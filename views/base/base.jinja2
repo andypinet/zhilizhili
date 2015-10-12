@@ -1,0 +1,41 @@
+<!doctype html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html><!--<![endif]-->
+    <head prefix="og: http://ogp.me/ns#">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <link rel="dns-prefetch" href="//s.qmstatic.com"/>
+        <link rel="dns-prefetch" href="//wscdn.qianmo.com"/>
+        <link rel="dns-prefetch" href="//p1.qianmo.com"/>
+        <link rel="dns-prefetch" href="//p2.qianmo.com"/>
+
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1">
+        {% if title %}
+        <title>{{ title }}</title>
+        <meta name="title" content="{{ title }}">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <!-- Fallback for manifest.json add to homescreen (Chrome Android) -->
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#e51c23">
+        <meta name="msapplication-TileColor" content="#e51c23">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="theme-color" content="#e51c23">
+
+        <link rel="icon" sizes="192x192" href="/static/assets/images/gmail_small.png">
+        <link rel="manifest" href="/static/manifest.json">
+
+        {% endif %}
+        {% block extendHeader %}{% endblock %}
+        <script src="/static/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+        <link rel="import" href="/static/bower_components/polymer/polymer.html">
+        {% block extendStylesheets %}{% endblock %}
+    </head>
+<body {% block bodyAttr%}{% endblock %}>
+    {% block pageContent %}{% endblock %}
+    {% block extendScript %}{% endblock %}
+</body>
+</html>
