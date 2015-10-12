@@ -4,6 +4,7 @@
 
 ### 安装virtualenv
 pip3 install vitrualenv
+virtualenv -p python3 env
 
 ### 安装依赖库
 ./utils.py -i -r requirement.txt 
