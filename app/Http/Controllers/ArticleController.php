@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Content;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -16,7 +17,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Content::all();
+        $articles = Content::latest()->published()->get();
         return view('article/index', compact('articles'));
     }
 
@@ -27,7 +28,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('article/create');
     }
 
     /**
@@ -36,9 +37,11 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\CreateArticleRequest $request)
     {
-        //
+        $input = $request->all();
+        Content::create($input);
+        return redirect('/article');
     }
 
     /**
@@ -50,7 +53,7 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article = Content::findOrFail($id);
-
+//        dd($article->published_at->diffForHumans());
         return view('article/show', compact('article'));
     }
 
@@ -62,7 +65,8 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $article = Content::findOrFail($id);
+        return view('article/edit', compact('article'));
     }
 
     /**
@@ -72,9 +76,13 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\CreateArticleRequest $request, $id)
     {
-        //
+        $input = $request->all();
+        $article = Content::findOrFail($id);
+        $article->update($input);
+
+        return redirect('/article');
     }
 
     /**
