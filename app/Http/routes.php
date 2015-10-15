@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Blade::setContentTags('<%', '%>');         // for variables and all things Blade
+Blade::setEscapedContentTags('<%%', '%%>');     // for escaped dat
+
+Route::get('/', 'IndexController@index');
+Route::get('/about', 'IndexController@about');
+
+Route::get('/admin', 'AdminController@index');
+Route::get('/article', 'ArticleController@index');
+Route::get('/article/{id}', 'ArticleController@show');
