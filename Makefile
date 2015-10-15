@@ -1,4 +1,4 @@
 python_path = ./env/bin/python
 
 serve:
-	$(python_path) app.py
+	$(python_path) run.py

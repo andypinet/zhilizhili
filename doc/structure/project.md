@@ -1,0 +1,9 @@
+项目目录设计
+```
+app
+    --controllers
+    --migrations
+    --models
+    --static
+    --views
+```    

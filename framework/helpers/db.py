@@ -1,4 +1,4 @@
-from framework.exceptions import NotSupportError
+from framework.exceptions.NotSupportException import *
 
 
 def gennerate_connection(driverName, **config):
@@ -10,5 +10,5 @@ def gennerate_connection(driverName, **config):
                                                                 config['port'],
                                                                 config['db'])
     else:
-        raise NotSupportError("we don not supprt other driver")
+        raise NotSupportException("we don not supprt other driver")
     return connection

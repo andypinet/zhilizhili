@@ -1,2 +1,6 @@
 flask
 sqlalchemy
+mysql-connector-python --allow-external mysql-connector-python
+flask-login
+alembic
+flask-sqlalchemy
