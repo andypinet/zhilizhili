@@ -3,6 +3,7 @@
 @section('content')
     <h3>撰写新文章</h3>
     {!! Form::open(['url' => '/article']) !!}
+    {!! Form::hidden('user_id',$user_id,['class'=>'form-control']) !!}
     <div class="form-group">
         {!! Form::label('title','标题:') !!}
         {!! Form::text('title',null,['class'=>'form-control']) !!}

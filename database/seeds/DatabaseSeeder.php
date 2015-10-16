@@ -16,6 +16,9 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(UserTableSeeder::class);
 
+        \App\User::truncate();
+        factory(\App\User::class, 120)->create();
+
         Model::reguard();
     }
 }

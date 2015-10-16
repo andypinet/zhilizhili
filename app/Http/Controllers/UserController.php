@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Content;
-use Carbon\Carbon;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class ArticleController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Content::latest()->published()->get();
-        return view('article/index', compact('articles'));
+        //
     }
 
     /**
@@ -28,12 +26,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        $user_id = \Auth::User()->id;
-        if (is_null($user_id))
-        {
-            $user_id = 1;
-        }
-        return view('article/create', compact('user_id'));
+        //
     }
 
     /**
@@ -42,11 +35,9 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Requests\CreateArticleRequest $request)
+    public function store(Request $request)
     {
-        $input = $request->all();
-        Content::create($input);
-        return redirect('/article');
+        //
     }
 
     /**
@@ -57,9 +48,9 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $article = Content::findOrFail($id);
-//        dd($article->published_at->diffForHumans());
-        return view('article/show', compact('article'));
+        $user = User::findOrFail($id);
+        $userArticles = $user->articles;
+        return view('user/show', compact('userArticles'));
     }
 
     /**
@@ -70,8 +61,7 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        $article = Content::findOrFail($id);
-        return view('article/edit', compact('article'));
+        //
     }
 
     /**
@@ -81,13 +71,9 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Requests\CreateArticleRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $input = $request->all();
-        $article = Content::findOrFail($id);
-        $article->update($input);
-
-        return redirect('/article');
+        //
     }
 
     /**

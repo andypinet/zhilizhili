@@ -14,6 +14,7 @@ class CreateContentsTable extends Migration
     {
         Schema::create('contents', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
             $table->string('title', 200)->nullable();
             $table->string('slug', 200)->nullable();
             $table->text('text')->nullable();
@@ -28,6 +29,8 @@ class CreateContentsTable extends Migration
             $table->boolean('allow_ping')->default(true);
             $table->boolean('allow_feed')->default(true);
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

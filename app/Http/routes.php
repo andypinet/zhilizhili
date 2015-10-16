@@ -24,3 +24,12 @@ Route::get('/about', 'IndexController@about');
 //Route::post('/article', 'ArticleController@store');
 
 Route::resource('article', 'ArticleController');
+Route::resource('user', 'UserController');
+
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
