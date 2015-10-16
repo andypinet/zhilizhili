@@ -58,7 +58,12 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article = Content::findOrFail($id);
-//        dd($article->published_at->diffForHumans());
+        \Auth::loginUsingId(1);
+//        $this->authorize('show-content', $article);
+//        if (\Gate::denies('update', $article))
+//        {
+//            abort('403', 'sorry');
+//        }
         return view('article/show', compact('article'));
     }
 
