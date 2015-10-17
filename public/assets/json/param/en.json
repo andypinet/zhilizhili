@@ -1,0 +1,27 @@
+{
+	"param":{
+		"cameraFovPc":45,
+		"cameraFovSmt":90,
+		"basefloor":15,
+		"lookAtRoad":30,
+		"speed":550,
+		"movexpc":26,
+		"moveypc":12,
+		"movexsmt":53,
+		"moveysmt":0,
+		"movespeedpc":0.2,
+		"movespeedsmt":0.1,
+		"itemoffsetx":111,
+		"itemoffsety":103,
+		"itemoffsetz":600,
+		"stgpartsoffsetx":30,
+		"stgpartsoffsety":22,
+		"itemshowinterval":50,
+		"stgpartsshowinterval":70,
+		"deadspeed":34,
+		"kaihuku0":10,
+		"kaihuku1":15,
+		"kaihuku2":30,
+		"itemtouchbuffer":33
+	}
+}

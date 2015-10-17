@@ -1,0 +1,6 @@
+{
+	"param":{
+		"pc":{"speed":300,"moveX":26,"moveY":12,"moveSpeed":0.172,"itemRangeX0":151,"itemRangeY0":96,"itemRangeX1":153,"itemRangeY1":110,"itemRangeX2":200,"itemRangeY2":155,"itemStartZ":700,"itemShow":80,"itemNum":10,"deadSpeed":25,"kaihuku0":2,"kaihuku1":10,"kaihuku2":30,"fov":45,"basefloor":15,"lookAtRoad":30,"sPartsRX":190,"sPartsRY":230,"sPartsShow":60,"lineLife":15},
+		"smt":{"speed":249,"moveX":71,"moveY":0,"moveSpeed":0.1889,"itemRangeX0":221,"itemRangeY0":177,"itemRangeX1":230,"itemRangeY1":98,"itemRangeX2":288,"itemRangeY2":223,"itemStartZ":463,"itemShow":69,"itemNum":10,"deadSpeed":25,"kaihuku0":2,"kaihuku1":10,"kaihuku2":31,"fov":90,"basefloor":14.444444444444445,"lookAtRoad":30,"sPartsRX":290,"sPartsRY":231,"sPartsShow":53,"lineLife":14}
+	}
+}
