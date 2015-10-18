@@ -21,6 +21,8 @@
     "jquery-mousewheel": "https://github.com/jquery/jquery-mousewheel.git#~3.1.13",
     "swfobject": "https://github.com/swfobject/swfobject.git",
     "stats.js": "https://github.com/mrdoob/stats.js.git",
-    "modernizr": "~3.1.0"
+    "modernizr": "~3.1.0",
+    "scss-lfx-nipponcolor": "scss-zhilizhili-nipponcolor#*",
+    "gsap": "https://github.com/greensock/GreenSock-JS.git#~1.18.0"
   }
 }

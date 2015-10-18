@@ -1,3 +1,7 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "../../../public/bower_components/scss-lfx-nipponcolor/stylesheets/nipponcolor";
+
+@import "config/color";
 
 @import "index/about";
+@import "index/index";

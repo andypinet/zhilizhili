@@ -1,0 +1,11 @@
+$zhilizhili-color: (
+	"red": get-nipponcolor("usubeni"),
+	"orange": get-nipponcolor("sohi"),
+	"yellow": get-nipponcolor("hanaba"),
+	"green": get-nipponcolor("moegi"),
+	"cyan-blue": get-nipponcolor("seiji"),
+	"blue": get-nipponcolor("sora"),
+	"purple": get-nipponcolor("fujimurasaki")
+) !global !default;
+
+@debug $zhilizhili-color;

@@ -1,12 +1,31 @@
 @extends('base')
 
 @section('head')
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="bower_components/polymer/polymer.html">
     <link rel="stylesheet" href="/css/app.css"/>
     <script src="/js/modernizr.js"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=3K4LGyRxytdEBnZmcwPbrtF5"></script>
 @stop
 
 @section('content')
-    你好 我叫<% $name %>
+    <template id="app" is="dom-bind">
+        你好 我叫<% $name %>
+        <div class="theater">
+            <div class="scene">
+                <div>- <span id="me"></span></div>
+            </div>
+
+            <pre id="nodebug"><code>
+                theater.write(
+                    <span id="log"></span>
+                );
+            </code></pre>
+        </div>
+
+        <div id="allmap">
+        </div>
+    </template>
 
     <div id="main"></div>
     <div id="bg"></div>
@@ -40,5 +59,12 @@
     <script src="/js/shader/zoomBlur.js"></script>
 
     <script src="/js/myfw.js"></script>
-    <script src="/js/main.js"></script>
+@stop
+
+@section('script')
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/gsap/src/uncompressed/TweenMax.js"></script>
+    <script src="/bower_components/gsap/src/uncompressed/TimelineLite.js"></script>
+    <script src="bower_components/TheaterJS/build/theater.js"></script>
+    <script src="/controller/index/about.js"></script>
 @stop
