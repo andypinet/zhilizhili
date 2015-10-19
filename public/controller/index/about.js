@@ -1,8 +1,9 @@
 var tl = new TimelineLite();
 var theater = new TheaterJS();
 
-function ready() {
+function ready(app) {
 	var $log = document.querySelector("#log");
+	var pageContent = document.querySelector('#page-content');
 
 	// First, describe actors by passing a name,
 	// an experience and finally a selector string.
@@ -50,30 +51,42 @@ function ready() {
 // theater.write("I:Hello", 400).write("You:Wassup?", 400);
 // Is the same as:
 // theater.write("I:Hello", 400, "Your:Wassup?", 400);
-	theater
-
-		// "Me:Luke" adds 2 scenes:
-		// 1 - Update current actor.
-		// 2 - Add a "say" scene with the speech (Luke in this example).
-		.write("Me:大家好 我叫凌柏超.")
-
-		// 等待4600毫秒
-		.write(600)
-
-		.write('Me:我是扬州人')
-
-		// 召唤地图
-		.write({ name: "call", args: [showMap, true] })
+//	theater
+//
+//		// "Me:Luke" adds 2 scenes:
+//		// 1 - Update current actor.
+//		// 2 - Add a "say" scene with the speech (Luke in this example).
+//		.write("Me:大家好 我叫凌柏超.")
+//
+//		// 等待600毫秒
+//		.write(600)
+//
+//		.write('Me:我是扬州人')
+//
+//		// 召唤地图
+//		.write({ name: "call", args: [showMap, false] })
+//
+//		// 等待600毫秒
+//		.write(600)
+//
+//		.write("Me: 我们开始新的单元吧")
+//
+//		.write({name: 'call', args: [nextPage, true]});
 
 	// Code below is used for the purpose of the demo.
 	function showMap() {
 		console.log('我就是地图');
 		// 百度地图API功能
 		var map = new BMap.Map("allmap");    // 创建Map实例
-		map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+		map.centerAndZoom("扬州", 9);  // 初始化地图,设置中心点坐标和地图级别
 		map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
-		map.setCurrentCity("北京");          // 设置地图显示的城市 此项是必须设置的
-		map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+	}
+
+	app.currentIndex = 0;
+
+	function nextPage() {
+		app.currentIndex++;
+		pageContent.go(app.currentIndex);
 	}
 }
 
@@ -87,7 +100,7 @@ function ready() {
 	// Listen for template bound event to know when bindings
 	// have resolved and content has been stamped to the page
 	app.addEventListener('dom-change', function() {
-		ready();
+		ready(app);
 	});
 
 	// See https://github.com/Polymer/polymer/issues/1381

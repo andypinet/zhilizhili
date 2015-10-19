@@ -22,7 +22,6 @@ class IndexController extends Controller
 
     public function about()
     {
-        echo env('DB_DATABASE', '');
         return view('index/about', array(
             'name' => '凌柏超'
         ));

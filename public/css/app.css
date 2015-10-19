@@ -1,6 +1,25 @@
+html {
+  overflow-x: hidden; }
+
+body {
+  margin: 0; }
+
 #allmap {
   width: 700px;
   height: 450px; }
+
+zhilizhili-slider {
+  width: 100vw;
+  height: 100vh; }
+
+zhilizhili-slider slider-item {
+  overflow: hidden; }
+
+#introduction {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1; }
 
 .test {
   width: 450px;

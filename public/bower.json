@@ -23,6 +23,7 @@
     "stats.js": "https://github.com/mrdoob/stats.js.git",
     "modernizr": "~3.1.0",
     "scss-lfx-nipponcolor": "scss-zhilizhili-nipponcolor#*",
-    "gsap": "https://github.com/greensock/GreenSock-JS.git#~1.18.0"
+    "gsap": "https://github.com/greensock/GreenSock-JS.git#~1.18.0",
+    "zhilizhili-slider": "https://github.com/andypinet/zhilizhili-slider.git#~0.5.1"
   }
 }

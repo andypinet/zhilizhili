@@ -5,3 +5,4 @@ Homestead.json
 .env
 _ide_helper.php
 /public/bower_components
+.tags
