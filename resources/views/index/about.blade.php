@@ -57,7 +57,7 @@
 @stop
 
 @section('content')
-        <zhilizhili-loading imgpath="assets/img/loading/" loadingtime="13300">
+        <zhilizhili-loading imgpath="assets/img/loading/" loadingtime="15300">
             <h3>关于我</h3>
         </zhilizhili-loading>
     <template id="app" is="dom-bind">
