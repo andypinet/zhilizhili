@@ -10893,10 +10893,7 @@ exports["default"] = function (superClass) {
 			this._fromColor.r += (t1.r - this._fromColor.r) * ease;
 			this._fromColor.g += (t1.g - this._fromColor.g) * ease;
 			this._fromColor.b += (t1.b - this._fromColor.b) * ease;
-			return this._effect.elm().css({
-				background: "-moz-linear-gradient(left top, #" + this._toColor.getHexString() + ", #" + this._fromColor.getHexString() + ")",
-				background: "-webkit-gradient(linear, left top, right bottom, from(#" + this._toColor.getHexString() + "), to(#" + this._fromColor.getHexString() + "))"
-			});
+			return this._effect.elm().css({});
 		}
 	};
 

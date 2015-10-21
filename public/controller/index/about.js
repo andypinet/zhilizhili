@@ -1,4 +1,3 @@
-var tl = new TimelineLite();
 var theater = new TheaterJS();
 
 function ready(app) {
@@ -88,8 +87,6 @@ function ready(app) {
 		app.currentIndex++;
 		pageContent.go(app.currentIndex);
 	}
-
-	nextPage();
 }
 
 (function(document) {

@@ -164,6 +164,7 @@
 
 	root.MY_CLASS.webglMain = require('./about/my_class/webgl_main')();	
 
+
 	$(window).ready((function(_this) {
 		return function() {
 			root.MY.app = new root.MY_CLASS.main();
