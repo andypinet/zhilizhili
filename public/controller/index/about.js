@@ -88,6 +88,8 @@ function ready(app) {
 		app.currentIndex++;
 		pageContent.go(app.currentIndex);
 	}
+
+	nextPage();
 }
 
 (function(document) {

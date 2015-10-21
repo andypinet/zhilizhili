@@ -10,7 +10,8 @@ body {
 
 zhilizhili-slider {
   width: 100vw;
-  height: 100vh; }
+  height: 100vh;
+  display: none; }
 
 zhilizhili-slider slider-item {
   overflow: hidden; }
@@ -19,7 +20,8 @@ zhilizhili-slider slider-item {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 1; }
+  z-index: 1;
+  display: none; }
 
 .test {
   width: 450px;

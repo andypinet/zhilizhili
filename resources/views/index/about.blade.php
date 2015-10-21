@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/app.css"/>
     <script src="/js/modernizr.js"></script>
     <script src="http://api.map.baidu.com/api?v=2.0&ak=3K4LGyRxytdEBnZmcwPbrtF5"></script>
+    <script src="bower_components/three.js/build/three.min.js"></script>
 @stop
 
 @section('content')
@@ -31,6 +32,19 @@
                 </div>
             </slider-item>
             <slider-item>
+            </slider-item>
+            <slider-item>
+                <img src="http://dummyimage.com/650x450/00cfba/dcffcc&text=slider 3" alt=""/>
+            </slider-item>
+            <slider-item>
+                <img src="http://dummyimage.com/650x450/00cfba/dcffcc&text=slider 4" alt=""/>
+            </slider-item>
+            <slider-item>
+                <img src="http://dummyimage.com/650x450/00cfba/dcffcc&text=slider 5" alt=""/>
+            </slider-item>
+        </zhilizhili-slider>      
+    </template>
+
                 <div id="main"></div>
                 <div id="bg"></div>
                 <div id="loading"></div>
@@ -39,7 +53,15 @@
                 <div id="top"></div>
                 <div id="gameUi"></div>
                 <div id="debug"></div>
-                <div id="restart"></div>
+                <div id="restart"></div>      
+@stop
+
+@section('script')
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/gsap/src/uncompressed/TweenMax.js"></script>
+    <script src="/bower_components/gsap/src/uncompressed/TimelineLite.js"></script>
+    <script src="bower_components/TheaterJS/build/theater.js"></script>
+    <script src="/controller/index/about.js"></script>
 
                 <script src="/bower_components/jquery/dist/jquery.js"></script>
                 <script src="/bower_components/jquery.easing/js/jquery.easing.js"></script>
@@ -63,25 +85,5 @@
                 <script src="/js/shader/zoomBlur.js"></script>
 
                 <script src="/js/myfw.js"></script>
-                <script src="/js/mywebgl.js"></script>
-            </slider-item>
-            <slider-item>
-                <img src="http://dummyimage.com/650x450/00cfba/dcffcc&text=slider 3" alt=""/>
-            </slider-item>
-            <slider-item>
-                <img src="http://dummyimage.com/650x450/00cfba/dcffcc&text=slider 4" alt=""/>
-            </slider-item>
-            <slider-item>
-                <img src="http://dummyimage.com/650x450/00cfba/dcffcc&text=slider 5" alt=""/>
-            </slider-item>
-        </zhilizhili-slider>
-    </template>
-@stop
-
-@section('script')
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/gsap/src/uncompressed/TweenMax.js"></script>
-    <script src="/bower_components/gsap/src/uncompressed/TimelineLite.js"></script>
-    <script src="bower_components/TheaterJS/build/theater.js"></script>
-    <script src="/controller/index/about.js"></script>
+                <script src="/js/mywebgl.js"></script>  
 @stop
