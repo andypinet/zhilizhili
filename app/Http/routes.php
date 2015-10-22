@@ -18,6 +18,8 @@ Route::get('/', 'IndexController@index');
 Route::get('/about', 'IndexController@about');
 
 Route::resource('article', 'ArticleController');
+Route::post('/user/upload','UserController@upload');
+Route::get('/user/time', 'UserController@time');
 Route::resource('user', 'UserController');
 
 Route::get('auth/login', 'Auth\AuthController@getLogin');
