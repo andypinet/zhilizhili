@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="x-ua-compatible" content="IE=edge">  
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
     <title>Document</title>
     <script>
     window.oldBrowser = false;
@@ -16,7 +16,7 @@
     });
     </script>
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-    <link rel="import" href="bower_components/polymer/polymer.html">    
+    <link rel="import" href="bower_components/polymer/polymer.html">
     <script src="bower_components/gsap/src/minified/TweenMax.min.js"></script>
     <script src="bower_components/gsap/src/minified/TimelineMax.min.js"></script>
     <script src="bower_components/es6-shim/es6-shim.min.js"></script>           
@@ -42,7 +42,7 @@
             z-index: -1;
             background-color: transparent;
         }
-    </style>      
+    </style>
     @yield('head')
 </head>
 <body>
