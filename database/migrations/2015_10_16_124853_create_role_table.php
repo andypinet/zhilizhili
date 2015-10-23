@@ -65,11 +65,17 @@ class CreateRoleTable extends Migration
      */
     public function down()
     {
-        Schema::table('roles', function (Blueprint $table) {
-            $table->drop('roles');
-            $table->drop('permissions');
-            $table->drop('permission_role');
-            $table->drop('role_user');
+        Schema::table('permission_role', function(Blueprint $table){
+            $table->dropForeign('permission_role_permission_id_foreign');
+            $table->dropForeign('permission_role_role_id_foreign');
         });
+        Schema::table('role_user', function(Blueprint $table){
+            $table->dropForeign('role_user_role_id_foreign');
+            $table->dropForeign('role_user_user_id_foreign');
+        });
+        Schema::drop('roles');
+        Schema::drop('permissions');
+        Schema::drop('permission_role');
+        Schema::drop('role_user');
     }
 }

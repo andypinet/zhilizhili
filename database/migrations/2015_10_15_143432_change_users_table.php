@@ -30,7 +30,6 @@ class ChangeUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
             $table->dropColumn('url');
             $table->dropColumn('screen_name');
             $table->dropColumn('activated');

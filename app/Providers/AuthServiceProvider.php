@@ -38,6 +38,9 @@ class AuthServiceProvider extends ServiceProvider
 
     protected function getPermissions()
     {
-        return Permission::with('roles')->get();
+        if (\Schema::hasTable('permissions')) {
+            return Permission::with('roles')->get();
+        }
+        return [];
     }
 }

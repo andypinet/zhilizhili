@@ -41,6 +41,9 @@ class CreateContentsTable extends Migration
      */
     public function down()
     {
+        Schema::table('contents', function(Blueprint $table){
+            $table->dropForeign('contents_user_id_foreign');
+        });
         Schema::drop('contents');
     }
 }
