@@ -1,17 +1,62 @@
 @extends('base')
 
 @section('head')
-    <link rel="stylesheet" href="/css/app.css"/>
+    <link rel="stylesheet" href="/css/index/index.css"/>
+    <link rel="import" href="/bower_components/zhilizhili-slider/zhilizhili-slider.html">
+    <link rel="import" href="/bower_components/zhilizhili-slider/slider-item.html">
+    <link rel="import" href="/components/simple-slider.html">
+    <link rel="import" href="/components/simple-slider-item.html">
+    <style is="custom-style">
+        #slider simple-slider {
+            position: relative;
+            display: block;
+            width: 1200px;
+            height: 170px;
+            overflow: hidden;
+        }
+
+        #slider simple-slider ::content .simple-slider-wrapper {
+            position: absolute;
+            width: 999em;
+            transition: all 1s ease;
+        }
+
+        #slider simple-slider simple-slider-item {
+            float: left;
+            width: 240px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #slider simple-slider simple-slider-item ::content div {
+            display: block;
+            width: 220px;
+        }
+    </style>
 @stop
 
 @section('content')
     <template id="app" is="dom-bind">
         <h1>zhilizhili beta</h1>
-        @foreach($articles as $article)
-            <div>
-                <h3><% $article->title %></h3>
-            </div>
-        @endforeach
+        <zhilizhili-slider id="slider" direction="vertical">
+            <slider-item>
+                <div class="movies">
+                    @if(count($articles) > 0)
+                        <simple-slider>
+                            @foreach($articles as $article)
+                                <simple-slider-item>
+                                    <div><% $article->title %></div>
+                                </simple-slider-item>
+                            @endforeach
+                        </simple-slider>
+                        <div class="simple-slider-prev">prev</div>
+                        <div class="simple-slider-next">next</div>
+                    @endif
+                </div>
+                <div>{{index}}</div>
+            </slider-item>
+        </zhilizhili-slider>
     </template>
 @stop
 

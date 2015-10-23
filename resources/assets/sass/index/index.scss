@@ -1,17 +1,12 @@
-.test {
-  width: 450px;
-  height: 240px;
-  background-color: map-get($zhilizhili-color, "blue");
-  position: relative;
+body {
+  margin: 0;
 }
 
-.boxes {
-  display: flex;
+#slider {
+  width: 100%;
+  height: 450px;
 }
 
-.box {
-  width: 120px;
-  height: 120px;
-  margin-left: 60px;
-  background-color: map-get($zhilizhili-color, "green");
+#slider .zhilizhili-slider-wrapper {
+  width: 100%;
 }

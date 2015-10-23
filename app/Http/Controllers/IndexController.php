@@ -17,7 +17,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $articles = Content::all();
+        $articles = Content::skip(10)->take(10)->get();
         return view('index/index', compact('articles'));
     }
 

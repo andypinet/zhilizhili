@@ -1,0 +1,1 @@
+{"version":3,"sources":["index/index.css"],"names":[],"mappings":"AAAA;EACE,UAAU,EAAE;;AAEd;EACE,YAAY;EACZ,cAAc,EAAE;;AAElB;EACE,YAAY,EAAE","file":"index/index.css","sourcesContent":["body {\n  margin: 0; }\n\n#slider {\n  width: 100%;\n  height: 450px; }\n\n#slider .zhilizhili-slider-wrapper {\n  width: 100%; }\n\n\n"],"sourceRoot":"/source/"}

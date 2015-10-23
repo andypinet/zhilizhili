@@ -1,6 +1,3 @@
-function ready() {
-}
-
 (function(document) {
 
 	// Grab a reference to our auto-binding template
@@ -11,7 +8,45 @@ function ready() {
 	// Listen for template bound event to know when bindings
 	// have resolved and content has been stamped to the page
 	app.addEventListener('dom-change', function() {
-		ready();
+		var movies = document.querySelectorAll('.movies');
+		var data = {};
+		data.movies = [];
+
+		function prevHandler(e, moviedata, movie) {
+			if (moviedata.currentIndex > 0) {
+				moviedata.currentIndex--;
+				movie.simpleSlider.go(moviedata.currentIndex);
+			}
+			app.index = moviedata.currentIndex;
+		}
+
+		function nextHandler(e, moviedata, movie) {
+			if (moviedata.currentIndex < (movie.items.length - movie.pageView)) {
+				moviedata.currentIndex++;
+				movie.simpleSlider.go(moviedata.currentIndex);
+			}
+			app.index = moviedata.currentIndex;
+		}
+
+		function handler(i) {
+			var movie = movies.item(i);
+			movie.simpleSlider = movie.querySelector('simple-slider');
+			movie.items = movie.simpleSlider.querySelectorAll('simple-slider-item');
+			movie.pageView = 5;
+			data.movies[i] = {
+				currentIndex: 0
+			};
+			movie.querySelector('.simple-slider-prev').addEventListener('click', function handler(e){
+				prevHandler(e, data.movies[i], movie);
+			}, false);
+			movie.querySelector('.simple-slider-next').addEventListener('click', function handler(e){
+				nextHandler(e, data.movies[i], movie);
+			}, false)
+		}
+
+		for (var i = 0; i < movies.length; i++) {
+			handler(i);
+		}
 	});
 
 	// See https://github.com/Polymer/polymer/issues/1381

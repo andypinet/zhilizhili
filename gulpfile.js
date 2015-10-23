@@ -31,6 +31,17 @@ gulp.task('build-umd', function(){
 	});
 });
 
+
+zTask.scope(gulp);
+
+gulp.task('build-sass', function () {
+	zTask.require('build-sass')({
+		src: paths.srcRoot + 'assets/sass/**/*.scss',
+		dest: paths.destRoot + 'css'
+	});
+});
+
 gulp.task('watch', function(){
-	gulp.watch(paths.srcRoot + 'assets/js/**/*.js', ['build-umd']);
+	//gulp.watch(paths.srcRoot + 'assets/js/**/*.js', ['build-umd']);
+	gulp.watch(paths.srcRoot + 'assets/sass/**/*.scss', ['build-sass']);
 });
