@@ -7,4 +7,5 @@ _ide_helper.php
 /public/bower_components
 /public/js/about
 /public/upload
+.sass-cache
 .tags
