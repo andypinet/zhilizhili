@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Content extends Model
 {
-	protected $fillable = ['title', 'text', 'type', 'published_at', 'user_id'];
+	protected $fillable = ['title', 'text', 'type', 'published_at', 'user_id', 'slug'];
 
 	public $dates = ['published_at'];
 

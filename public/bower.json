@@ -26,6 +26,9 @@
     "gsap": "https://github.com/greensock/GreenSock-JS.git#~1.18.0",
     "zhilizhili-slider": "https://github.com/andypinet/zhilizhili-slider.git#~0.5.1",
     "zhilizhili-loading": "git@github.com:andypinet/zhilizhili-loading.git#~0.9.0",
-    "normalize-css": "normalize.css#~3.0.3"
+    "normalize-css": "normalize.css#~3.0.3",
+    "github-markdown-css": "~2.1.0",
+    "marked-element": "PolymerElements/marked-element#~1.1.1",
+    "editor.md": "~1.5.0"
   }
 }
