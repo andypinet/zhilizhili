@@ -2,6 +2,7 @@
 
 @section('head')
     <link rel="stylesheet" href="/css/index/index.css"/>
+    <link rel="import" href="/bower_components/iron-ajax/iron-ajax.html">
     <link rel="import" href="/bower_components/zhilizhili-slider/zhilizhili-slider.html">
     <link rel="import" href="/bower_components/zhilizhili-slider/slider-item.html">
     <link rel="import" href="/components/simple-slider.html">
@@ -57,6 +58,14 @@
                 <div>{{index}}</div>
             </slider-item>
         </zhilizhili-slider>
+        <iron-ajax id="ajax"
+                url="http://192.168.0.103:5000/user/ajax"
+                params='{"_token": "<% csrf_token() %>"}'
+                method="GET"
+                last-response="{{ajaxResponse}}"
+                headers='{"prop": "1"}'
+        ></iron-ajax>
+        <div>{{ajaxResponse.content}}</div>
     </template>
 @stop
 

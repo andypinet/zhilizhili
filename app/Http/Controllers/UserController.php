@@ -126,4 +126,11 @@ class UserController extends Controller
         echo "data: The server time is: {$time}\n\n";
         flush();
     }
+
+    public function ajax()
+    {
+        return response()->json([
+            'content' => 'hihi'
+        ]);
+    }
 }

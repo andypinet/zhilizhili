@@ -20,6 +20,9 @@ Route::get('/about', 'IndexController@about');
 Route::resource('article', 'ArticleController');
 Route::post('/user/upload','UserController@upload');
 Route::get('/user/time', 'UserController@time');
+Route::group(['middleware' => 'cros'], function(\Illuminate\Routing\Router $router){
+    $router->get('/user/ajax', 'UserController@ajax');
+});
 Route::resource('user', 'UserController');
 
 Route::get('auth/login', 'Auth\AuthController@getLogin');
