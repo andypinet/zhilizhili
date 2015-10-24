@@ -43,12 +43,6 @@
 			handler(i);
 		}
 
-		setTimeout(function () {
-			document.querySelector('#ajax').params = Object.assign(document.querySelector('#ajax').params, {
-				append: 1
-			});
-			document.querySelector('#ajax').generateRequest();
-		}, 3000);
 	});
 
 	window.addEventListener('WebComponentsReady', function() {

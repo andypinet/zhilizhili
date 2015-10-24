@@ -1,49 +1,5 @@
-html {
-  overflow-x: hidden; }
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif; }
-
-#allmap {
-  width: 700px;
-  height: 450px; }
-
-zhilizhili-slider {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 999; }
-
-zhilizhili-slider slider-item {
-  overflow: hidden; }
-
-#introduction {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 999; }
-
-#me {
-  font-size: 30px;
-  color: #EDE8FF;
-  text-shadow: 1px 1px 10px #FD82F3;
-  letter-spacing: 5px;
-  -webkit-font-smoothing: antialiased; }
-
 body {
   margin: 0; }
-
-#slider {
-  width: 100%;
-  height: 450px; }
-
-#slider .zhilizhili-slider-wrapper {
-  width: 100%; }
 
 
 

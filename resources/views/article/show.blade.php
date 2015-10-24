@@ -1,5 +1,9 @@
 @extends('base')
 
+@section('head')
+    <link rel="stylesheet" href="">
+@stop
+
 @section('content')
     @can('edit_form')
     <a href="">编辑文章</a>

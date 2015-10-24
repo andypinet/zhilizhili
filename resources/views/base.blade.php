@@ -17,6 +17,8 @@
     </script>
     <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
     <link rel="import" href="/bower_components/polymer/polymer.html">
+    <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="/css/app.css">
     <script src="/bower_components/gsap/src/minified/TweenMax.min.js"></script>
     <script src="/bower_components/gsap/src/minified/TimelineMax.min.js"></script>
     <script src="/bower_components/es6-shim/es6-shim.min.js"></script>
