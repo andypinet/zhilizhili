@@ -2,9 +2,6 @@ main {
   width: 1200px;
   margin: 0 auto; }
 
-.editormd-preview-container ol.linenums li code, .editormd-html-preview ol.linenums li code {
-  white-space: pre-line; }
-
 
 
 /*# sourceMappingURL=../../maps/css/article/show.css.map */

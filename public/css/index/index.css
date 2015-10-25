@@ -34,6 +34,10 @@ simple-slider-item {
   bottom: 0;
   z-index: 2000; }
 
+html, body {
+  width: 100%;
+  height: 100%; }
+
 main {
   height: 100%;
   display: -webkit-box;
@@ -48,7 +52,8 @@ main {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  background-color: #00acc1; }
 
 .square-container {
   -webkit-perspective: 1000px;
@@ -69,14 +74,6 @@ main {
   .square:hover {
     -webkit-transition: none;
     transition: none; }
-
-main {
-  position: relative;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden; }
 
 .nav-item {
   width: 960px;
@@ -101,8 +98,8 @@ main {
 
 .nav-item:nth-of-type(1) {
   left: 120px;
-  top: 240px;
-  background-color: rgb(125, 99, 219);
+  top: 260px;
+  background-color: rgb(238, 18, 170);
   z-index: 4;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
@@ -110,35 +107,35 @@ main {
 
 .nav-item:nth-of-type(2) {
   left: 180px;
-  top: 180px;
-  background-color: rgb(104, 160, 60);
+  top: 200px;
+  background-color: rgb(252, 141, 8);
   z-index: 3;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
-  opacity: 0.5; }
+  opacity: 0.8; }
 
 .nav-item:nth-of-type(3) {
   left: 240px;
-  top: 120px;
-  background-color: rgb(38, 43, 250);
+  top: 140px;
+  background-color: rgb(7, 15, 199);
   z-index: 2;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
-  opacity: 0.33333; }
+  opacity: 0.6; }
 
 .nav-item:nth-of-type(4) {
   left: 300px;
-  top: 60px;
-  background-color: rgb(215, 44, 65);
+  top: 80px;
+  background-color: rgb(143, 141, 103);
   z-index: 1;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
-  opacity: 0.25; }
+  opacity: 0.4; }
 
 .nav-item:nth-of-type(5) {
   left: 360px;
-  top: 0px;
-  background-color: rgb(112, 191, 134);
+  top: 20px;
+  background-color: rgb(252, 180, 150);
   z-index: 0;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;

@@ -10,11 +10,11 @@
         @can('edit_form')
         <a href="">编辑文章</a>
         @endcan
-        <article class="markdown-body">
+        <article>
             <h3><a href=""><% $article->title %></a></h3>
             <div id="test-editormd-view2">
                 <textarea id="append-test" style="display:none;">
-                    <% $article->text %>
+<% $article->text %>
                 </textarea>
             </div>
         </article>
