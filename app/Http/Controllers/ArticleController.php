@@ -17,7 +17,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Content::latest()->published()->get();
+        $articles = Content::latest()->published()->paginate(10);
         return view('article/index', compact('articles'));
     }
 
@@ -28,6 +28,10 @@ class ArticleController extends Controller
      */
     public function create()
     {
+        if (is_null(\Auth::User())) {
+            abort('403', '你们是没有权限的 哈哈');
+        }
+
         $user_id = \Auth::User()->id;
         if (is_null($user_id))
         {
@@ -58,7 +62,6 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article = Content::findOrFail($id);
-        \Auth::loginUsingId(1);
 //        $this->authorize('show-content', $article);
 //        if (\Gate::denies('update', $article))
 //        {
