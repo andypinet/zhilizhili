@@ -105,7 +105,7 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/TheaterJS/build/theater.js"></script>
     <script src="http://api.map.baidu.com/api?v=2.0&ak=3K4LGyRxytdEBnZmcwPbrtF5"></script>
-    <script src="bower_components/three.js/build/three.min.js"></script>     
+    <script src="/js/three.min.js"></script>
     <script src="/controller/index/about.js"></script>
 
                 <script src="/bower_components/jquery.easing/js/jquery.easing.js"></script>

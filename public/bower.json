@@ -14,7 +14,6 @@
     "page": "visionmedia/page.js#~1.6.3",
     "localforage": "~1.2.10",
     "moment": "~2.10.6",
-    "three.js": "threejs#*",
     "TheaterJS": "theaterjs#~1.4.2",
     "jquery": "~2.1.4",
     "jquery.easing": "~1.3.1",
