@@ -25,4 +25,9 @@ class Content extends Model
 	{
 		return $this->belongsTo('App\User');
 	}
+
+	public function scopePassCheck($query)
+	{
+		$query->where('status', '=', 1);
+	}
 }

@@ -24,6 +24,7 @@ Route::group(['middleware' => 'cros'], function(\Illuminate\Routing\Router $rout
     $router->get('/user/ajax', 'UserController@ajax');
 });
 Route::resource('user', 'UserController');
+Route::resource('admin', 'AdminController');
 
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');

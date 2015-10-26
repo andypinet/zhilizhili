@@ -15,9 +15,14 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $articles = Content::latest()->published()->paginate(10);
+        if ($request->user()->isAdmin()) {
+            $articles = Content::latest()->published()->paginate(10);
+        }
+        else {
+            $articles = Content::latest()->passCheck()->published()->paginate(10);
+        }
         return view('article/index', compact('articles'));
     }
 

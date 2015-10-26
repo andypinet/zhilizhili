@@ -21,4 +21,9 @@ class ArticlePolicy
     {
         return $user->owns($article);
     }
+
+    public function canSee(User $user, Content $article)
+    {
+        return $user->isAdmin() || $article->status == 1;
+    }
 }

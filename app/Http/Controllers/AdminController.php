@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Content;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,8 +21,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        //
-        return view("admin/index");
+        $articles = Content::latest()->published()->paginate(10);
+        return view("admin/index", compact('articles'));
     }
 
     /**

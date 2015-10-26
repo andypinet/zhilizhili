@@ -6,19 +6,24 @@
 @stop
 
 @section('content')
-    @can('admin_access')
-    <a href="">编辑文章</a>
-    @endcan
-    <main>
-        <article>
-            <h3><a href=""><% $article->title %></a></h3>
-            <div id="test-editormd-view2">
-                <textarea id="append-test" style="display:none;">
+    @can('canSee', $article)
+        你是有权限的 或者文章已审核完毕
+        @can('admin_access')
+        <a href="">编辑文章</a>
+        @endcan
+        <main>
+            <article>
+                <h3><a href=""><% $article->title %></a></h3>
+                <div id="test-editormd-view2">
+                    <textarea id="append-test" style="display:none;">
 <% $article->text %>
-                </textarea>
-            </div>
-        </article>
-    </main>
+                    </textarea>
+                </div>
+            </article>
+        </main>
+    @else
+        这篇文章还在审核中
+    @endcan
 @stop
 
 @section('script')
