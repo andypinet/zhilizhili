@@ -60,4 +60,9 @@ class User extends Model implements AuthenticatableContract,
         }
         return !! $role->intersect($this->roles)->count();
     }
+
+    public function isAdmin()
+    {
+        return $this->hasRole('admin');
+    }
 }

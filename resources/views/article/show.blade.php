@@ -6,10 +6,10 @@
 @stop
 
 @section('content')
+    @can('admin_access')
+    <a href="">编辑文章</a>
+    @endcan
     <main>
-        @can('edit_form')
-        <a href="">编辑文章</a>
-        @endcan
         <article>
             <h3><a href=""><% $article->title %></a></h3>
             <div id="test-editormd-view2">
