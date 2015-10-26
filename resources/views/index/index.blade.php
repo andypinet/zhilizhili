@@ -7,6 +7,7 @@
     <link rel="import" href="/bower_components/zhilizhili-slider/slider-item.html">
     <link rel="import" href="/components/simple-slider.html">
     <link rel="import" href="/components/simple-slider-item.html">
+    <link rel="import" href="/components/top-bar.html">
     <style is="custom-style">
         simple-slider {
             display: block;
@@ -45,6 +46,13 @@
 
 @section('content')
     <template id="app" is="dom-bind">
+        <top-bar>
+            @if (isset($userInfo))
+                <div id="user-info" class="user-info">
+                    <a href="<% url('user', $userInfo->id) %>" class="user-info-home"><span class="user-info-name"><% $userInfo->name %></span></a>
+                </div>
+            @endif
+        </top-bar>
         <div class="movies" style="display: none;">
             @if(count($articles) > 0)
                 <simple-slider>

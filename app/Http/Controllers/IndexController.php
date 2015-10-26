@@ -6,6 +6,7 @@ use App\Content;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 
 class IndexController extends Controller
@@ -15,10 +16,15 @@ class IndexController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $articles = Content::skip(10)->take(10)->get();
-        return view('index/index', compact('articles'));
+        $result = compact('articles');
+        if ($request->user())
+        {
+            $result['userInfo'] = $request->user();
+        }
+        return view('index/index', $result);
     }
 
 
