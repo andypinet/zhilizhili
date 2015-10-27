@@ -18,6 +18,7 @@
     <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
     <link rel="import" href="/bower_components/polymer/polymer.html">
     <link rel="stylesheet" href="/bower_components/normalize-css/normalize.css">
+    <link rel="import" href="/components/top-bar.html">
     <link rel="stylesheet" href="/css/app.css">
     <script src="/bower_components/gsap/src/minified/TweenMax.min.js"></script>
     <script src="/bower_components/gsap/src/minified/TimelineMax.min.js"></script>
@@ -48,6 +49,13 @@
     @yield('head')
 </head>
 <body>
+    <top-bar>
+        @if (!is_null(Auth::user()))
+            <div id="user-info" class="user-info">
+                <a href="<% url('user', Auth::user()->id) %>" class="user-info-home"><span class="user-info-name"><% Auth::user()->name %></span></a>
+            </div>
+        @endif
+    </top-bar>
     @yield('content')
     <div class="polymer-support-oldbrowser" id="polymer-support-oldbrowser">
         web components 正在努力加载中

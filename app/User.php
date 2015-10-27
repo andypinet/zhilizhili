@@ -39,7 +39,17 @@ class User extends Model implements AuthenticatableContract,
 
     public function articles()
     {
-        return $this->hasMany('App\Content');
+        return $this->hasMany(Content::class);
+    }
+
+    public function unCheckArticles()
+    {
+        return $this->articles()->where('status', 0);
+    }
+
+    public function checkedArticles()
+    {
+        return $this->articles()->where('status', 1);
     }
 
     public function owns($article)

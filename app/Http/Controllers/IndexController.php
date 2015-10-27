@@ -20,10 +20,6 @@ class IndexController extends Controller
     {
         $articles = Content::skip(10)->take(10)->get();
         $result = compact('articles');
-        if ($request->user())
-        {
-            $result['userInfo'] = $request->user();
-        }
         return view('index/index', $result);
     }
 

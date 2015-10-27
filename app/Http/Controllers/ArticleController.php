@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Content;
 use App\Meta;
 use App\Type;
+use App\User;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Http\Request;

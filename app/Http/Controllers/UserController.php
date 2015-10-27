@@ -52,9 +52,10 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::findOrFail($id);
-        $userArticles = $user->articles;
-        return view('user/show', compact('userArticles'));
+        $owneruser = User::findOrFail($id);
+        $userCheckedArticles = $owneruser->checkedArticles;
+        $userUnCheckArticles = $owneruser->unCheckArticles;
+        return view('user/show', compact('owneruser', 'userCheckedArticles', 'userUnCheckArticles'));
     }
 
     /**
