@@ -5,6 +5,11 @@
 @stop
 
 @section('content')
+    @if(count($types))
+        @foreach($types as $type)
+            <a href="<% url('article/type', $type->id) %>"><% $type->name %></a>
+        @endforeach
+    @endif
     @if(count($articles))
         @foreach($articles as $article)
             <h3><a href="<% url('article', $article->id) %>"><% $article->title %></a></h3>
@@ -12,7 +17,7 @@
         @endforeach
         <iron-selector selected="<% $articles->currentPage() - 1 %>">
             @for ($i = 0; $i < $articles->lastPage(); $i++)
-                <a href="<% url('article?page='.($i + 1)) %>"><% $i + 1 %></a>
+                <a href="<% url('article/type', $type_id).'?page='.($i+1) %>"><% $i + 1 %></a>
             @endfor
         </iron-selector>
         <span>共<% $articles->total() %>篇</span>

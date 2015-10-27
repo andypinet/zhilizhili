@@ -6,6 +6,7 @@ use App\Content;
 use App\Meta;
 use App\Type;
 use Carbon\Carbon;
+use DB;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -17,15 +18,17 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(Request $request, $type_id)
     {
+        $types = Type::all();
+        $type = Type::findOrFail($type_id);
         if (!is_null($request->user()) && $request->user()->isAdmin()) {
-            $articles = Content::latest()->published()->paginate(10);
+            $articles = $type->contents()->orderBy('contents.id', 'desc')->published()->paginate(10);
         }
         else {
-            $articles = Content::latest()->passCheck()->published()->paginate(10);
+            $articles = $type->contents()->orderBy('contents.id', 'desc')->passCheck()->published()->paginate(10);
         }
-        return view('article/index', compact('articles'));
+        return view('article/index', compact('articles', 'types', 'type_id'));
     }
 
     /**

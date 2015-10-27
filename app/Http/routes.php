@@ -17,7 +17,9 @@ Blade::setEscapedContentTags('<%%', '%%>');     // for escaped dat
 Route::get('/', 'IndexController@index');
 Route::get('/about', 'IndexController@about');
 
+Route::get('/article/type/{type_id}', 'ArticleController@index');
 Route::resource('article', 'ArticleController');
+
 Route::post('/user/upload','UserController@upload');
 Route::get('/user/time', 'UserController@time');
 Route::group(['middleware' => 'cros'], function(\Illuminate\Routing\Router $router){
