@@ -25,7 +25,9 @@ class CreateArticleRequest extends Request
     {
         return [
             'title'=>'required',
+            'slug'=>'required',
             'text'=>'required',
+            'type_id'=>'required',
             'published_at'=>'required'
         ];
     }

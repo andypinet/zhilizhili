@@ -7,7 +7,7 @@
 @section('content')
     @if(count($types))
         @foreach($types as $type)
-            <a href="<% url('article/type', $type->id) %>"><% $type->name %></a>
+            <a href="<% url('article/type', $type->id) %>"><% $type->label %></a>
         @endforeach
     @endif
     @if(count($articles))

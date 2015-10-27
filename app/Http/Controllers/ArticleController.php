@@ -36,18 +36,19 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        if (is_null(\Auth::User())) {
+        if (is_null($request->user())) {
             abort('403', '你们是没有权限的 哈哈');
         }
 
         $user_id = \Auth::User()->id;
-        if (is_null($user_id))
+        $types = [];
+        foreach(Type::all() as $type)
         {
-            $user_id = 1;
+            array_push($types, $type->label);
         }
-        return view('article/create', compact('user_id'));
+        return view('article/create', compact('user_id', 'types'));
     }
 
     /**
@@ -59,8 +60,9 @@ class ArticleController extends Controller
     public function store(Requests\CreateArticleRequest $request)
     {
         $input = $request->all();
+        $input['type_id']++;
         Content::create($input);
-        return redirect('/article');
+        return redirect('/article/type/'.$input['type_id']);
     }
 
     /**

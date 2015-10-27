@@ -26,6 +26,9 @@
             </div>
         </div>
         <div class="form-group">
+            {!! Form::select('type_id', $types, null , ['class' => 'form-control']) !!}
+        </div>
+        <div class="form-group">
             {!! Form::label('published_at','发布时间:') !!}
             {!! Form::input('date','published_at',date('Y-m-d'),['class'=>'form-control']) !!}
         </div>
