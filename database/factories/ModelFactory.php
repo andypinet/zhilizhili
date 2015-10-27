@@ -26,6 +26,13 @@ $factory->define(App\Content::class, function (Faker\Generator $faker) {
         'title' => $faker->sentence(),
         'slug' => $faker->sentence(),
         'text' => $faker->paragraph(),
-        'type' => '1'
+        'type_id' => 1
+    ];
+});
+
+$factory->define(App\Type::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->sentence($nbWords = 1),
+        'label' => $faker->sentence($nbWords = 1)
     ];
 });

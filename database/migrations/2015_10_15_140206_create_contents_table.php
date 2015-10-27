@@ -21,7 +21,7 @@ class CreateContentsTable extends Migration
             $table->integer('order')->nullable();
             $table->integer('authorid', false, true)->nullable();
             $table->string('template', 32)->nullable();
-            $table->string('type', 16)->nullable();
+            $table->integer('type_id')->unsigned();
             $table->string('status', 16)->nullable();
             $table->string('password', 32)->nullable();
             $table->integer('comments_num', false, true)->nullable();

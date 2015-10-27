@@ -30,4 +30,9 @@ class Content extends Model
 	{
 		$query->where('status', '=', 1);
 	}
+
+	public function metas()
+	{
+		return $this->belongsToMany(Meta::class);
+	}
 }

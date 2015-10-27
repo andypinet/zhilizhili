@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddRelationshipsTable extends Migration
+class CreateTypeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,12 @@ class AddRelationshipsTable extends Migration
      */
     public function up()
     {
-        Schema::create('content_meta', function (Blueprint $table) {
-            $table->integer('content_id')->unsigned();
-            $table->integer('meta_id')->unsigned();
+        Schema::create('types', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('label');
+            $table->text('description');
+            $table->timestamps();
         });
     }
 
@@ -25,6 +28,6 @@ class AddRelationshipsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('content_meta');
+        Schema::drop('types');
     }
 }

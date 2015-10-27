@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Content;
+use App\Meta;
+use App\Type;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -17,7 +19,7 @@ class ArticleController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->user()->isAdmin()) {
+        if (!is_null($request->user()) && $request->user()->isAdmin()) {
             $articles = Content::latest()->published()->paginate(10);
         }
         else {
