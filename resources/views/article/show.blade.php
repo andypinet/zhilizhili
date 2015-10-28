@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-    @can('canSee', $article)
+    @if(!is_null(Auth::user()) && Auth::user()->isAdmin() || $article->status == 1)
         你是有权限的 或者文章已审核完毕
         @can('admin_access')
         <a href="">编辑文章</a>
@@ -23,7 +23,7 @@
         </main>
     @else
         这篇文章还在审核中
-    @endcan
+    @endif
 @stop
 
 @section('script')

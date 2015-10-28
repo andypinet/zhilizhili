@@ -38,6 +38,8 @@
         {!! Form::close() !!}
         @include('errors/listgroup')
     </main>
+
+    <input id="token" type="hidden" value="<% csrf_token() %>">
 @stop
 
 @section('script')

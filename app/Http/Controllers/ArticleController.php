@@ -6,11 +6,13 @@ use App\Content;
 use App\Meta;
 use App\Type;
 use App\User;
+use App\Video;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 
 class ArticleController extends Controller
 {
@@ -44,11 +46,7 @@ class ArticleController extends Controller
         }
 
         $user_id = \Auth::User()->id;
-        $types = [];
-        foreach(Type::all() as $type)
-        {
-            array_push($types, $type->label);
-        }
+        $types = Type::selectData();
         return view('article/create', compact('user_id', 'types'));
     }
 
@@ -61,7 +59,6 @@ class ArticleController extends Controller
     public function store(Requests\CreateArticleRequest $request)
     {
         $input = $request->all();
-        $input['type_id']++;
         Content::create($input);
         return redirect('/article/type/'.$input['type_id']);
     }
@@ -92,7 +89,12 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $article = Content::findOrFail($id);
-        return view('article/edit', compact('article'));
+        if (\Gate::denies('update', $article))
+        {
+            abort('403', 'sorry');
+        }
+        $types = Type::selectData();
+        return view('article/edit', compact('article', 'types'));
     }
 
     /**
@@ -106,9 +108,73 @@ class ArticleController extends Controller
     {
         $input = $request->all();
         $article = Content::findOrFail($id);
+        $article->status = 0;
         $article->update($input);
 
-        return redirect('/article');
+        return redirect('/article/type/'.$input['type_id']);
+    }
+
+    public function uploadVideo()
+    {
+        if (!\Auth::check()) {
+            abort('403', '你们是没有权限的 哈哈');
+        }
+        $user_id = \Auth::User()->id;
+        $types = Type::selectData();
+        return view('article/uploadvideo', compact('user_id', 'types'));
+    }
+
+    /**
+     * [upload description]
+     * @return [type] [description]
+     */
+    public function upload(Request $request)
+    {
+        if (\Auth::check()) {
+            $userId = \Auth::User()->id;
+            $file = Input::file('movie');
+
+            $originExtension = $file->getClientOriginalExtension();
+            $originalName = str_replace('.'.$originExtension, '', $file->getClientOriginalName());
+            $dataName = $request->user()->name.'/'.$originalName;
+
+            if (is_null(Video::findVideoByName($dataName)))
+            {
+                $fileName = strval(time()).str_random(5).'.'.$originExtension;
+                $destinationPath = public_path().'/upload/';
+                $filepath = $destinationPath . $fileName;
+
+                if (Input::hasFile('movie')) {
+                    $uploadSuccess = $file->move($destinationPath, $fileName);
+                    if ($uploadSuccess)
+                    {
+                        $content = new Content();
+                        $content->user_id = $request->user()->id;
+                        $content->type_id = $request->input('type_id');
+                        $content->title = $request->input('title');
+                        $content->save();
+
+                        $video = new Video();
+                        $video->name = $dataName;
+                        $video->filepath = $filepath;
+                        $video->content_id = $content->id;
+                        $video->save();
+                        return response()->json(['upload' => 'success', 'id' => $video->id]);
+                    }
+                    return response()->json(['upload' => 'error']);
+                }
+                else {
+                    return response()->json(['upload' => 'error']);
+                }
+            }
+            else {
+                return response()->json(['upload' => 'success', 'id'=>Video::findVideoByName($dataName)->id]);
+            }
+
+        }
+        else {
+            return response()->json(['upload' => 'error']);
+        }
     }
 
     /**

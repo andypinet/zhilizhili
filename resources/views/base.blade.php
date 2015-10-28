@@ -54,6 +54,9 @@
             <div id="user-info" class="user-info">
                 <a href="<% url('user', Auth::user()->id) %>" class="user-info-home"><span class="user-info-name"><% Auth::user()->name %></span></a>
             </div>
+        @else
+            <a href="<% url('/auth/register') %>">注册</a>
+            <a href="<% url('/auth/login') %>">登陆</a>
         @endif
     </top-bar>
     @yield('content')

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Video;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -92,30 +93,6 @@ class UserController extends Controller
         //
     }
 
-    /**
-     * [upload description]
-     * @return [type] [description]
-     */
-    public function upload(Request $request)
-    {
-        if (\Auth::check()) {
-            $userId = \Auth::User()->id;
-            $file = Input::file('movie');
-            $extension = $file->getClientOriginalExtension();
-            $fileName = strval(time()).str_random(5).'.'.$extension;
-
-            $destinationPath = public_path().'/upload/';
-            if (Input::hasFile('movie')) {
-                $uploadSuccess = $file->move($destinationPath, $fileName);
-                return response()->json(['upload' => 'success']);
-            } else {
-                return response()->json(['upload' => 'error']);
-            }
-        }
-        else {
-            return response()->json(['upload' => 'error']);
-        }
-    }
 
     public function time()
     {

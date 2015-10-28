@@ -1,15 +1,30 @@
 @extends('base')
 
+@section('head')
+    <link rel="stylesheet" href="/bower_components/editor.md/css/editormd.css">
+    <link rel="stylesheet" href="/css/article/create.css">
+@stop
+
 @section('content')
     <h3>修改文章</h3>
+
     {!! Form::model($article, ['method'=>'PATCH', 'url' => '/article/'.$article->id]) !!}
     <div class="form-group">
         {!! Form::label('title','标题:') !!}
         {!! Form::text('title',null,['class'=>'form-control']) !!}
     </div>
     <div class="form-group">
+        {!! Form::label('slug','简介:') !!}
+        {!! Form::textarea('slug',null) !!}
+    </div>
+    <div class="form-group">
         {!! Form::label('text','正文:') !!}
-        {!! Form::textarea('text',null,['class'=>'form-control']) !!}
+        <div id="test-editormd">
+            {!! Form::textarea('text',null) !!}
+        </div>
+    </div>
+    <div class="form-group">
+        {!! Form::select('type_id', $types, null, ['class' => 'form-control']) !!}
     </div>
     <div class="form-group">
         {!! Form::label('published_at','发布时间:') !!}
@@ -20,4 +35,20 @@
     </div>
     {!! Form::close() !!}
     @include('errors/listgroup')
+
+    <input id="contentId" type="text" value="<% $article->id %>">
+    <input id="token" type="hidden" value="<% csrf_token() %>">
+@stop
+
+@section('script')
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/editor.md/editormd.js"></script>
+    <script>
+        testEditor = editormd("test-editormd", {
+            width   : "90%",
+            height  : 640,
+            syncScrolling : "single",
+            path    : "/bower_components/editor.md/lib/"
+        });
+    </script>
 @stop

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Content extends Model
 {
-	protected $fillable = ['title', 'text', 'type_id', 'published_at', 'user_id', 'slug'];
+	protected $fillable = ['title', 'text', 'type_id', 'published_at', 'user_id', 'slug', 'video_id'];
 
 	public $dates = ['published_at'];
 
@@ -34,5 +34,10 @@ class Content extends Model
 	public function metas()
 	{
 		return $this->belongsToMany(Meta::class);
+	}
+
+	public function videos()
+	{
+		return $this->hasMany(Video::class);
 	}
 }
