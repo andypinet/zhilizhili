@@ -54,45 +54,48 @@
     @yield('head')
 </head>
 <body>
-    <top-bar>
-        <div class="row">
-            <div class="col-xs">
-                <div class="layout horizontal center start-justified">
-                    logo
+    <template is="dom-bind" id="app">
+        <top-bar>
+            <div class="row">
+                <div class="col-xs">
+                    <div class="layout horizontal center start-justified">
+                        logo
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs">
-                <div class="layout horizontal center-center">
-                    {!! Form::open(['url' => '', 'method' => 'post', 'is'=>'iron-form']) !!}
+                <div class="col-xs">
+                    <div class="layout horizontal center-center search-form">
+                        {!! Form::open(['url' => '', 'method' => 'post', 'is'=>'iron-form']) !!}
                         <div class="layout horizontal center">
                             {!! Form::text('text', '', ['class' => '', 'is'=>'iron-input']) !!}
                             <button class="layout horizontal">
                                 <iron-icon icon="icons:search"></iron-icon>
                             </button>
                         </div>
-                    {!! Form::close() !!}
+                        {!! Form::close() !!}
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs">
-                <div class="layout horizontal center end-justified">
-                    <div id="user" class="layout inline">
-                        @if (!is_null(Auth::user()))
-                            <div id="user-info" class="user-info">
-                                <a href="<% url('user', Auth::user()->id) %>" class="user-info-home"><span class="user-info-name"><% Auth::user()->name %></span></a>
-                            </div>
-                        @else
-                            <a href="<% url('/auth/register') %>">注册</a>
-                            <a href="<% url('/auth/login') %>">登陆</a>
-                        @endif
+                <div class="col-xs">
+                    <div class="layout horizontal center end-justified">
+                        <div id="user" class="layout inline">
+                            @if (!is_null(Auth::user()))
+                                <div id="user-info" class="user-info">
+                                    <a href="<% url('user', Auth::user()->id) %>" class="user-info-home"><span class="user-info-name"><% Auth::user()->name %></span></a>
+                                </div>
+                            @else
+                                <a href="<% url('/auth/register') %>">注册</a>
+                                <a href="<% url('/auth/login') %>">登陆</a>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
+        </top-bar>
+        @yield('content')
+        <div class="polymer-support-oldbrowser" id="polymer-support-oldbrowser">
+            web components 正在努力加载中
         </div>
-    </top-bar>
-    @yield('content')
-    <div class="polymer-support-oldbrowser" id="polymer-support-oldbrowser">
-        web components 正在努力加载中
-    </div>
+    </template>
 </body>
+<script src="/controller/ViewController.js"></script>
 @yield('script')
 </html>

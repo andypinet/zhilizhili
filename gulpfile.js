@@ -26,6 +26,13 @@ gulp.task('build-umd', function(){
 	});
 });
 
+gulp.task('build-controller', function(){
+	zTask.require('build-umd')({
+		src: paths.srcRoot + 'assets/controller/**/*.js',
+		dest: paths.destRoot + 'controller'
+	});
+});
+
 
 zTask.scope(gulp);
 

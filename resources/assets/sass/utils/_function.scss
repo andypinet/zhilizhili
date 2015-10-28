@@ -1,0 +1,3 @@
+@function zhilizhili-color($name) {
+  @return map-get($zhilizhili-color, $name);
+}

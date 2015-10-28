@@ -1,0 +1,14 @@
+@import "config/color";
+@import "utils/function";
+
+top-bar {
+  .search-form {
+    input {
+      border: 0;
+    }
+    button {
+      border: 0;
+      background-color: zhilizhili-color('blue');
+    }
+  }
+}

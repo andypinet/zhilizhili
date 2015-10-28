@@ -11,14 +11,6 @@
 @stop
 
 @section('content')
-    <div class="row">
-        <div class="col-xs">
-            hihi
-        </div>
-        <div class="col-xs">
-            hihi
-        </div>
-    </div>
     @if(count($types))
         @foreach($types as $type)
             <a href="<% url('article/type', $type->id) %>"><% $type->label %></a>
@@ -38,4 +30,8 @@
     @else
         我们还没有发布一篇文章
     @endif
+@stop
+
+@section('script')
+    <script src="/controller/article/index.js"></script>
 @stop
