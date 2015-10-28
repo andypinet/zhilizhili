@@ -11,11 +11,6 @@ var elixir = require('laravel-elixir');
  |
  */
 
-elixir(function(mix) {
-    mix.sass('app.scss');
-});
-
-
 var gulp = require('gulp');
 var zTask = require("require-dir")("../zhilizhili-gulp-task/build").index;
 

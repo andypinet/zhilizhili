@@ -5,6 +5,7 @@
     <link rel="import" href="bower_components/zhilizhili-slider/zhilizhili-slider.html">
     <link rel="import" href="../bower_components/paper-styles/paper-styles.html">        
     <link rel="stylesheet" href="/css/app.css"/>
+    <script src="/bower_components/gsap/src/minified/TimelineMax.min.js"></script>
     <script src="/js/modernizr.js"></script>
     <link rel="import" href="../bower_components/zhilizhili-loading/zhilizhili-loading.html">  
     <style is="custom-style">

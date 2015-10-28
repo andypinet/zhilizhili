@@ -2,9 +2,23 @@
 
 @section('head')
     <link rel="import" href="/bower_components/iron-selector/iron-selector.html">
+    <style is="custom-style">
+        [class^="col"] {
+            background-color: #00b0ff;
+            color: #ffffff;
+        } 
+    </style>
 @stop
 
 @section('content')
+    <div class="row">
+        <div class="col-xs">
+            hihi
+        </div>
+        <div class="col-xs">
+            hihi
+        </div>
+    </div>
     @if(count($types))
         @foreach($types as $type)
             <a href="<% url('article/type', $type->id) %>"><% $type->label %></a>

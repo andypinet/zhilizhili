@@ -28,6 +28,8 @@
     "normalize-css": "normalize.css#~3.0.3",
     "github-markdown-css": "~2.1.0",
     "marked-element": "PolymerElements/marked-element#~1.1.1",
-    "editor.md": "~1.5.0"
+    "editor.md": "~1.5.0",
+    "flexboxgrid": "~6.3.0",
+    "scss-zhilizhili-mei": "~0.3.2"
   }
 }
