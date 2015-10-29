@@ -6,6 +6,9 @@
 body {
   margin: 0; }
 
+.hidden {
+  display: none; }
+
 top-bar {
   height: 50px;
   background-color: #c4e2f4; }
@@ -37,6 +40,42 @@ top-bar {
       top-bar .user a:hover {
         color: white;
         text-shadow: 0 0 3px #6a437b; }
+
+.paignation paper-button a {
+  display: block;
+  width: 100%;
+  height: 100%; }
+
+lfx-player > .lfx-player {
+  position: relative; }
+.lfx-player__controlbar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: rgba(233, 233, 233, 0.8);
+  border-radius: 5px;
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 1000; }
+  .lfx-player__controlbar .btn {
+    font-size: 18px; }
+.lfx-player__progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; }
+  .lfx-player__progress paper-slider {
+    width: 100%; }
 
 
 

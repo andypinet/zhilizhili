@@ -11,6 +11,22 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 
 var app = document.querySelector('#app');
 
+function showVieo() {
+    var videos = document.querySelectorAll('.video');
+    var videoInfo = document.querySelector('.video-info');
+    Array.prototype.slice.call(videos).forEach(function (video, index) {
+        var info = video.querySelector('.info');
+        var infoEmpty = video.querySelector('.info-empty');
+        video.addEventListener('click', function handle() {
+            if (info.innerText.trim() == '') {
+                videoInfo.innerHTML = infoEmpty.innerHTML;
+            } else {
+                videoInfo.innerHTML = info.innerHTML;
+            }
+        }, false);
+    });
+}
+
 var PlayAvContrller = (function (_ViewController) {
     _inherits(PlayAvContrller, _ViewController);
 
@@ -24,7 +40,7 @@ var PlayAvContrller = (function (_ViewController) {
     _createClass(PlayAvContrller, [{
         key: 'domChange',
         value: function domChange() {
-            console.log(this.name + '#');
+            showVieo();
         }
     }, {
         key: 'fun',

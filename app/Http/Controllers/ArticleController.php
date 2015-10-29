@@ -26,10 +26,10 @@ class ArticleController extends Controller
         $types = Type::all();
         $type = Type::findOrFail($type_id);
         if (!is_null($request->user()) && $request->user()->isAdmin()) {
-            $articles = $type->contents()->orderBy('contents.id', 'desc')->published()->paginate(10);
+            $articles = $type->contents()->orderBy('contents.id', 'desc')->published()->paginate(16);
         }
         else {
-            $articles = $type->contents()->orderBy('contents.id', 'desc')->passCheck()->published()->paginate(10);
+            $articles = $type->contents()->orderBy('contents.id', 'desc')->passCheck()->published()->paginate(16);
         }
         return view('article/index', compact('articles', 'types', 'type_id'));
     }

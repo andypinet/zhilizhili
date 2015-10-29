@@ -93,8 +93,8 @@
 @mixin column-size($alias) {
   @for $i from 1 through 12 {
     .col-#{$alias}-#{$i} {
-      flex-basis: percentage(1 / $i);
-      max-width: percentage(1 / $i);
+      flex-basis: percentage($i / 12);
+      max-width: percentage($i / 12);
     }
   }
 }

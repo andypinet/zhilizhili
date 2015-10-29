@@ -1,2 +1,96 @@
+@import "../lfxui/position";
+@import "../config/color";
+@import "../utils/getrandom";
+@import "../utils/function";
 @import "common/article_nav";
 
+.videos {
+  padding: 15px;
+  .video {
+    height: 173px;
+    .info {
+      display: none;
+    }
+  }
+}
+
+@for $i from 1 through 16 {
+  .video:nth-child(#{$i}) {
+    background-color: getRandomColor('rgba');
+  }
+}
+
+.videoshow {
+  padding-top: 15px;
+  flex-grow: 0;
+  flex-basis: 345px;
+  background-color: getRandomColor('rgba');
+  lfx-player {
+    width: 100%;
+    video {
+      width: 100%;
+    }
+  }
+  .video-info {
+    margin-top: 15px;
+  }
+}
+
+lfx-player {
+  @at-root {
+    .lfx-player {
+      &__controlbar {
+        display: flex;
+        width: 150px;
+        height: 40px;
+      }
+      &__volume {
+        display: flex;
+        align-items: center;
+        @include position-absolute(top 50% left 20px);
+        transform: translateY(-50%);
+        paper-slider {
+          width: 120px;
+          .expand:not(.pin) > #sliderKnob.paper-slider > #sliderKnobInner.paper-slider {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+      &__toggle {
+        @include position-absolute(top 50% left 50%);
+        transform: translateX(-50%) translateY(-50%);
+      }
+
+      &__list {
+        @include position-absolute(top 50% right 45px);
+        transform: translateY(-50%);
+      }
+
+      &__full {
+        @include position-absolute(top 50% right 20px);
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+
+.paignation {
+  paper-button {
+    width: 55px;
+    min-width: 0;
+    padding-left: 0;
+    padding-right: 0;
+    a {
+      text-decoration: none;
+    }
+    &:hover {
+      background-color: zhilizhili-color('blue');
+      a {
+        color: #ffffff;
+      }
+    }
+  }
+}

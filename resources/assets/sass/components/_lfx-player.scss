@@ -1,0 +1,32 @@
+@import "../lfxui/position";
+
+lfx-player {
+  > .lfx-player {
+    position: relative;
+  }
+  @at-root {
+    .lfx-player {
+      &__controlbar {
+        display: flex;
+        align-items: center;
+        background: rgba(233, 233, 233, 0.8);
+        border-radius: 5px;
+        @include position-absolute(bottom 15% left 50%);
+        transform: translateX(-50%);
+        z-index: 1000;
+        .btn {
+          font-size: 18px;
+        }
+      }
+
+      &__progress {
+        @include position-absolute(bottom 0 left 0);
+        width: 100%;
+        z-index: 1000;
+        paper-slider {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

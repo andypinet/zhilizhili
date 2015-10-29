@@ -1,0 +1,125 @@
+<dom-module id="lfx-player">
+    <template src="{{src}}">
+        <div class="lfx-player">
+            <video id="videoMedia" src$="{{src}}"
+                   on-loadstart="HanlderLoadStart" on-timeupdate="HandlerTimeUpdate" on-progress="HanlderProgress"></video>
+            <div class="lfx-player__controlbar">
+                <div id="volume" class="btn lfx-player__volume">
+                    <iron-icon icon="av:volume-up"></iron-icon>
+                    <paper-slider min="0" max="1" step="0.05" value="{{currentVolume}}" on-immediate-value-change="HandlerVolumeChange"></paper-slider>
+                </div>
+                <div id="toggle" class="btn lfx-player__toggle" on-click="hanlderToggleButton">
+                    <iron-icon icon="av:play-arrow"></iron-icon>
+                </div>
+                <div class="btn lfx-player__list">
+                    <iron-icon icon="icons:menu"></iron-icon>
+                </div>
+                <div class="btn lfx-player__full">
+                    <iron-icon icon="icons:fullscreen"></iron-icon>
+                </div>
+            </div>
+            <div id="progress" class="lfx-player__progress">
+                <paper-slider min="0" max="{{duration}}" step="3"
+                              value="{{currentTime}}" on-immediate-value-change="HandlerTimeChange"></paper-slider>
+            </div>
+            <content></content>
+        </div>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'lfx-player',
+            properties: {
+                src: {
+                    type: String
+                },
+                duration: {
+                    type: Number
+                }
+            },
+
+            ready: function(){
+                var self = this;
+                self.showToggle('av:play-arrow', 'av:pause');
+                self.currentVolume = self.$.videoMedia.volume;
+                self.showVolume('av:volume-up', 'av:volume-mute');
+            },
+
+            HanlderLoadStart: function() {
+                // 影片加载开始
+                var self = this;
+                setTimeout(function () {
+                    self.currentTime = self.$.videoMedia.currentTime;
+                    self.duration = self.$.videoMedia.duration;
+                    if (self.$.videoMedia.buffered.length > 0) {
+                        console.log(self.$.videoMedia.buffered.end(0));
+                    }
+//                    self.updatePaperSlider(self.$.videoMedia.buffered.end(0));
+                }, 1000);
+            },
+
+            updatePaperSlider: function(value) {
+                var self = this;
+                var pageSlider = self.$.progress.children.item(0);
+                pageSlider.secondaryProgress = value;
+            },
+
+            hanlderToggleButton: function() {
+                var self = this;
+                if (self.$.videoMedia.paused) {
+                    self.$.videoMedia.play();
+                    self.showToggle('av:pause', 'av:play-arrow');
+                } else {
+                    self.$.videoMedia.pause();
+                    self.showToggle('av:play-arrow', 'av:pause');
+                }
+            },
+
+            showToggle: function(newState, oldState) {
+                var self = this;
+                var icon = self.$.toggle.children.item(0);
+                icon.setAttribute('icon', newState);
+            },
+
+            HandlerVolumeChange: function(e) {
+                var self = this;
+                var value = e.target.immediateValue;
+                self.$.videoMedia.volume = value;
+                if (value < 0.05) {
+                    self.showVolume('av:volume-mute', 'av:volume-up');
+                }
+                else {
+                    self.showVolume('av:volume-up', 'av:volume-mute');
+                }
+            },
+
+            showVolume: function(newState, oldState) {
+                var self = this;
+                var icon = self.$.volume.children.item(0);
+                icon.setAttribute('icon', newState);
+            },
+
+            HandlerTimeChange: function(e) {
+                var self = this;
+                var value = e.target.immediateValue;
+                self.$.videoMedia.currentTime = value;
+            },
+
+            HandlerTimeUpdate: function(e) {
+                var self = this;
+                self.$.progress.children.item(0).value = self.$.videoMedia.currentTime;
+            },
+
+            HanlderProgress: function(e) {
+                var self = this;
+                var range = 0;
+                var bf = self.$.videoMedia.buffered;
+                var time = self.$.videoMedia.currentTime;
+                if (bf.length > 0) {
+                    var loadEnd = bf.end(bf.length - 1);
+                    self.updatePaperSlider(loadEnd);
+                }
+            }
+        });
+    </script>
+</dom-module>

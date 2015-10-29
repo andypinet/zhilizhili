@@ -13,4 +13,10 @@ body {
   margin: 0;
 }
 
+.hidden {
+  display: none;
+}
+
 @import "topbar";
+@import "pagination";
+@import "components/lfx-player";
