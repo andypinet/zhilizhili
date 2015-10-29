@@ -55,17 +55,19 @@
 </head>
 <body>
     <template is="dom-bind" id="app">
-        <top-bar>
+        <top-bar id="topBar" class="layout horizontal center">
             <div class="row">
                 <div class="col-xs">
                     <div class="layout horizontal center start-justified">
-                        logo
+                        <div class="logo-con">
+                            <span>zhilizhili</span>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xs">
                     <div class="layout horizontal center-center search-form">
                         {!! Form::open(['url' => '', 'method' => 'post', 'is'=>'iron-form']) !!}
-                        <div class="layout horizontal center">
+                        <div class="layout horizontal center search-group">
                             {!! Form::text('text', '', ['class' => '', 'is'=>'iron-input']) !!}
                             <button class="layout horizontal">
                                 <iron-icon icon="icons:search"></iron-icon>
@@ -76,7 +78,7 @@
                 </div>
                 <div class="col-xs">
                     <div class="layout horizontal center end-justified">
-                        <div id="user" class="layout inline">
+                        <div id="user" class="layout inline user">
                             @if (!is_null(Auth::user()))
                                 <div id="user-info" class="user-info">
                                     <a href="<% url('user', Auth::user()->id) %>" class="user-info-home"><span class="user-info-name"><% Auth::user()->name %></span></a>

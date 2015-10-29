@@ -11,26 +11,28 @@ var calculateAngle = function calculateAngle(x, y, width, height) {
     return Math.atan2(x - width / 2, -(y - height / 2)) * (180 / Math.PI);
 };
 
-var $square = $('.square');
+window.addEventListener('dom-change', function () {
+    var $square = $('.square');
 
-var squareW = $square.width();
-var squareH = $square.height();
+    var squareW = $square.width();
+    var squareH = $square.height();
 
-$(document).on('mousemove', function (e) {
-    var x = e.pageX - $square.offset().left;
-    var y = e.pageY - $square.offset().top;
+    $(document).on('mousemove', function (e) {
+        var x = e.pageX - $square.offset().left;
+        var y = e.pageY - $square.offset().top;
 
-    var scaledX = scale(x / squareW, -1, 1);
-    var scaledY = scale(y / squareH, -1, 1);
+        var scaledX = scale(x / squareW, -1, 1);
+        var scaledY = scale(y / squareH, -1, 1);
 
-    var maxX = Math.atan2(15, squareH * .5 * 180 / Math.PI);
-    var maxY = Math.atan2(15, squareW * .5 * 180 / Math.PI);
-    var opacity = Math.max(Math.abs(scaledX / maxX), Math.abs(scaledY / maxY));
+        var maxX = Math.atan2(15, squareH * .5 * 180 / Math.PI);
+        var maxY = Math.atan2(15, squareW * .5 * 180 / Math.PI);
+        var opacity = Math.max(Math.abs(scaledX / maxX), Math.abs(scaledY / maxY));
 
-    var angle = calculateAngle(x, y, squareW, squareH);
+        var angle = calculateAngle(x, y, squareW, squareH);
 
-    $square.css({
-        transform: '\n        matrix3d(\n            1, 0, ' + -scaledX * transformFactor + ', 0,\n            0, 1, ' + -scaledY * transformFactor + ', 0,\n            0, 0, 1, 0,\n            0, 0, 0, 1\n        )'
+        $square.css({
+            transform: '\n            matrix3d(\n                1, 0, ' + -scaledX * transformFactor + ', 0,\n                0, 1, ' + -scaledY * transformFactor + ', 0,\n                0, 0, 1, 0,\n                0, 0, 0, 1\n            )'
+        });
     });
 });
 

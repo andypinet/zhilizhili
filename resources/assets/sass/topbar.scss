@@ -2,13 +2,49 @@
 @import "utils/function";
 
 top-bar {
+  height: 50px;
+  background-color: lighten(zhilizhili-color("blue"), 27%);
+  > .row {
+    width: 100%;
+  }
+
+  .logo-con {
+    font-size: 30px;
+    margin-left: 20px;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px zhilizhili-color('red');
+  }
+
   .search-form {
-    input {
-      border: 0;
+    .search-group {
+      input {
+        border: 1px solid zhilizhili-color("blue");
+        width: 335px;
+        height: 30px;
+        &:focus {
+          outline: none;
+        }
+      }
+      button {
+        border: 0;
+        background-color: zhilizhili-color("blue");
+        color: #ffffff;
+        height: 30px;
+      }
     }
-    button {
-      border: 0;
-      background-color: zhilizhili-color('blue');
+  }
+  
+  .user {
+    margin-right: 20px;
+    line-height: 30px;
+    a {
+      color: #d689f9;
+      margin-right: 10px;
+      text-decoration: none;
+      &:hover {
+        color: lighten(#d689f9, 27%);
+        text-shadow: 0 0 3px #6a437b;
+      }
     }
   }
 }

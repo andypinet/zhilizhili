@@ -2,20 +2,17 @@
 
 @section('head')
     <link rel="import" href="/bower_components/iron-selector/iron-selector.html">
-    <style is="custom-style">
-        [class^="col"] {
-            background-color: #00b0ff;
-            color: #ffffff;
-        } 
-    </style>
+    <link rel="stylesheet" href="/css/article/index.css">
 @stop
 
 @section('content')
-    @if(count($types))
-        @foreach($types as $type)
-            <a href="<% url('article/type', $type->id) %>"><% $type->label %></a>
-        @endforeach
-    @endif
+    <nav id="articleNav" class="article-nav">
+        @if(count($types))
+            @foreach($types as $type)
+                <a href="<% url('article/type', $type->id) %>"><% $type->label %></a>
+            @endforeach
+        @endif
+    </nav>
     @if(count($articles))
         @foreach($articles as $article)
             <h3><a href="<% url('article', $article->id) %>"><% $article->title %></a></h3>

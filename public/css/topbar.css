@@ -1,8 +1,34 @@
-top-bar .search-form input {
-  border: 0; }
-top-bar .search-form button {
-  border: 0;
-  background-color: get-nipponcolor("sora"); }
+top-bar {
+  height: 50px;
+  background-color: #c4e2f4; }
+  top-bar > .row {
+    width: 100%; }
+  top-bar .logo-con {
+    font-size: 30px;
+    margin-left: 20px;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #e87a90; }
+  top-bar .search-form .search-group input {
+    border: 1px solid #51a8dd;
+    width: 335px;
+    height: 30px; }
+    top-bar .search-form .search-group input:focus {
+      outline: none; }
+  top-bar .search-form .search-group button {
+    border: 0;
+    background-color: #51a8dd;
+    color: #ffffff;
+    height: 30px; }
+  top-bar .user {
+    margin-right: 20px;
+    line-height: 30px; }
+    top-bar .user a {
+      color: #d689f9;
+      margin-right: 10px;
+      text-decoration: none; }
+      top-bar .user a:hover {
+        color: white;
+        text-shadow: 0 0 3px #6a437b; }
 
 
 
