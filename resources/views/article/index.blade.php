@@ -6,10 +6,12 @@
     <link rel="import" href="/bower_components/paper-button/paper-button.html">
     <link rel="import" href="/bower_components/iron-icons/av-icons.html">
     <link rel="import" href="/components/lfx-player.html">
+    <link rel="stylesheet" href="/css/range_slider.css">
     <link rel="stylesheet" href="/css/article/index.css">
 @stop
 
 @section('content')
+    <input type="range" min="0" max="2142" data-rangeSlider>
     <nav id="articleNav" class="article-nav">
         @if(count($types))
             @foreach($types as $type)
@@ -60,5 +62,13 @@
 @stop
 
 @section('script')
+    <script src="/js/rangeSlider.js"></script>
     <script src="/controller/article/index.js"></script>
+    <script>
+        window.addEventListener('WebComponentsReady', function(){
+            var elements = document.querySelectorAll('input[type="range"][data-rangeSlider]');
+            console.log(elements);
+            rangeSlider.create(elements);
+        });
+    </script>
 @stop

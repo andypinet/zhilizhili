@@ -70,7 +70,7 @@ lfx-player > .lfx-player {
     font-size: 18px; }
 .lfx-player__progress {
   position: absolute;
-  bottom: 0;
+  bottom: 15px;
   left: 0;
   width: 100%;
   z-index: 1000; }

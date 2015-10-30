@@ -20,7 +20,7 @@ lfx-player {
       }
 
       &__progress {
-        @include position-absolute(bottom 0 left 0);
+        @include position-absolute(bottom 15px left 0);
         width: 100%;
         z-index: 1000;
         paper-slider {

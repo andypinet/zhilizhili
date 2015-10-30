@@ -71,13 +71,14 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
+        $types = Type::all();
         $article = Content::findOrFail($id);
 //        $this->authorize('show-content', $article);
 //        if (\Gate::denies('update', $article))
 //        {
 //            abort('403', 'sorry');
 //        }
-        return view('article/show', compact('article'));
+        return view('article/show', compact('article', 'types'));
     }
 
     /**

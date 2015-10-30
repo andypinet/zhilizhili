@@ -1,6 +1,6 @@
 <dom-module id="lfx-player">
     <template src="{{src}}">
-        <div class="lfx-player">
+        <div class="lfx-player" on-mouseleave="mouseLeaveHandle" on-mouseenter="mouseEnterHandle">
             <video id="videoMedia" src$="{{src}}"
                    on-loadstart="HanlderLoadStart" on-timeupdate="HandlerTimeUpdate" on-progress="HanlderProgress"></video>
             <div class="lfx-player__controlbar">
@@ -43,6 +43,7 @@
                 self.showToggle('av:play-arrow', 'av:pause');
                 self.currentVolume = self.$.videoMedia.volume;
                 self.showVolume('av:volume-up', 'av:volume-mute');
+                self.classList.add('mouseenter');
             },
 
             HanlderLoadStart: function() {
@@ -54,7 +55,7 @@
                     if (self.$.videoMedia.buffered.length > 0) {
                         console.log(self.$.videoMedia.buffered.end(0));
                     }
-//                    self.updatePaperSlider(self.$.videoMedia.buffered.end(0));
+                    self.updatePaperSlider(self.$.videoMedia.buffered.end(0));
                 }, 1000);
             },
 
@@ -115,9 +116,38 @@
                 var range = 0;
                 var bf = self.$.videoMedia.buffered;
                 var time = self.$.videoMedia.currentTime;
+                console.log(bf.length);
                 if (bf.length > 0) {
                     var loadEnd = bf.end(bf.length - 1);
                     self.updatePaperSlider(loadEnd);
+                }
+            },
+
+            enterfun: function() {
+                var self = this;
+                return self.debounce('enter', function(){
+                    self.classList.remove('mouseleave');
+                    self.classList.add('mouseenter');
+                }, 700);
+            },
+
+            leavefun: function() {
+                var self = this;
+                return self.debounce('leave', function(){
+                    self.classList.remove('mouseenter');
+                    self.classList.add('mouseleave');
+                }, 700);
+            },
+
+            mouseEnterHandle: function(e) {
+                var self = this;
+                self.enterfun();
+            },
+
+            mouseLeaveHandle: function(e) {
+                var self = this;
+                if (!self.classList.contains('mouseleave')) {
+                    self.leavefun();
                 }
             }
         });

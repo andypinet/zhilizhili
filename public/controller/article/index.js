@@ -40,6 +40,7 @@ var PlayAvContrller = (function (_ViewController) {
     _createClass(PlayAvContrller, [{
         key: 'domChange',
         value: function domChange() {
+            var self = this;
             showVieo();
         }
     }, {

@@ -22,6 +22,7 @@ class PlayAvContrller extends ViewController {
         this.name = 'PlayAvController';
     }
     domChange() {
+        var self = this;
         showVieo();
     }
     fun() {

@@ -2,22 +2,47 @@
 
 @section('head')
     <link rel="stylesheet" href="/bower_components/editor.md/css/editormd.preview.css">
+    <link rel="import" href="/bower_components/iron-selector/iron-selector.html">
+    <link rel="import" href="/bower_components/paper-slider/paper-slider.html">
+    <link rel="import" href="/bower_components/paper-button/paper-button.html">
+    <link rel="import" href="/bower_components/iron-icons/av-icons.html">
+    <link rel="import" href="/components/lfx-player.html">
     <link rel="stylesheet" href="/css/article/show.css">
 @stop
 
 @section('content')
+    <nav id="articleNav" class="article-nav">
+        @if(count($types))
+            @foreach($types as $type)
+                <a href="<% url('article/type', $type->id) %>"><% $type->label %></a>
+            @endforeach
+        @endif
+    </nav>
     @if(!is_null(Auth::user()) && Auth::user()->isAdmin() || $article->status == 1)
-        你是有权限的 或者文章已审核完毕
         @can('admin_access')
         <a href="">编辑文章</a>
         @endcan
         <main>
+            <h3 class="video-title"><a href=""><% $article->title %></a></h3>
+            <div class="layout horizontal">
+                <div class="video-up">
+                    <div class="video-up-name">
+                        up主 <span><% $article->user->name %></span>
+                    </div>
+                </div>
+            </div>
             <article>
-                <h3><a href=""><% $article->title %></a></h3>
-                <div id="test-editormd-view2">
-                    <textarea id="append-test" style="display:none;">
-<% $article->text %>
-                    </textarea>
+                <div class="row">
+                    <div class="col-xs video-play">
+                        <div class="layout horizontal">
+                            <lfx-player src="http://192.168.0.106/wohejimi.mp4"></lfx-player>
+                        </div>
+                    </div>
+                    <div class="col-xs video-danmu">
+                        <div class="layout horizontal ">
+                            right
+                        </div>
+                    </div>
                 </div>
             </article>
         </main>
@@ -28,24 +53,4 @@
 
 @section('script')
     <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/editor.md/lib/marked.min.js"></script>
-    <script src="/bower_components/editor.md/lib/prettify.min.js"></script>
-    <script src="/bower_components/editor.md/lib/raphael.min.js"></script>
-    <script src="/bower_components/editor.md/lib/underscore.min.js"></script>
-    <script src="/bower_components/editor.md/lib/sequence-diagram.min.js"></script>
-    <script src="/bower_components/editor.md/lib/flowchart.min.js"></script>
-    <script src="/bower_components/editor.md/lib/jquery.flowchart.min.js"></script>
-    <script src="/bower_components/editor.md/editormd.js"></script>
-    <script>
-        $(function(){
-            testEditormdView2 = editormd.markdownToHTML("test-editormd-view2", {
-                htmlDecode      : "style,script,iframe",  // you can filter tags decode
-                emoji           : true,
-                taskList        : true,
-                tex             : true,  // 默认不解析
-                flowChart       : true,  // 默认不解析
-                sequenceDiagram : true,  // 默认不解析
-            });
-        });
-    </script>
 @stop
