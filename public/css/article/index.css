@@ -25,52 +25,52 @@
       display: none; }
 
 .video:nth-child(1) {
-  background-color: rgba(110, 13, 22, 0.08); }
+  background-color: rgba(65, 55, 173, 0.58); }
 
 .video:nth-child(2) {
-  background-color: rgba(106, 113, 43, 0.31); }
+  background-color: rgba(239, 87, 49, 0.11); }
 
 .video:nth-child(3) {
-  background-color: rgba(141, 134, 101, 0.8); }
+  background-color: rgba(98, 217, 165, 0.84); }
 
 .video:nth-child(4) {
-  background-color: rgba(246, 184, 7, 0.9); }
+  background-color: rgba(98, 46, 179, 0.58); }
 
 .video:nth-child(5) {
-  background-color: rgba(209, 172, 6, 0.37); }
+  background-color: rgba(228, 126, 151, 0.28); }
 
 .video:nth-child(6) {
-  background-color: rgba(237, 197, 229, 0.96); }
+  background-color: rgba(74, 84, 21, 0.1); }
 
 .video:nth-child(7) {
-  background-color: rgba(38, 120, 82, 0.57); }
+  background-color: rgba(73, 254, 143, 0.63); }
 
 .video:nth-child(8) {
-  background-color: rgba(161, 210, 187, 0.85); }
+  background-color: rgba(55, 122, 239, 0.07); }
 
 .video:nth-child(9) {
-  background-color: rgba(211, 163, 55, 0.65); }
+  background-color: rgba(161, 76, 251, 0.29); }
 
 .video:nth-child(10) {
-  background-color: rgba(179, 53, 191, 0.87); }
+  background-color: rgba(187, 97, 58, 1); }
 
 .video:nth-child(11) {
-  background-color: rgba(20, 198, 255, 0.75); }
+  background-color: rgba(181, 77, 104, 0.31); }
 
 .video:nth-child(12) {
-  background-color: rgba(247, 107, 46, 0.93); }
+  background-color: rgba(215, 60, 16, 0.08); }
 
 .video:nth-child(13) {
-  background-color: rgba(111, 85, 137, 0.52); }
+  background-color: rgba(157, 233, 42, 0.85); }
 
 .video:nth-child(14) {
-  background-color: rgba(142, 57, 86, 0.27); }
+  background-color: rgba(56, 156, 99, 0.51); }
 
 .video:nth-child(15) {
-  background-color: rgba(75, 198, 70, 0.59); }
+  background-color: rgba(206, 104, 175, 0.48); }
 
 .video:nth-child(16) {
-  background-color: rgba(206, 135, 173, 0.26); }
+  background-color: rgba(13, 57, 87, 0.96); }
 
 .videoshow {
   padding-top: 15px;
@@ -81,7 +81,7 @@
   -webkit-flex-basis: 345px;
   -ms-flex-preferred-size: 345px;
   flex-basis: 345px;
-  background-color: rgba(213, 194, 47, 0.45); }
+  background-color: rgba(248, 75, 145, 0.02); }
   .videoshow lfx-player {
     width: 100%; }
     .videoshow lfx-player video {

@@ -3,10 +3,10 @@
 @section('head')
     <link rel="stylesheet" href="/bower_components/editor.md/css/editormd.preview.css">
     <link rel="import" href="/bower_components/iron-selector/iron-selector.html">
-    <link rel="import" href="/bower_components/paper-slider/paper-slider.html">
     <link rel="import" href="/bower_components/paper-button/paper-button.html">
     <link rel="import" href="/bower_components/iron-icons/av-icons.html">
     <link rel="import" href="/components/lfx-player.html">
+    <link rel="stylesheet" href="/css/range_slider.css">
     <link rel="stylesheet" href="/css/article/show.css">
 @stop
 
@@ -52,5 +52,6 @@
 @stop
 
 @section('script')
+    <script src="/js/rangeSlider.js"></script>
     <script src="/bower_components/jquery/dist/jquery.js"></script>
 @stop

@@ -54,12 +54,9 @@ main {
           align-items: center;
           @include position-absolute(top 50% left 20px);
           transform: translateY(-50%);
-          paper-slider {
-            width: 120px;
-            .expand:not(.pin) > #sliderKnob.paper-slider > #sliderKnobInner.paper-slider {
-              width: 20px;
-              height: 20px;
-            }
+          #videovolume + .rangeSlider {
+            margin-left: 10px;
+            width: 90px;
           }
         }
 
@@ -80,6 +77,21 @@ main {
 
         &__progress {
           transition: opacity 0.3s ease;
+          #videorange + .rangeSlider {
+            .rangeSlider__fill {
+              z-index: 2;
+            }
+          }
+          #videoprogress + .rangeSlider {
+            top: -3px;
+            .rangeSlider__handle {
+              display: none;
+            }
+            .rangeSlider__fill {
+              z-index: 1;
+              background: lighten(#3367D6, 27%);
+            }
+          }
         }
       }
     }

@@ -73,11 +73,9 @@ main {
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
         transform: translateY(-50%); }
-        .lfx-player__volume paper-slider {
-          width: 120px; }
-          .lfx-player__volume paper-slider .expand:not(.pin) > #sliderKnob.paper-slider > #sliderKnobInner.paper-slider {
-            width: 20px;
-            height: 20px; }
+        .lfx-player__volume #videovolume + .rangeSlider {
+          margin-left: 10px;
+          width: 90px; }
       .lfx-player__toggle {
         position: absolute;
         top: 50%;
@@ -102,6 +100,15 @@ main {
       .lfx-player__progress {
         -webkit-transition: opacity 0.3s ease;
         transition: opacity 0.3s ease; }
+        .lfx-player__progress #videorange + .rangeSlider .rangeSlider__fill {
+          z-index: 2; }
+        .lfx-player__progress #videoprogress + .rangeSlider {
+          top: -3px; }
+          .lfx-player__progress #videoprogress + .rangeSlider .rangeSlider__handle {
+            display: none; }
+          .lfx-player__progress #videoprogress + .rangeSlider .rangeSlider__fill {
+            z-index: 1;
+            background: #a6bced; }
   .video-play lfx-player.mouseenter > .lfx-player {
     cursor: pointer; }
     .video-play lfx-player.mouseenter > .lfx-player .lfx-player__controlbar {
