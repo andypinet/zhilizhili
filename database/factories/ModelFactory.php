@@ -36,3 +36,11 @@ $factory->define(App\Type::class, function (Faker\Generator $faker) {
         'label' => $faker->sentence($nbWords = 1)
     ];
 });
+
+$factory->define(App\Client::class, function (Faker\Generator $faker) {
+    return [
+        'id' => str_random(38),
+        'secret' => str_random(38),
+        'name' => $faker->word,
+    ];
+});
