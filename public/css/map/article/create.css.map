@@ -1,0 +1,1 @@
+{"version":3,"sources":["article/create.css"],"names":[],"mappings":"AAAA;EACE,cAAc;EACd,eAAe,EAAE","file":"article/create.css","sourcesContent":["main {\n  width: 1200px;\n  margin: 0 auto; }\n\n\n"],"sourceRoot":"/source/"}

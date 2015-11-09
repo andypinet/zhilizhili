@@ -1,0 +1,1 @@
+{"version":3,"sources":["lfx-view/lfx-view.css"],"names":[],"mappings":"AAAA;EACE,eAAe,EAAE","file":"lfx-view/lfx-view.css","sourcesContent":["lfx-view > .lfx-view {\n  display: block; }\n\n\n"],"sourceRoot":"/source/"}

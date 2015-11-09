@@ -1,0 +1,17 @@
+@mixin block($name) {
+  #{$name} {
+    @content;
+  }
+}
+
+@mixin element($name: null) {
+  &__#{$name} {
+    @content;
+  }
+}
+
+@mixin modifiy($name: null) {
+  &--#{$name} {
+    @content;
+  }
+}

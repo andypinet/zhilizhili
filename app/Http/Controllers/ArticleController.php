@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
+use Jenssegers\Agent\Agent;
 
 class ArticleController extends Controller
 {
@@ -71,6 +72,7 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
+        $agent = new Agent();
         $types = Type::all();
         $article = Content::findOrFail($id);
 //        $this->authorize('show-content', $article);
@@ -78,7 +80,8 @@ class ArticleController extends Controller
 //        {
 //            abort('403', 'sorry');
 //        }
-        return view('article/show', compact('article', 'types'));
+//        return view('article/show', compact('article', 'types'));
+        return view('mobile/article/show', compact('article', 'types'));
     }
 
     /**

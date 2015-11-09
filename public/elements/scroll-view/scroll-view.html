@@ -1,0 +1,23 @@
+<script src="/bower_components/hammerjs/hammer.min.js"></script>
+
+<dom-module id="scroll-view">
+    <link rel="stylesheet" href="scroll-view.css">
+
+    <style>
+        :host #scrollViewInner {
+            touch-action: pan-y !important;
+        }
+    </style>
+
+    <!-- ... your custom element here... -->
+    <template>
+        <div id="scrollViewWrapper">
+            <div id="scrollViewInner">
+                <content></content>
+            </div>
+        </div>
+    </template>
+</dom-module>
+
+<!-- your element code typescript transpiled file -->
+<script type="text/javascript" src="scroll-view.js"></script>

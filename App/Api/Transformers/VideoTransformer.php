@@ -15,7 +15,8 @@ class VideoTransformer extends TransformerAbstract
     {
         return [
             'title' => $video['title'],
-            'text' => $video['text']
+            'text' => $video['text'],
+            'url' => url('article', $video->id)
         ];
     }
 }

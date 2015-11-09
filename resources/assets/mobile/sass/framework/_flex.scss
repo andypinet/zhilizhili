@@ -1,0 +1,4 @@
+@mixin layout-horizontal() {
+    display: flex;
+    flex-direction: row;
+}

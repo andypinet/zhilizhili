@@ -30,6 +30,9 @@
     "marked-element": "PolymerElements/marked-element#~1.1.1",
     "editor.md": "~1.5.0",
     "flexboxgrid": "~6.3.0",
-    "scss-zhilizhili-mei": "~0.3.2"
+    "scss-zhilizhili-mei": "~0.3.2",
+    "polymer-ts": "~0.1.21",
+    "hammerjs": "hammer.js#~2.0.4",
+    "sass-material-colors": "~0.0.5"
   }
 }

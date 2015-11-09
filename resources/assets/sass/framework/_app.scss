@@ -1,0 +1,54 @@
+@import "../../../bower_components/sass-mediaqueries/media-queries";
+@import "../../../bower_components/sassstd/src/sassstd";
+@import "../../../bower_components/scss-lfx-mei/stylesheets/mei";
+
+@function mq($args...) {
+    $media-type: 'only screen';
+    $media-type-key: 'media-type';
+    $args: keywords($args);
+    $expr: '';
+
+    @if map-has-key($args, $media-type-key) {
+        $media-type: map-get($args, $media-type-key);
+        $args: map-remove($args, $media-type-key);
+    }
+
+    @each $key, $value in $args {
+        @if $value {
+            $expr: "#{$expr} and (#{$key}: #{$value})";
+        }
+    }
+
+    @return "#{$media-type} #{$expr}";
+}
+
+@function screen($min, $max, $orientation: false) {
+    @return mq($min-width: $min, $max-width: $max, $orientation: $orientation);
+}
+
+$media-hook: () !default !global;
+
+@mixin register-media-hook($hook-name, $media) {
+    $media-hook: map-deep-set($media-hook, $hook-name, $media) !global;
+}
+
+@mixin use-media-hook($hook-name) {
+    @at-root {
+        $media: map-deep-get($media-hook, $hook-name);
+        @debug $media;
+        @media #{$media} {
+            @content
+        }
+    }
+}
+
+@mixin application($name) {
+    @content;
+}
+
+@mixin viewController($name) {
+    @include register-media-hook("mobile", screen(320px, 768px));
+    @include register-media-hook("pad", screen(768px, 1280px));
+    @include register-media-hook("pc", screen(1280px, 2880px));
+    @content
+}
