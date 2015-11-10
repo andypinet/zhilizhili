@@ -3,4 +3,5 @@ declare module utils {
     function getElmentWidth(element: any): number;
     function getChildrenLength(element: HTMLElement): number;
     function getTranslateX(element: any): number;
+    function debounce(func: any, wait: any, immediate: any): () => any;
 }

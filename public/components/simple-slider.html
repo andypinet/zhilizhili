@@ -24,7 +24,7 @@
 
             go: function (index) {
                 var self = this;
-                var width = self.sliderItems.item(0).clientWidth;
+                var width = self.sliderItems.item(0).offsetWidth;
                 self.transform('translateX(' + (-index * width) + 'px)', self.wrapperDom);
             }
         };

@@ -80,8 +80,8 @@ class ArticleController extends Controller
 //        {
 //            abort('403', 'sorry');
 //        }
-//        return view('article/show', compact('article', 'types'));
-        return view('mobile/article/show', compact('article', 'types'));
+        return view('article/show', compact('article', 'types'));
+//        return view('mobile/article/show', compact('article', 'types'));
     }
 
     /**

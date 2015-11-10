@@ -87,9 +87,9 @@ gulp.task("watch-umd", function(){
 });
 
 gulp.task("build:d.ts", function() {
-	exec("tsc -d src/framework/utils.ts --module commonjs", function(){
-		gulp.src("src/framework/utils.d.ts")
-				.pipe(gulp.dest("typings/framework"));
+	exec("tsc -d resources/assets/framework/utils.ts --module commonjs", function(){
+		gulp.src("resources/assets/framework/utils.d.ts")
+				.pipe(gulp.dest("public/typings/framework"));
 	});
 });
 
@@ -112,3 +112,38 @@ gulp.task('build-mobilesass', function () {
 gulp.task('watch-mobilesass', function() {
 	gulp.watch(paths.srcRoot + 'assets/mobile/sass/**/*.scss', ["build-mobilesass"]);
 });
+
+
+gulp.task('build-pcsass', function () {
+	zTask.require('build-sass')({
+		src: paths.srcRoot + 'assets/pc/sass/**/*.scss',
+		dest: paths.destRoot + 'pc/css'
+	});
+});
+
+gulp.task('watch-pcsass', function() {
+	gulp.watch(paths.srcRoot + 'assets/pc/sass/**/*.scss', ["build-pcsass"]);
+});
+
+
+gulp.task('build-pc', function(src, dest){
+	zTask.require('build-umd')({
+		src: src,
+		dest: dest
+	});
+});
+
+var pcumddeb = debounce(function(){
+	var src = paths.srcRoot + 'assets/pc/controller/article/*.js';
+	var dest = paths.destRoot + 'pc/controller/article';
+
+	exec("gulp build-pc -d --src " + src + " --dest " + dest, function(err, stdout, stderr) {
+		console.log(stdout);
+		console.log(stderr);
+	});
+}, 10000);
+
+gulp.task("watch-pc", function(){
+	gulp.watch(paths.srcRoot + 'assets/pc/controller/**/*.js', pcumddeb)
+});
+

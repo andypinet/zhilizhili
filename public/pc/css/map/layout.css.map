@@ -1,0 +1,1 @@
+{"version":3,"sources":["layout.scss"],"names":[],"mappings":"AAAA;EACE,gBAAe;EACf,OAAM;EACN,SAAQ;EACR,UAAS;EACT,QAAO,EAAA;;AAIT;EACE,YAAW;EACX,aAAY,EAAA","file":"layout.css","sourcesContent":[".full-fixed {\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n}\n\n\n.full-parent {\n  width: 100%;\n  height: 100%;\n}"],"sourceRoot":"/source/"}
