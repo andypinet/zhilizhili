@@ -27,9 +27,8 @@
  * @param {string} [color-variant='500']  - quoted, lowercase color variant (e.g.
  *                                          '200', 'a100')
  */
-main {
-  width: 1200px;
-  margin: 0 auto; }
+.vidoe-play-con {
+  background-color: #000000; }
 
 .video-up {
   padding-top: 15px;
@@ -42,126 +41,186 @@ main {
   margin-top: 15px;
   margin-bottom: 0; }
 
-.video-play {
-  width: 100%; }
-  .video-play lfx-player {
-    width: 854px;
-    height: 480px;
-    background-color: #000000; }
-    .video-play lfx-player > .lfx-player {
-      width: 100%;
-      height: 100%; }
-    .video-play lfx-player video {
-      width: 100%;
-      height: 100%; }
-    .lfx-player {
-      cursor: pointer; }
-      .lfx-player__controlbar {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-flex-flow: row;
-        -ms-flex-flow: row;
-        flex-flow: row;
-        width: 370px;
-        height: 40px;
-        -webkit-transition: opacity 0.3s ease;
-        transition: opacity 0.3s ease; }
-      .lfx-player__volume {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
-        position: absolute;
-        top: 50%;
-        left: 20px;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%); }
-        .lfx-player__volume #videovolume + .rangeSlider {
-          margin-left: 10px;
-          width: 90px; }
-      .lfx-player__toggle {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        -ms-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%); }
-      .lfx-player__list {
-        position: absolute;
-        top: 50%;
-        right: 45px;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%); }
-      .lfx-player__full {
-        position: absolute;
-        top: 50%;
-        right: 20px;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%); }
-      .lfx-player__progress {
-        -webkit-transition: opacity 0.3s ease;
-        transition: opacity 0.3s ease; }
-        .lfx-player__progress #videorange + .rangeSlider .rangeSlider__fill {
-          z-index: 2; }
-        .lfx-player__progress #videoprogress + .rangeSlider {
-          top: -3px; }
-          .lfx-player__progress #videoprogress + .rangeSlider .rangeSlider__handle {
-            display: none; }
-          .lfx-player__progress #videoprogress + .rangeSlider .rangeSlider__fill {
-            z-index: 1;
-            background: #a6bced; }
-  .video-play lfx-player.mouseenter > .lfx-player {
+lfx-player {
+  width: 100%;
+  height: 480px;
+  background-color: #000000; }
+  lfx-player > .lfx-player {
+    width: 100%;
+    height: 100%; }
+  lfx-player video {
+    width: 100%;
+    height: 100%; }
+  .lfx-player {
     cursor: pointer; }
-    .video-play lfx-player.mouseenter > .lfx-player .lfx-player__controlbar {
-      opacity: 1; }
-    .video-play lfx-player.mouseenter > .lfx-player .lfx-player__progress {
-      opacity: 1; }
-  .video-play lfx-player.mouseleave > .lfx-player {
-    cursor: pointer; }
-    .video-play lfx-player.mouseleave > .lfx-player .lfx-player__controlbar {
-      opacity: 0; }
-    .video-play lfx-player.mouseleave > .lfx-player .lfx-player__progress {
-      opacity: 0; }
+    .lfx-player__controlbar {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-flow: row;
+      -ms-flex-flow: row;
+      flex-flow: row;
+      width: 370px;
+      height: 40px;
+      -webkit-transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease; }
+    .lfx-player__volume {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); }
+      .lfx-player__volume #videovolume + .rangeSlider {
+        margin-left: 10px;
+        width: 90px; }
+    .lfx-player__toggle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%); }
+    .lfx-player__list {
+      position: absolute;
+      top: 50%;
+      right: 45px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); }
+    .lfx-player__full {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%); }
+    .lfx-player__progress {
+      -webkit-transition: opacity 0.3s ease;
+      transition: opacity 0.3s ease; }
+      .lfx-player__progress #videorange + .rangeSlider .rangeSlider__fill {
+        z-index: 2; }
+      .lfx-player__progress #videoprogress + .rangeSlider {
+        top: -3px; }
+        .lfx-player__progress #videoprogress + .rangeSlider .rangeSlider__handle {
+          display: none; }
+        .lfx-player__progress #videoprogress + .rangeSlider .rangeSlider__fill {
+          z-index: 1;
+          background: #a6bced; }
 
-.video-danmu {
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  -webkit-flex-basis: 331px;
-  -ms-flex-preferred-size: 331px;
-  flex-basis: 331px; }
+lfx-player.mouseenter > .lfx-player {
+  cursor: pointer; }
+  lfx-player.mouseenter > .lfx-player .lfx-player__controlbar {
+    opacity: 1; }
+  lfx-player.mouseenter > .lfx-player .lfx-player__progress {
+    opacity: 1; }
+
+lfx-player.mouseleave > .lfx-player {
+  cursor: pointer; }
+  lfx-player.mouseleave > .lfx-player .lfx-player__controlbar {
+    opacity: 0; }
+  lfx-player.mouseleave > .lfx-player .lfx-player__progress {
+    opacity: 0; }
+
+.focus-button {
+  background-color: #2196f3;
+  color: #ffffff; }
+  .focus-button .focus-button__icon {
+    position: relative;
+    top: -1px; }
+
+.media-player {
+  background-color: rgba(51, 174, 214, 0.67);
+  box-shadow: 1px 1px 20px 1px #9e9e9e; }
+  .media-player--default .media-player__inner {
+    width: 1200px;
+    margin: 0 auto; }
+  .media-player--default .media-player__play {
+    width: 854px; }
+  .media-player--default .media-player__list {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    background-color: #00b3ee; }
+
+.panel .panel__inner {
+  width: 1200px;
+  margin: 0 auto; }
+.panel .panel__main {
+  width: 854px; }
+.panel .panel__aside {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+.timeline-inner {
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: transform 1s ease; }
+
+.vis-timeline {
+  border: 0; }
+
+.vis-timeline .vis-time-axis .vis-major {
+  display: none; }
+
+.vis-time-axis .vis-grid.vis-vertical {
+  height: 22px !important;
+  top: auto !important;
+  bottom: 0 !important; }
+
+.timeline-wrapper {
+  width: 1000px;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: auto;
+  right: 0;
+  bottom: 20px;
+  margin: auto; }
 
 .modal {
-  z-index: 9999; }
+  -webkit-transition: opacity 1.0s ease;
+  transition: opacity 1.0s ease;
+  color: #ffffff; }
   .modal--default {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #ffffff; }
-
-.btn {
-  float: left;
-  width: 45px;
-  height: 20px;
-  background-color: #0091ea;
-  color: #ffffff;
-  text-align: center;
-  margin-left: 10px; }
+    opacity: 1;
+    z-index: 999; }
+  .modal--hide {
+    opacity: 0;
+    z-index: -1; }
+  .modal .modal__close {
+    position: absolute;
+    right: 15px;
+    top: 15px; }
 
 .gallery--default .gallery__slider {
   width: 950px;
   height: 520px;
   margin: 0 auto;
-  margin-top: 30px;
-  background-color: rgba(207, 127, 14, 0.66); }
+  margin-top: 30px; }
+  .gallery--default .gallery__slider slider-item:nth-of-type(1) {
+    background-color: rgba(109, 40, 87, 0.83); }
+  .gallery--default .gallery__slider slider-item:nth-of-type(2) {
+    background-color: rgba(111, 38, 12, 0.86); }
+  .gallery--default .gallery__slider slider-item:nth-of-type(3) {
+    background-color: rgba(154, 145, 239, 0.94); }
+  .gallery--default .gallery__slider slider-item:nth-of-type(4) {
+    background-color: rgba(190, 209, 11, 0.81); }
+  .gallery--default .gallery__slider slider-item:nth-of-type(5) {
+    background-color: rgba(138, 81, 29, 0.13); }
+  .gallery--default .gallery__slider slider-item:nth-of-type(6) {
+    background-color: rgba(36, 101, 184, 0.37); }
 .gallery--default .gallery__thumbnail-control {
   width: 1200px;
   overflow: hidden;
@@ -183,11 +242,36 @@ main {
   width: 240px;
   height: 150px;
   border: 7px solid transparent;
-  background-color: rgba(95, 150, 95, 0.55);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease; }
   .gallery--default .gallery__thumbnail.active {
     border-color: #2196f3; }
+  .gallery--default .gallery__thumbnail:nth-of-type(1) {
+    background-color: rgba(130, 105, 217, 0.34); }
+  .gallery--default .gallery__thumbnail:nth-of-type(2) {
+    background-color: rgba(72, 231, 217, 0.57); }
+  .gallery--default .gallery__thumbnail:nth-of-type(3) {
+    background-color: rgba(74, 254, 154, 0.07); }
+  .gallery--default .gallery__thumbnail:nth-of-type(4) {
+    background-color: rgba(226, 226, 167, 0.79); }
+  .gallery--default .gallery__thumbnail:nth-of-type(5) {
+    background-color: rgba(195, 244, 30, 0.36); }
+  .gallery--default .gallery__thumbnail:nth-of-type(6) {
+    background-color: rgba(13, 159, 247, 0.94); }
+
+.main-content .panel__main paper-card {
+  width: 100%; }
+.main-content .panel__aside paper-card {
+  width: 100%; }
+
+.timeline-modal {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  left: 0;
+  bottom: 0; }
 
 
 

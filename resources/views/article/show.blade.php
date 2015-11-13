@@ -6,8 +6,12 @@
     <link rel="import" href="/bower_components/paper-button/paper-button.html">
     <link rel="import" href="/bower_components/iron-icons/av-icons.html">
     <link rel="import" href="/bower_components/iron-selector/iron-selector.html">
+    <link rel="import" href="/bower_components/iron-icon/iron-icon.html">
+    <link rel="import" href="/bower_components/iron-icons/iron-icons.html">
     <link rel="import" href="/bower_components/zhilizhili-slider/slider-item.html">
     <link rel="import" href="/bower_components/zhilizhili-slider/zhilizhili-slider.html">
+    <link rel="import" href="/bower_components/paper-card/paper-card.html">
+    <link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
     <link rel="import" href="/bower_components/iron-a11y-keys/iron-a11y-keys.html">
     <link rel="import" href="/components/simple-slider.html">
     <link rel="import" href="/components/simple-slider-item.html">
@@ -17,6 +21,7 @@
     <script src="/framework/utils.js"></script>
 
     <link rel="stylesheet" href="/css/range_slider.css">
+    <link rel="stylesheet" href="/bower_components/vis/dist/vis.min.css">
     <link rel="stylesheet" href="/pc/css/layout.css">
     <link rel="stylesheet" href="/pc/css/article/show.css">
 @stop
@@ -30,34 +35,58 @@
         @endif
     </nav>
     @if(!is_null(Auth::user()) && Auth::user()->isAdmin() || $article->status == 1)
-        @can('admin_access')
-        <a href="">编辑文章</a>
-        @endcan
         <main>
-            <h3 class="video-title"><a href=""><% $article->title %></a></h3>
-            <div class="layout horizontal">
-                <div class="video-up">
-                    <div class="video-up-name">
-                        up主 <span><% $article->user->name %></span>
+            <div class="media-player media-player--default">
+                <div class="layout horizontal center-justified media-player__inner">
+                    <div class="media-player__play">
+                        <div class="layout horizontal">
+                            <lfx-player src="http://192.168.0.106/wohejimi.mp4">
+                                <div class="controlbar btn lfx-player__list" on-click="showModalHandle" title="打开知识窗口">
+                                    <iron-icon icon="icons:menu"></iron-icon>
+                                </div>
+                            </lfx-player>
+                        </div>
+                    </div>
+                    <div class="media-player__list">
+                        list
                     </div>
                 </div>
             </div>
-            <article>
-                <div class="row">
-                    <div class="col-xs video-play">
-                        <div class="layout horizontal">
-                            <lfx-player src="http://192.168.0.106/wohejimi.mp4"></lfx-player>
-                        </div>
+            <section class="panel panel--default main-content">
+                <div class="layout horizontal panel__inner">
+                    <div class="panel__main">
+                        <paper-card heading="<% $article->title %>">
+                            <div class="card-content">
+                                <div class="user user--default">
+                                    <div class="user__logo"></div>
+                                    <div class="user__name">
+                                        <% $article->user->name %>
+                                    </div>
+                                    <div class="user__action">
+                                        <paper-button class="focus-button">
+                                            <iron-icon class="focus-button__icon" icon="icons:add"></iron-icon>
+                                            <span class="focus-button__content">关注</span>
+                                        </paper-button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <paper-button>Some action</paper-button>
+                            </div>
+                        </paper-card>
                     </div>
-                    <div class="col-xs video-danmu">
-                        <div class="layout horizontal ">
-                            right
-                        </div>
+                    <div class="panel__aside">
+                        <paper-card>
+                            aside
+                        </paper-card>
                     </div>
                 </div>
-            </article>
+            </section>
         </main>
-        <div id="test" class="modal modal--default full-fixed">
+        <div id="modal" class="modal modal--hide full-fixed">
+            <paper-button class="modal__close" on-click="hideModalHandle">
+                close
+            </paper-button>
             <div class="modal__body full-parent">
                 <div class="gallery gallery--default">
                     <zhilizhili-slider id="gallerySlider" class="gallery__slider" direction="horizontal">
@@ -110,10 +139,20 @@
                     <iron-a11y-keys id="nextkey" keys="right"
                                     on-keys-pressed="onNext"></iron-a11y-keys>
 
+                    <iron-a11y-keys id="hidekey" keys="esc"
+                                    on-keys-pressed="onEsc"></iron-a11y-keys>
+
 
                 </div>
             </div>
         </div>
+        <!-- /modal -->
+        <div class="modal modal--default timeline-modal fixed">
+            <div id="timelineWrapper" class="timeline-wrapper">
+                <div id="visualization" class="timeline-inner"></div>
+            </div>
+        </div>
+        <!-- /modal -->
     @else
         这篇文章还在审核中
     @endif
@@ -122,5 +161,7 @@
 @section('script')
     <script src="/js/rangeSlider.js"></script>
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/js/lib/vis-custom.min.js"></script>
+    <script src="/assets/pc/lib/vis-timeline.js"></script>
     <script src="/pc/controller/article/show.js"></script>
 @stop

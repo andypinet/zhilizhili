@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="/css/flexgrid.css">
     <link rel="stylesheet" href="/css/app.css">
     <script src="/bower_components/gsap/src/minified/TweenMax.min.js"></script>
-    <script src="/bower_components/es6-shim/es6-shim.min.js"></script>
     <style>
         .polymer-support-oldbrowser {
             display: flex;

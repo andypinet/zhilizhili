@@ -1,3 +1,6 @@
+.fixed {
+  position: fixed; }
+
 .full-fixed {
   position: fixed;
   top: 0;

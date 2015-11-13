@@ -147,3 +147,39 @@ gulp.task("watch-pc", function(){
 	gulp.watch(paths.srcRoot + 'assets/pc/controller/**/*.js', pcumddeb)
 });
 
+gulp.task('build-es', function(src, dest) {
+	return gulp.src(src)
+			.pipe(es5)
+			.pipe(gulp.dest(dest))
+});
+
+const babel = require('gulp-babel');
+const browserify = require("gulp-browserify");
+const babelify = require("babelify");
+
+var es5 = browserify({
+	transform: function(filename, opts){
+		return babelify(filename, {
+			presets: ['es2015'],
+			plugins: ['transform-regenerator']
+		});
+	}
+});
+
+var zst = function(name, destpath) {
+	"use strict";
+	return debounce(function(){
+		var src = paths.srcRoot + `${destpath}/${name}.js`;
+		var dest = paths.destRoot + `${destpath}`;
+
+		exec("gulp build-es -d --src " + src + " --dest " + dest, function(err, stdout, stderr) {
+			console.log(stdout);
+			console.log(stderr);
+		});
+	}, 0)
+};
+
+gulp.task("watch-es5", function(name, dest){
+	dest = dest || '';
+	gulp.watch(paths.srcRoot + `${dest}/${name}.js`, zst(name, dest))
+});

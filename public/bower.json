@@ -33,6 +33,7 @@
     "scss-zhilizhili-mei": "~0.3.2",
     "polymer-ts": "~0.1.21",
     "hammerjs": "hammer.js#~2.0.4",
-    "sass-material-colors": "~0.0.5"
+    "sass-material-colors": "~0.0.5",
+    "vis": "~4.9.0"
   }
 }

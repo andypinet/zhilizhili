@@ -13,13 +13,13 @@ lfx-player {
         border-radius: 5px;
         @include position-absolute(bottom 15% left 50%);
         transform: translateX(-50%);
-        z-index: 1000;
+        z-index: 1;
       }
 
       &__progress {
         @include position-absolute(bottom 15px left 0);
         width: 100%;
-        z-index: 1000;
+        z-index: 1;
         paper-progress {
           width: 100%;
         }

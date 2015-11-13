@@ -11,9 +11,7 @@
                 <div id="toggle" class="btn lfx-player__toggle" on-click="hanlderToggleButton">
                     <iron-icon icon="av:play-arrow"></iron-icon>
                 </div>
-                <div class="btn lfx-player__list">
-                    <iron-icon icon="icons:menu"></iron-icon>
-                </div>
+                <content select=".controlbar"></content>
                 <div class="btn lfx-player__full">
                     <iron-icon icon="icons:fullscreen"></iron-icon>
                 </div>
@@ -24,7 +22,7 @@
                 <input id="videorange" type="range" min="0" step="0.01" max="{{duration}}" value="{{currentTime}}" data-buffer="0" data-rangeSlider>
                 <input id="videoprogress" type="range" value="{{currentTime}}" step="0.01" data-rangeSlider>
             </div>
-            <content></content>
+            <content select="after"></content>
         </div>
     </template>
 

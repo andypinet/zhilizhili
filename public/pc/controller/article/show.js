@@ -44,10 +44,26 @@
             lastThumbnailIndex = thumbnailIndex;
         }
     };
+    var showModal = false;
+    var hideModal = function hideModal() {
+        if (showModal) {
+            showModal = false;
+            app.$.modal.classList.remove('modal--default');
+            app.$.modal.classList.add('modal--hide');
+        }
+    };
     app.prevSliderHandle = prevHandle;
     app.onPrev = prevHandle;
     app.nextSliderHandle = nextHandle;
     app.onNext = nextHandle;
+    app.showModalHandle = function () {
+        if (!showModal) {
+            showModal = true;
+            app.$.modal.classList.remove('modal--hide');
+            app.$.modal.classList.add('modal--default');
+        }
+    };
+    app.hideModalHandle = hideModal;
     app.addEventListener('dom-change', function () {
         zhilizhiliSlider = app.$.gallerySlider;
         control = app.$.galleryControls;
@@ -55,6 +71,7 @@
         var maxmove = totallength - 5;
         app.$.prevkey.target = document.body;
         app.$.nextkey.target = document.body;
+        app.$.hidekey.target = document.body;
         Array.prototype.slice.call(control.$.simpleSliderWrapper.children).forEach(function (button, index) {
             var debfun = function debfun() {
                 if (index != lastThumbnailIndex) {
@@ -91,7 +108,13 @@
             button.addEventListener('click', debfun);
         });
     });
-    window.addEventListener('WebComponentsReady', function () {});
+    window.addEventListener('WebComponentsReady', function () {
+        document.addEventListener('keydown', function (e) {
+            if (e.which == 27) {
+                hideModal();
+            }
+        }, false);
+    });
 })(document);
 
 },{}]},{},[1])
