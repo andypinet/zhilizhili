@@ -1,0 +1,69 @@
+.nav-item {
+  width: 960px;
+  height: 450px;
+  position: absolute;
+  font-size: 60px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 450px; }
+
+.nav-item.active {
+  left: 0 !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  opacity: 1 !important; }
+
+.nav-item.hide {
+  top: 1024px !important;
+  opacity: 0 !important; }
+
+.nav-item:nth-of-type(1) {
+  left: 120px;
+  top: 260px;
+  background-color: rgb(118, 219, 35);
+  z-index: 4;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  opacity: 1; }
+
+.nav-item:nth-of-type(2) {
+  left: 180px;
+  top: 200px;
+  background-color: rgb(215, 234, 5);
+  z-index: 3;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  opacity: 0.8; }
+
+.nav-item:nth-of-type(3) {
+  left: 240px;
+  top: 140px;
+  background-color: rgb(31, 89, 213);
+  z-index: 2;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  opacity: 0.6; }
+
+.nav-item:nth-of-type(4) {
+  left: 300px;
+  top: 80px;
+  background-color: rgb(54, 153, 26);
+  z-index: 1;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  opacity: 0.4; }
+
+.nav-item:nth-of-type(5) {
+  left: 360px;
+  top: 20px;
+  background-color: rgb(61, 41, 87);
+  z-index: 0;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  opacity: 0.2; }
+
+
+
+/*# sourceMappingURL=map/index.css.map */

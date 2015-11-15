@@ -1,9 +1,61 @@
 @import "config/color";
 @import "utils/function";
 @import "../../../public/bower_components/sass-material-colors/sass/sass-material-colors";
+@import "../../../node_modules/sass-rem/rem";
+
+@mixin host($component, $sel) {
+  $parse-sels: selector-parse($sel);
+  $parse-sels-length: length($parse-sels);
+  @for $i from 1 through $parse-sels-length {
+    $parse-sel: nth($parse-sels, $i);
+    $parse-sel-node-length: length($parse-sel);
+    $usesel: "";
+    @for $m from 1 through $parse-sel-node-length {
+      $usesel: $usesel + nth($parse-sel, $m) + $component + " ";
+    }
+    #{$usesel} {
+      @content;
+    }
+  }
+}
+
+@mixin nav-content() {
+  paper-card {
+    width: 100%;
+    border: 0;
+    box-shadow: none;
+    background-color: #f7f8fa;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    paper-material {
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+
+    @include host(".paper-card", ".header .title-text") {
+      padding-bottom: 0;
+      color: material-color("red");
+      @include rem((
+              font-size: 16px
+      ));
+    }
+
+    .card-content {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+  paper-menu {
+    background-color: #f7f8fa;
+  }
+}
 
 top-bar {
   height: 95px;
+  position: relative;
+  z-index: 1000;
+  background-color: #ffffff;
+
   > .row {
     width: 100%;
   }
@@ -48,6 +100,7 @@ top-bar {
         border: 0;
         width: 425px;
         height: 30px;
+        background-color: transparent;
         &:focus {
           outline: none;
         }
@@ -100,5 +153,26 @@ top-bar {
       min-width: 0;
       color: material-color("grey");
     }
+  }
+
+  .nav-menu {
+    width: 300px;
+    position: absolute;
+    left: 0;
+    top: 95px;
+    z-index: 1;
+    border-top: 1px solid material-color("grey", "200");
+    @include nav-content();
+  }
+
+  .user-menu {
+    width: 300px;
+    position: absolute;
+    right: 0;
+    top: 95px;
+    z-index: 1;
+    border-top: 1px solid material-color("grey", "200");
+    background-color: #f7f8fa;
+    @include nav-content();
   }
 }

@@ -19,6 +19,11 @@ var paths = {
 	destRoot: 'public/'
 };
 
+var buildPaths = {
+	root: 'build',
+	template: 'build/template/'
+};
+
 gulp.task('build-umd', function(){
 	zTask.require('build-umd')({
 		src: paths.srcRoot + 'assets/js/**/*.js',
@@ -117,7 +122,7 @@ gulp.task('watch-mobilesass', function() {
 gulp.task('build-pcsass', function () {
 	zTask.require('build-sass')({
 		src: paths.srcRoot + 'assets/pc/sass/**/*.scss',
-		dest: paths.destRoot + 'pc/css'
+		dest: paths.destRoot + 'assets/pc/css'
 	});
 });
 
@@ -182,4 +187,39 @@ var zst = function(name, destpath) {
 gulp.task("watch-es5", function(name, dest){
 	dest = dest || '';
 	gulp.watch(paths.srcRoot + `${dest}/${name}.js`, zst(name, dest))
+});
+
+var rename = require("gulp-rename");
+
+gulp.task('build:element', function(name, path){
+	var destpath = paths.srcRoot + path + name;
+
+	gulp.src(buildPaths.template + "_element.scss")
+			.pipe(rename(name + ".scss"))
+			.pipe(gulp.dest(`${destpath}`));
+
+	gulp.src(buildPaths.template + "_element.html")
+			.pipe(rename(name + ".html"))
+			.pipe(gulp.dest(`${destpath}`));
+
+	gulp.src(buildPaths.template + "_element.ts")
+			.pipe(rename(name + ".ts"))
+			.pipe(gulp.dest(`${destpath}`));
+});
+
+gulp.task("deploy:element", function(name, path) {
+	var src = paths.srcRoot + path + name + '/';
+	var dest = paths.destRoot + path + name + '/';
+	
+	gulp.src(`${src}${name}.js`)
+		.pipe(es5)
+		.pipe(gulp.dest(`${dest}`));
+
+	gulp.src(`${src}${name}.html`)
+			.pipe(gulp.dest(`${dest}`));
+
+	zTask.require('build-sass')({
+		src: `${src}${name}.scss`,
+		dest: `${dest}`
+	});
 });

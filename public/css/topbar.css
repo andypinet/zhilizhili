@@ -9,7 +9,10 @@
  *                                          '200', 'a100')
  */
 top-bar {
-  height: 95px; }
+  height: 95px;
+  position: relative;
+  z-index: 1000;
+  background-color: #ffffff; }
   top-bar > .row {
     width: 100%; }
   top-bar .row {
@@ -60,7 +63,8 @@ top-bar {
     top-bar .search-form .search-group input {
       border: 0;
       width: 425px;
-      height: 30px; }
+      height: 30px;
+      background-color: transparent; }
       top-bar .search-form .search-group input:focus {
         outline: none; }
     top-bar .search-form .search-group button {
@@ -99,6 +103,61 @@ top-bar {
       margin-right: 20px;
       min-width: 0;
       color: #9e9e9e; }
+  top-bar .nav-menu {
+    width: 300px;
+    position: absolute;
+    left: 0;
+    top: 95px;
+    z-index: 1;
+    border-top: 1px solid #eeeeee; }
+    top-bar .nav-menu paper-card {
+      width: 100%;
+      border: 0;
+      box-shadow: none;
+      background-color: #f7f8fa;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0; }
+      top-bar .nav-menu paper-card paper-material {
+        border-radius: 0 !important;
+        box-shadow: none !important; }
+      top-bar .nav-menu paper-card .header.paper-card .title-text.paper-card {
+        padding-bottom: 0;
+        color: #f44336;
+        font-size: 16px;
+        font-size: 1.6rem; }
+      top-bar .nav-menu paper-card .card-content {
+        padding-top: 10px;
+        padding-bottom: 10px; }
+    top-bar .nav-menu paper-menu {
+      background-color: #f7f8fa; }
+  top-bar .user-menu {
+    width: 300px;
+    position: absolute;
+    right: 0;
+    top: 95px;
+    z-index: 1;
+    border-top: 1px solid #eeeeee;
+    background-color: #f7f8fa; }
+    top-bar .user-menu paper-card {
+      width: 100%;
+      border: 0;
+      box-shadow: none;
+      background-color: #f7f8fa;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0; }
+      top-bar .user-menu paper-card paper-material {
+        border-radius: 0 !important;
+        box-shadow: none !important; }
+      top-bar .user-menu paper-card .header.paper-card .title-text.paper-card {
+        padding-bottom: 0;
+        color: #f44336;
+        font-size: 16px;
+        font-size: 1.6rem; }
+      top-bar .user-menu paper-card .card-content {
+        padding-top: 10px;
+        padding-bottom: 10px; }
+    top-bar .user-menu paper-menu {
+      background-color: #f7f8fa; }
 
 
 

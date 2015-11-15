@@ -251,17 +251,17 @@ lfx-player.mouseleave > .lfx-player {
   margin: 0 auto;
   margin-top: 30px; }
   .gallery--default .gallery__slider slider-item:nth-of-type(1) {
-    background-color: rgba(31, 32, 233, 0.44); }
+    background-color: rgba(228, 164, 147, 0.2); }
   .gallery--default .gallery__slider slider-item:nth-of-type(2) {
-    background-color: rgba(232, 53, 201, 0.37); }
+    background-color: rgba(49, 251, 55, 0.36); }
   .gallery--default .gallery__slider slider-item:nth-of-type(3) {
-    background-color: rgba(1, 95, 14, 0.35); }
+    background-color: rgba(9, 181, 26, 0.72); }
   .gallery--default .gallery__slider slider-item:nth-of-type(4) {
-    background-color: rgba(154, 68, 84, 0.14); }
+    background-color: rgba(184, 39, 178, 0.38); }
   .gallery--default .gallery__slider slider-item:nth-of-type(5) {
-    background-color: rgba(206, 78, 104, 0.39); }
+    background-color: rgba(51, 226, 238, 0.44); }
   .gallery--default .gallery__slider slider-item:nth-of-type(6) {
-    background-color: rgba(12, 61, 13, 0.81); }
+    background-color: rgba(251, 17, 143, 0.65); }
 .gallery--default .gallery__thumbnail-control {
   width: 1280px;
   overflow: hidden;
@@ -288,17 +288,17 @@ lfx-player.mouseleave > .lfx-player {
   .gallery--default .gallery__thumbnail.active {
     border-color: #2196f3; }
   .gallery--default .gallery__thumbnail:nth-of-type(1) {
-    background-color: rgba(216, 10, 208, 0.72); }
+    background-color: rgba(178, 123, 105, 0.07); }
   .gallery--default .gallery__thumbnail:nth-of-type(2) {
-    background-color: rgba(91, 103, 138, 0.66); }
+    background-color: rgba(234, 238, 123, 0.97); }
   .gallery--default .gallery__thumbnail:nth-of-type(3) {
-    background-color: rgba(150, 85, 235, 0.35); }
+    background-color: rgba(134, 125, 230, 0.19); }
   .gallery--default .gallery__thumbnail:nth-of-type(4) {
-    background-color: rgba(210, 148, 197, 0.13); }
+    background-color: rgba(136, 91, 254, 0.66); }
   .gallery--default .gallery__thumbnail:nth-of-type(5) {
-    background-color: rgba(159, 191, 13, 0.03); }
+    background-color: rgba(180, 153, 92, 0.02); }
   .gallery--default .gallery__thumbnail:nth-of-type(6) {
-    background-color: rgba(139, 174, 197, 0.84); }
+    background-color: rgba(48, 239, 10, 0.23); }
 
 .video-figure--default {
   margin: 0;
@@ -310,7 +310,7 @@ lfx-player.mouseleave > .lfx-player {
     display: block;
     width: 179px;
     height: 100.6875px;
-    background-color: rgba(144, 121, 101, 0.15);
+    background-color: rgba(189, 149, 172, 0.25);
     position: relative; }
   .video-figure--default .video-figure__time {
     padding: 5px 8px;
@@ -347,21 +347,6 @@ lfx-player.mouseleave > .lfx-player {
     margin-left: 70px;
     margin-bottom: 10px; }
 
-.member--default {
-  position: relative; }
-  .member--default .member__logo {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #9e9e9e; }
-  .member--default .member__action {
-    color: #9e9e9e; }
-
-.dropdown-menu--close {
-  display: none; }
-.dropdown-menu--open {
-  display: block; }
-
 .main-content .panel__main paper-card {
   width: 100%;
   margin-bottom: 15px; }
@@ -381,63 +366,6 @@ lfx-player.mouseleave > .lfx-player {
   left: 0;
   bottom: 0;
   z-index: 0; }
-
-.nav-menu {
-  width: 300px;
-  position: absolute;
-  left: 0;
-  top: 95px;
-  z-index: 1;
-  border-top: 1px solid #eeeeee; }
-  .nav-menu paper-card {
-    width: 100%;
-    border: 0;
-    box-shadow: none;
-    background-color: #f7f8fa;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0; }
-    .nav-menu paper-card paper-material {
-      border-radius: 0 !important;
-      box-shadow: none !important; }
-    .nav-menu paper-card .header.paper-card .title-text.paper-card {
-      padding-bottom: 0;
-      color: #f44336;
-      font-size: 16px;
-      font-size: 1.33333rem; }
-    .nav-menu paper-card .card-content {
-      padding-top: 10px;
-      padding-bottom: 10px; }
-  .nav-menu paper-menu {
-    background-color: #f7f8fa; }
-
-.user-menu {
-  width: 300px;
-  position: absolute;
-  right: 0;
-  top: 95px;
-  z-index: 1;
-  border-top: 1px solid #eeeeee;
-  background-color: #f7f8fa; }
-  .user-menu paper-card {
-    width: 100%;
-    border: 0;
-    box-shadow: none;
-    background-color: #f7f8fa;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0; }
-    .user-menu paper-card paper-material {
-      border-radius: 0 !important;
-      box-shadow: none !important; }
-    .user-menu paper-card .header.paper-card .title-text.paper-card {
-      padding-bottom: 0;
-      color: #f44336;
-      font-size: 16px;
-      font-size: 1.33333rem; }
-    .user-menu paper-card .card-content {
-      padding-top: 10px;
-      padding-bottom: 10px; }
-  .user-menu paper-menu {
-    background-color: #f7f8fa; }
 
 
 

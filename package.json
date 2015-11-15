@@ -13,6 +13,7 @@
     "gulp-babel": "^6.1.0",
     "gulp-browserify": "^0.5.1",
     "gulp-param": "^0.6.4",
+    "gulp-rename": "^1.2.2",
     "laravel-elixir": "^3.0.0",
     "moment": "^2.10.6",
     "require-dir": "^0.3.0",

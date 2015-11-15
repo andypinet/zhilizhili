@@ -9,7 +9,6 @@
     <link rel="import" href="/bower_components/iron-icons/iron-icons.html">
     <link rel="import" href="/bower_components/zhilizhili-slider/slider-item.html">
     <link rel="import" href="/bower_components/zhilizhili-slider/zhilizhili-slider.html">
-    <link rel="import" href="/bower_components/paper-card/paper-card.html">
     <link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
     <link rel="import" href="/bower_components/iron-a11y-keys/iron-a11y-keys.html">
     <link rel="import" href="/components/simple-slider.html">
