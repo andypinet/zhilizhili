@@ -1,8 +1,10 @@
 <dom-module id="lfx-player">
     <template src="{{src}}">
         <div class="lfx-player" on-mouseleave="mouseLeaveHandle" on-mouseenter="mouseEnterHandle">
-            <video id="videoMedia" src$="{{src}}"
-                   on-loadstart="HanlderLoadStart" on-timeupdate="HandlerTimeUpdate" on-progress="HanlderProgress" on-ended="HandlerPlayEnd"></video>
+            <video id="videoMedia"
+                   on-loadstart="HanlderLoadStart" on-timeupdate="HandlerTimeUpdate" on-progress="HanlderProgress" on-ended="HandlerPlayEnd">
+                <source src="{{src}}" type="video/mp4">
+            </video>
             <div class="lfx-player__controlbar">
                 <div id="volume" class="btn lfx-player__volume">
                     <iron-icon icon="av:volume-up"></iron-icon>

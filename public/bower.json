@@ -34,6 +34,8 @@
     "polymer-ts": "~0.1.21",
     "hammerjs": "hammer.js#~2.0.4",
     "sass-material-colors": "~0.0.5",
-    "vis": "~4.9.0"
+    "vis": "~4.9.0",
+    "videojs-webcomponent": "~0.1.3",
+    "jwplayer": "https://github.com/jwplayer/jwplayer.git#~7.2.0"
   }
 }

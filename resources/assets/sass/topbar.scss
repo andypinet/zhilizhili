@@ -1,25 +1,52 @@
 @import "config/color";
 @import "utils/function";
+@import "../../../public/bower_components/sass-material-colors/sass/sass-material-colors";
 
 top-bar {
-  height: 50px;
-  background-color: lighten(zhilizhili-color("blue"), 27%);
+  height: 95px;
   > .row {
     width: 100%;
   }
 
+  .row {
+    height: 100%;
+  }
+
+  .col-xs {
+    flex-grow: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .col-xs:nth-of-type(1) {
+    flex-basis: 300px;
+    justify-content: center;
+  }
+
+  .col-xs:nth-of-type(2) {
+    flex-grow: 1;
+  }
+
+  .col-xs:nth-of-type(3) {
+    flex-basis: 300px;
+    border-left: 1px solid material-color("grey", "200");
+    justify-content: flex-end;
+  }
+
   .logo-con {
     font-size: 30px;
-    margin-left: 20px;
     color: #ffffff;
     text-shadow: 1px 1px 1px zhilizhili-color('red');
   }
 
   .search-form {
     .search-group {
+      border-bottom: 1px solid material-color("grey");
       input {
-        border: 1px solid zhilizhili-color("blue");
-        width: 335px;
+        border: 0;
+        width: 425px;
         height: 30px;
         &:focus {
           outline: none;
@@ -27,24 +54,51 @@ top-bar {
       }
       button {
         border: 0;
-        background-color: zhilizhili-color("blue");
+        background-color: transparent;
         color: #ffffff;
         height: 30px;
+        iron-icon {
+          color: material-color("grey");
+        }
       }
     }
   }
-  
-  .user {
-    margin-right: 20px;
-    line-height: 30px;
-    a {
-      color: #d689f9;
-      margin-right: 10px;
-      text-decoration: none;
-      &:hover {
-        color: lighten(#d689f9, 27%);
-        text-shadow: 0 0 3px #6a437b;
+
+  .upload-video-button {
+    height: 35px;
+    line-height: 35px;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: absolute;
+    left: auto;
+    top: 0;
+    right: 50px;
+    bottom: 0;
+    margin: auto;
+  }
+
+  .member {
+    padding-right: 10px;
+    &__action {
+      margin: 0;
+      padding-right: 10px;
+
+      paper-button {
+        width: 26px;
+        min-width: 0;
+        padding: 0;
+        iron-icon {
+          width: 20px;
+          height: 20px;
+        }
       }
+    }
+    &__toggle-nav {
+      width: 35px;
+      padding: 0;
+      margin-right: 20px;
+      min-width: 0;
+      color: material-color("grey");
     }
   }
 }

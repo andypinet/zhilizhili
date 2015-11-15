@@ -23,7 +23,14 @@
     <link rel="import" href="/bower_components/iron-input/iron-input.html">
     <link rel="import" href="/bower_components/iron-icon/iron-icon.html">
     <link rel="import" href="/bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="/bower_components/iron-icons/communication-icons.html">
+    <link rel="import" href="/bower_components/iron-icons/social-icons.html">
+    <link rel="import" href="/bower_components/paper-button/paper-button.html">
+    <link rel="import" href="/bower_components/paper-menu/paper-menu.html">
+    <link rel="import" href="/bower_components/paper-item/paper-item.html">
     <link rel="import" href="/components/top-bar.html">
+    <link rel="import" href="/components/dropdown-menu.html">
+    <link rel="import" href="/components/appstyle.html">
     <link rel="stylesheet" href="/css/flexgrid.css">
     <link rel="stylesheet" href="/css/app.css">
     <script src="/bower_components/gsap/src/minified/TweenMax.min.js"></script>
@@ -62,9 +69,19 @@
                             <span>zhilizhili</span>
                         </div>
                     </div>
+                    <dropdown-menu id="navMenu" class="dropdown-menu--close nav-menu">
+                        <paper-card heading="Card Title">
+                            <div class="card-content">
+                                <paper-menu selected="0">
+                                    <paper-item>Item 1</paper-item>
+                                    <paper-item>Item 2</paper-item>
+                                </paper-menu>
+                            </div>
+                        </paper-card>
+                    </dropdown-menu>
                 </div>
                 <div class="col-xs">
-                    <div class="layout horizontal center-center search-form">
+                    <div class="layout horizontal center search-form">
                         {!! Form::open(['url' => '', 'method' => 'post', 'is'=>'iron-form']) !!}
                         <div class="layout horizontal center search-group">
                             {!! Form::text('text', '', ['class' => '', 'is'=>'iron-input']) !!}
@@ -73,14 +90,32 @@
                             </button>
                         </div>
                         {!! Form::close() !!}
+                        <paper-button class="upload-video-button" primary link-button>
+                            <a href="">upload</a>
+                        </paper-button>
                     </div>
                 </div>
                 <div class="col-xs">
                     <div class="layout horizontal center end-justified">
                         <div id="user" class="layout inline user">
                             @if (!is_null(Auth::user()))
-                                <div id="user-info" class="user-info">
-                                    <a href="<% url('user', Auth::user()->id) %>" class="user-info-home"><span class="user-info-name"><% Auth::user()->name %></span></a>
+                                <div class="member member--default">
+                                    <div class="layout horizontal center">
+                                        <div class="member__action">
+                                            <div class="layout horizontal center">
+                                                <paper-button>
+                                                    <iron-icon icon="communication:email"></iron-icon>
+                                                </paper-button>
+                                                <paper-button>
+                                                    <iron-icon icon="social:notifications-none"></iron-icon>
+                                                </paper-button>
+                                            </div>
+                                        </div>
+                                        <div class="member__logo"></div>
+                                        <paper-button id="toggleUserMenu" class="member__toggle-nav">
+                                            <iron-icon icon="icons:expand-more"></iron-icon>
+                                        </paper-button>
+                                    </div>
                                 </div>
                             @else
                                 <a href="<% url('/auth/register') %>">注册</a>
@@ -88,6 +123,16 @@
                             @endif
                         </div>
                     </div>
+                    <dropdown-menu id="userMenu" class="dropdown-menu--close user-menu">
+                        <paper-card heading="">
+                            <div class="card-content">
+                                <paper-menu selected="0">
+                                    <paper-item>Item 1</paper-item>
+                                    <paper-item>Item 2</paper-item>
+                                </paper-menu>
+                            </div>
+                        </paper-card>
+                    </dropdown-menu>
                 </div>
             </div>
         </top-bar>
@@ -98,5 +143,6 @@
     </template>
 </body>
 <script src="/controller/ViewController.js"></script>
+<script src="/assets/pc/controller/base.js"></script>
 @yield('script')
 </html>

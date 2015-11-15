@@ -3,7 +3,6 @@
 @section('head')
     <link rel="stylesheet" href="/bower_components/editor.md/css/editormd.preview.css">
     <link rel="import" href="/bower_components/iron-selector/iron-selector.html">
-    <link rel="import" href="/bower_components/paper-button/paper-button.html">
     <link rel="import" href="/bower_components/iron-icons/av-icons.html">
     <link rel="import" href="/bower_components/iron-selector/iron-selector.html">
     <link rel="import" href="/bower_components/iron-icon/iron-icon.html">
@@ -27,20 +26,13 @@
 @stop
 
 @section('content')
-    <nav id="articleNav" class="article-nav">
-        @if(count($types))
-            @foreach($types as $type)
-                <a href="<% url('article/type', $type->id) %>"><% $type->label %></a>
-            @endforeach
-        @endif
-    </nav>
     @if(!is_null(Auth::user()) && Auth::user()->isAdmin() || $article->status == 1)
         <main>
             <div class="media-player media-player--default">
                 <div class="layout horizontal center-justified media-player__inner">
                     <div class="media-player__play">
                         <div class="layout horizontal">
-                            <lfx-player src="http://192.168.0.106/wohejimi.mp4">
+                            <lfx-player src="http://192.168.0.106/test03.mp4">
                                 <div class="controlbar btn lfx-player__list" on-click="showModalHandle" title="打开知识窗口">
                                     <iron-icon icon="icons:menu"></iron-icon>
                                 </div>
@@ -48,14 +40,28 @@
                         </div>
                     </div>
                     <div class="media-player__list">
-                        list
+                        @for($i = 0; $i < 5; $i++)
+                            <figure class="video-figure video-figure--default">
+                                <div class="layout horizontal">
+                                    <div class="video-figure__img">
+                                        <img class="" src="" alt="">
+                                        <div class="video-figure__title"></div>
+                                        <time class="video-figure__time">35:10</time>
+                                    </div>
+                                    <div class="video-figure__content">
+                                        <h3 class="video-figure__title">sadsadasdasdasdsads</h3>
+                                        <div class="video-figure__origin">sdsdsdsdsds</div>
+                                    </div>
+                                </div>
+                            </figure>
+                        @endfor
                     </div>
                 </div>
             </div>
             <section class="panel panel--default main-content">
                 <div class="layout horizontal panel__inner">
                     <div class="panel__main">
-                        <paper-card heading="<% $article->title %>">
+                        <paper-card class="video-info-card" heading="<% $article->title %>">
                             <div class="card-content">
                                 <div class="user user--default">
                                     <div class="user__logo"></div>
@@ -74,10 +80,40 @@
                                 <paper-button>Some action</paper-button>
                             </div>
                         </paper-card>
+                        <paper-card class="video-info-card" heading="">
+                            <div class="card-content">
+                                <div class="user user--default video-user">
+                                    <time>2015年1月31日发布</time>
+                                </div>
+                            </div>
+                            <div class="card-actions">
+                                <paper-button>展开</paper-button>
+                            </div>
+                        </paper-card>
+                        <paper-card class="video-comment-card" heading="">
+                            <div class="card-content">
+                            </div>
+                        </paper-card>
                     </div>
                     <div class="panel__aside">
                         <paper-card>
-                            aside
+                            <div class="card-content">
+                                @for($i = 0; $i < 5; $i++)
+                                <figure class="video-figure video-figure--default">
+                                    <div class="layout horizontal">
+                                        <div class="video-figure__img">
+                                            <img class="" src="" alt="">
+                                            <div class="video-figure__title"></div>
+                                            <time class="video-figure__time">35:10</time>
+                                        </div>
+                                        <div class="video-figure__content">
+                                            <h3 class="video-figure__title">sadsadasdasdasdsads</h3>
+                                            <div class="video-figure__origin">sdsdsdsdsds</div>
+                                        </div>
+                                    </div>
+                                </figure>
+                                @endfor
+                            </div>
                         </paper-card>
                     </div>
                 </div>

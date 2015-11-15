@@ -3346,6 +3346,7 @@ exports.default = function () {
             },
             timeAxis: { scale: 'minute', step: 3 },
             editable: false,
+            moveable: false,
             start: start,
             end: end
         };
