@@ -10,8 +10,10 @@ Object.defineProperty(exports, "__esModule", {
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var UIViewController = (function () {
-    function UIViewController() {
+    function UIViewController(element) {
         _classCallCheck(this, UIViewController);
+
+        this.element = element;
     }
 
     _createClass(UIViewController, [{
@@ -60,7 +62,9 @@ function bootstrap(instance, element) {
 function delegate(target) {
     console.log("View-Controller" + target.selector);
     window.addEventListener("WebComponentsReady", function () {
-        bootstrap(new target(), document.querySelector("View-Controller" + target.selector));
+        var element = document.querySelector("View-Controller" + target.selector);
+        var viewcontroller = new target(element);
+        bootstrap(viewcontroller, element);
     });
 }
 exports.UIViewController = UIViewController;
@@ -102,14 +106,10 @@ var __decorate = undefined && undefined.__decorate || function (decorators, targ
 var IndexViewController = (function (_UIViewController) {
     _inherits(IndexViewController, _UIViewController);
 
-    function IndexViewController() {
+    function IndexViewController(element) {
         _classCallCheck(this, IndexViewController);
 
-        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(IndexViewController).call(this));
-
-        console.log("IndexViewController");
-        console.dir(_this);
-        return _this;
+        return _possibleConstructorReturn(this, Object.getPrototypeOf(IndexViewController).call(this, element));
     }
 
     return IndexViewController;

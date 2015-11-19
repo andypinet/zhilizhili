@@ -1,0 +1,188 @@
+/**
+ * Retrieves a color value from the $material-colors Sass map
+ * Inspired by https://github.com/nilskaspersson/Google-Material-UI-Color-Palette/
+ *
+ * @function
+ * @param {string} color-name             - quoted, lower-case, dasherized color
+ *                                          name (e.g. 'pink', 'amber')
+ * @param {string} [color-variant='500']  - quoted, lowercase color variant (e.g.
+ *                                          '200', 'a100')
+ */
+top-bar {
+  background-color: transparent; }
+  top-bar .col-xs:nth-of-type(3) {
+    border-left: 0; }
+  top-bar .search-form .search-group {
+    border-bottom: 1px solid #ffffff; }
+    top-bar .search-form .search-group input {
+      color: #ffffff; }
+    top-bar .search-form .search-group button iron-icon {
+      color: #ffffff; }
+  top-bar .member__action paper-button iron-icon {
+    color: #ffffff; }
+  top-bar .member__toggle-nav {
+    color: #ffffff; }
+
+canvas {
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+body {
+  font-family: Verdana,"Lantinghei SC","Hiragino Sans GB","Microsoft Yahei",Helvetica,arial,\5b8b\4f53,sans-serif; }
+
+view-controller {
+  display: block;
+  width: 100%;
+  height: calc(100% - 95px); }
+  view-controller > .view-controller {
+    width: 100%;
+    height: 100%; }
+
+zhilizhili-slider {
+  height: 100%;
+  left: 0;
+  top: 0; }
+  zhilizhili-slider > .zhilizhili-slider {
+    width: 100%; }
+
+view-controller > .view-controller {
+  position: absolute;
+  z-index: 10; }
+zhilizhili-slider > .zhilizhili-slider slider-item {
+  width: 100%; }
+  zhilizhili-slider > .zhilizhili-slider slider-item > .slider-item {
+    height: 100%; }
+
+.introduction {
+  position: absolute;
+  left: 90px;
+  top: 30px;
+  z-index: 1; }
+
+.business-card {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  margin: auto;
+  height: 300px;
+  width: 600px;
+  background: #f12e50;
+  border-radius: 30px; }
+  .business-card:before, .business-card:after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0; }
+  .business-card:before {
+    background: #ee0c4b;
+    border-top-right-radius: 30px;
+    -webkit-clip-path: polygon(20% 0, 100% 0, 100% 30%, 40% 70%);
+    clip-path: polygon(20% 0, 100% 0, 100% 30%, 40% 70%); }
+  .business-card:after {
+    background: #c80e3d;
+    border-bottom-right-radius: 30px;
+    -webkit-clip-path: polygon(40% 70%, 100% 30%, 100% 100%, 48.5% 100%);
+    clip-path: polygon(40% 70%, 100% 30%, 100% 100%, 48.5% 100%); }
+  .business-card div {
+    z-index: 2; }
+  .business-card .business-card__logo {
+    position: absolute;
+    top: 10%;
+    right: 10%; }
+    .business-card .business-card__logo figure {
+      position: relative;
+      display: inline-block;
+      height: 4em;
+      width: calc(4em * 0.57735);
+      border-radius: .5em/.25em;
+      background: white;
+      -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg); }
+    .business-card .business-card__logo figure:before, .business-card .business-card__logo figure:after {
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      border-radius: inherit;
+      background: inherit;
+      content: ''; }
+    .business-card .business-card__logo figure:before {
+      -webkit-transform: rotate(60deg);
+      -ms-transform: rotate(60deg);
+      transform: rotate(60deg); }
+    .business-card .business-card__logo figure:after {
+      -webkit-transform: rotate(-60deg);
+      -ms-transform: rotate(-60deg);
+      transform: rotate(-60deg); }
+    .business-card .business-card__logo i {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      height: 25%;
+      width: 70%;
+      background: #ee0c4b;
+      -webkit-transform: skew(-30deg) rotate(-90deg);
+      -ms-transform: skew(-30deg) rotate(-90deg);
+      transform: skew(-30deg) rotate(-90deg);
+      z-index: 2; }
+      .business-card .business-card__logo i:before, .business-card .business-card__logo i:after {
+        content: '';
+        position: absolute;
+        width: 60%;
+        height: 75%;
+        background: inherit;
+        z-index: 5; }
+      .business-card .business-card__logo i:before {
+        top: -82%;
+        right: 24%;
+        -webkit-transform: skew(-40deg) rotate(90deg);
+        -ms-transform: skew(-40deg) rotate(90deg);
+        transform: skew(-40deg) rotate(90deg); }
+      .business-card .business-card__logo i:after {
+        bottom: -85%;
+        right: 23%;
+        -webkit-transform: skew(-40deg) rotate(90deg);
+        -ms-transform: skew(-40deg) rotate(90deg);
+        transform: skew(-40deg) rotate(90deg); }
+    .business-card .business-card__logo h2 {
+      display: inline-block;
+      color: white;
+      font-size: 2em;
+      font-weight: 900;
+      letter-spacing: -1px;
+      line-height: 2;
+      vertical-align: top; }
+  .business-card .business-card__tagline {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    color: white;
+    line-height: 1.4;
+    text-align: right; }
+    .business-card .business-card__tagline p {
+      word-break: break-all;
+      word-wrap: break-word; }
+
+.three-text {
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 2rem;
+  text-align: center;
+  text-shadow: 0px 0px 10px #f44336; }
+
+
+
+/*# sourceMappingURL=../map/about/index.css.map */

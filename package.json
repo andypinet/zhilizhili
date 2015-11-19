@@ -17,6 +17,7 @@
     "laravel-elixir": "^3.0.0",
     "moment": "^2.10.6",
     "require-dir": "^0.3.0",
+    "theaterjs": "^2.0.1",
     "videojs-webcomponent": "^0.1.3"
   }
 }

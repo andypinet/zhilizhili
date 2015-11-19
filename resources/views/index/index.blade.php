@@ -1,82 +1,114 @@
 @extends('base')
 
 @section('head')
+    <link rel="stylesheet" href="/assets/pc/css/layout.css"/>
     <link rel="stylesheet" href="/assets/pc/css/index.css"/>
-    <link rel="import" href="/bower_components/zhilizhili-slider/zhilizhili-slider.html">
-    <link rel="import" href="/bower_components/zhilizhili-slider/slider-item.html">
-    <link rel="import" href="/components/simple-slider.html">
-    <link rel="import" href="/components/simple-slider-item.html">
+    <link rel="import" href="/bower_components/iron-selector/iron-selector.html">
+    <link rel="import" href="/bower_components/iron-ajax/iron-ajax.html">
+    <link rel="import" href="/bower_components/iron-list/iron-list.html">
     <link rel="import" href="/assets/pc/elements/view-controller/view-controller.html">
-    <style is="custom-style">
-        simple-slider {
-            display: block;
-            position: relative;
-            width: 1200px;
-            height: 170px;
-            overflow: hidden;
-        }
-
-        simple-slider ::content .simple-slider-wrapper {
-            position: absolute;
-            width: 999em;
-            transition: all 1s ease;
-        }
-
-        simple-slider simple-slider-item {
-            float: left;
-            width: 240px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            perspective: 1200px;
-        }
-
-        simple-slider simple-slider-item ::content div {
-            width: 220px;
-        }
-
-        .square {
-            text-align: center;
-            line-height: 170px;
-            font-size: 20px;
-        }
-    </style>
+    <link rel="import" href="/assets/pc/elements/lfx-modal/lfx-modal.html">
+    <link rel="import" href="/assets/pc/elements/audio-player/audio-player.html">
 @stop
 
 @section('content')
+    <div class="full-fixed body-background">
+    </div>
     <view-controller id="index">
         <main>
-            <ul id="sliderNav">
-                <li>
-                    <div class="btn" slider-index="0">1</div>
-                </li>
-                <li>
-                    <div class="btn" slider-index="1">2</div>
-                </li>
-                <li>
-                    <div class="btn" slider-index="2">3</div>
-                </li>
-                <li>
-                    <div class="btn" slider-index="3">4</div>
-                </li>
-                <li>
-                    <div class="btn" slider-index="4">5</div>
-                </li>
+            <ul class="silder-nav silder-nav--default" id="sliderNav">
+                <iron-selector id="selector" selected="0">
+                    <li class="silder-nav__item">
+                        <div class="btn" slider-index="0">1</div>
+                    </li>
+                    <li class="silder-nav__item">
+                        <div class="btn" slider-index="1">2</div>
+                    </li>
+                    <li class="silder-nav__item">
+                        <div class="btn" slider-index="2">3</div>
+                    </li>
+                    <li class="silder-nav__item">
+                        <div class="btn" slider-index="3">4</div>
+                    </li>
+                    <li class="silder-nav__item">
+                        <div class="btn" slider-index="4">5</div>
+                    </li>
+                </iron-selector>
             </ul>
             <div id="navItems" class="nav-items">
-                <div class="nav-item">1</div>
-                <div class="nav-item">2</div>
-                <div class="nav-item">3</div>
-                <div class="nav-item">4</div>
-                <div class="nav-item">5</div>
+                <div class="nav-item">
+                    <figure class="gallery-figure gallery-figure--default">
+                        <div class="gallery-figure__img">
+                            <img src="/assets/pc/img/20121108090043196.jpg">
+                        </div>
+                        <figcaption class="gallery-figure__caption">
+                            hello
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="nav-item">
+                    <figure class="gallery-figure gallery-figure--default">
+                        <div class="gallery-figure__img">
+                            <img src="/assets/pc/img/BILIBILI-dong.jpg">
+                        </div>
+                        <figcaption class="gallery-figure__caption">
+                            hello
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="nav-item">
+                    <figure class="gallery-figure gallery-figure--default">
+                        <div class="gallery-figure__img">
+                            <img src="/assets/pc/img/fate_stay_night_anime_game_magic_fight_duo_hd-wallpaper-1897519.jpg">
+                        </div>
+                        <figcaption class="gallery-figure__caption">
+                            hello
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="nav-item">
+                    <figure class="gallery-figure gallery-figure--default">
+                        <div class="gallery-figure__img">
+                            <img src="/assets/pc/img/gundam_00-065.jpg">
+                        </div>
+                        <figcaption class="gallery-figure__caption">
+                            hello
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="nav-item">
+                    <figure class="gallery-figure gallery-figure--default">
+                        <div class="gallery-figure__img">
+                            <img src="/assets/pc/img/KmakGhk.jpg">
+                        </div>
+                        <figcaption class="gallery-figure__caption">
+                            hello
+                        </figcaption>
+                    </figure>
+                </div>
             </div>
         </main>
+        <lfx-modal class="full-fixed audio-player-modal" style="display: none;">
+            <div class="vis-audio-player vis-audio-player--default">
+                <div class="vis-audio-player__list">
+                    <iron-ajax url="/assets/pc/data/music.json" last-response="{{data}}" auto></iron-ajax>
+                    <iron-list items="[[data]]" as="item">
+                        <template>
+                            <div class="vis-audio-player__list-item">
+                                <div>Name: <a href="[[item.location]]">[[item.name]]</a></div>
+                            </div>
+                        </template>
+                    </iron-list>
+                </div>
+            </div>
+            <audio-player items="[[data]]"></audio-player>
+        </lfx-modal>
     </view-controller>
 @stop
 
 @section('script')
-    <script src="bower_components/TheaterJS/build/theater.js"></script>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="/js/rangeSlider.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/assets/pc/controller/index.js"></script>
     <script>
         window.addEventListener("WebComponentsReady", function(){
@@ -86,8 +118,17 @@
 
             var position = genneratePosition();
             var indices = [0, 1, 2, 3, 4];
-            var opacityes = [1, 0.8, 0.6, 0.4, 0.2];
+            var opacityes = [];
             var zindexes = [5, 4, 3, 2, 1];
+
+            // init
+            var navItemsChildren = navitemsDom.querySelectorAll('.nav-item');
+            
+            Array.prototype.slice.call(navItemsChildren).forEach(function(item, idx) {
+                // 收集opacity
+                var computestyle = window.getComputedStyle(item);
+                opacityes[idx] = computestyle.opacity;
+            });
 
             function generateIndices(indices, index) {
                 var icopy = indices.map(function(item){
@@ -147,13 +188,13 @@
                 var after = generateIndices(indices.map(function(item){
                     return item
                 }), index);
-                console.log(after);
+//                console.log(after);
 
                 function handle(i) {
                     var navitem = navitemsDom.children.item(indices[i]);
                     var opacity = parseFloat(getComputedStyle(navitem)['opacity']);
-                    console.log('移动是' + i);
-                    console.log('目标是' + after.indexOf(indices[i]));
+//                    console.log('移动是' + i);
+//                    console.log('目标是' + after.indexOf(indices[i]));
                     var attributes = Object.assign({}, {
                         left: position[i - index].x,
                         top: position[i - index].y
@@ -218,12 +259,16 @@
 
             var slideNavItems = document.querySelectorAll('#sliderNav .btn');
 
+            console.dir(slideNavItems);
+            
             var indexes = [0, 1, 2, 3, 4];
 
             function handle(index) {
                 var sliderNavItem = slideNavItems[index];
                 var sliderIndex = parseInt(sliderNavItem.getAttribute('slider-index'));
 
+                console.dir(sliderNavItem);
+                
                 sliderNavItem.addEventListener('click', function handle(){
                     console.log('请求第' + (sliderIndex +1));
                     var num = indices.indexOf(indexes[index]);
