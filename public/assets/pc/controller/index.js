@@ -69,10 +69,11 @@ function delegate(target) {
 }
 exports.UIViewController = UIViewController;
 exports.delegate = delegate;
-//# sourceMappingURL=UIViewController.js.map
 
 },{}],2:[function(require,module,exports){
 "use strict";
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _UIViewController2 = require("../../framework/controller/UIViewController");
 
@@ -109,13 +110,37 @@ var IndexViewController = (function (_UIViewController) {
     function IndexViewController(element) {
         _classCallCheck(this, IndexViewController);
 
-        return _possibleConstructorReturn(this, Object.getPrototypeOf(IndexViewController).call(this, element));
+        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(IndexViewController).call(this, element));
+
+        var self = _this;
+        document.querySelector('#hihi').addEventListener('response', function () {
+            self.readytoshowlist();
+        });
+        return _this;
     }
+
+    _createClass(IndexViewController, [{
+        key: "readytoshowlist",
+        value: function readytoshowlist() {
+            var player = document.querySelector('audio-player');
+            setTimeout(function () {
+                var musiclists = document.querySelectorAll('.vis-audio-player__list-item');
+                Array.prototype.slice.call(musiclists).forEach(function (musiclist, index) {
+                    musiclist.addEventListener('click', function (e) {
+                        player.toggleAtIndex(index);
+                    });
+                });
+                player.addEventListener('audio-player-playend', function (e) {
+                    console.log("end");
+                    player.toggleNext();
+                }, false);
+            }, 0);
+        }
+    }]);
 
     return IndexViewController;
 })(_UIViewController2.UIViewController);
 IndexViewController.selector = "#index";
 IndexViewController = __decorate([_UIViewController2.delegate], IndexViewController);
-//# sourceMappingURL=index.js.map
 
 },{"../../framework/controller/UIViewController":1}]},{},[2])

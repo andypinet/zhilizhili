@@ -1,6 +1,8 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 "use strict";
 
+var _Object$getPrototypeO;
+
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 var _rangeSlider = require("../../lib/rangeSlider");
@@ -8,6 +10,8 @@ var _rangeSlider = require("../../lib/rangeSlider");
 var _rangeSlider2 = _interopRequireDefault(_rangeSlider);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -36,19 +40,121 @@ var __decorate = undefined && undefined.__decorate || function (decorators, targ
     }
 };
 
-var AudioPlayer = (function (_polymer$Base) {
-    _inherits(AudioPlayer, _polymer$Base);
+var MediaBehavior = (function (_polymer$Base) {
+    _inherits(MediaBehavior, _polymer$Base);
+
+    function MediaBehavior() {
+        _classCallCheck(this, MediaBehavior);
+
+        return _possibleConstructorReturn(this, Object.getPrototypeOf(MediaBehavior).apply(this, arguments));
+    }
+
+    _createClass(MediaBehavior, [{
+        key: "created",
+        value: function created() {
+            console.log("created");
+            this.stopped = true;
+        }
+    }, {
+        key: "play",
+        value: function play(mediaelement) {
+            mediaelement.play();
+            this.stopped = false;
+            this.fire("audioplay");
+        }
+    }, {
+        key: "pause",
+        value: function pause(mediaelement) {
+            mediaelement.pause();
+            this.fire("audiopause");
+        }
+    }, {
+        key: "stop",
+        value: function stop(mediaelement) {
+            mediaelement.pause();
+            mediaelement.currentTime = 0;
+            this.stopped = true;
+            this.fire("audiostop");
+        }
+    }, {
+        key: "toggle",
+        value: function toggle(mediaelement) {
+            var self = this;
+            if (mediaelement.paused) {
+                self.play(mediaelement);
+            } else {
+                self.pause(mediaelement);
+            }
+        }
+    }]);
+
+    return MediaBehavior;
+})(polymer.Base);
+
+var AudioPlayer = (function (_polymer$Base2) {
+    _inherits(AudioPlayer, _polymer$Base2);
 
     function AudioPlayer() {
         _classCallCheck(this, AudioPlayer);
 
-        return _possibleConstructorReturn(this, Object.getPrototypeOf(AudioPlayer).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        var _this2 = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(AudioPlayer)).call.apply(_Object$getPrototypeO, [this].concat(_toConsumableArray(args))));
+
+        _this2.currentIndex = 0;
+        _this2.formatCurrentTime = 0;
+        _this2.formatDuration = 0;
+        return _this2;
     }
 
     _createClass(AudioPlayer, [{
         key: "ready",
         value: function ready() {
+            var self = this;
             this.initEle();
+            self.sourcelement = self.$.visAudio.querySelector('source');
+            self.duration = 600;
+            self.changing = false;
+        }
+    }, {
+        key: "readytoshow",
+        value: function readytoshow() {
+            var self = this;
+            console.dir(this);
+            console.dir(this.items);
+            self.setsource(self.$.visAudio, self.items[self.currentIndex].location);
+            var index = 0;
+            self.fire("readytoshow");
+        }
+    }, {
+        key: "setsource",
+        value: function setsource(element, src) {
+            console.log(src);
+            element.src = src;
+        }
+    }, {
+        key: "prev",
+        value: function prev() {
+            var self = this;
+            if (self.currentIndex > 0) {
+                self.currentIndex--;
+                self.setsource(self.$.visAudio, self.items[self.currentIndex].location);
+                return true;
+            }
+            return false;
+        }
+    }, {
+        key: "next",
+        value: function next() {
+            var self = this;
+            if (self.currentIndex < self.items.length - 1) {
+                self.currentIndex++;
+                self.setsource(self.$.visAudio, self.items[self.currentIndex].location);
+                return true;
+            }
+            return false;
         }
     }, {
         key: "initEle",
@@ -65,13 +171,183 @@ var AudioPlayer = (function (_polymer$Base) {
                 startEvent: []
             });
         }
+    }, {
+        key: "updatePaperSlider",
+        value: function updatePaperSlider(value) {
+            var self = this;
+            // 更新加载进度
+            self.$.videoprogress.value = value / self.duration * 100;
+            self.$.videoprogress.rangeSlider.update();
+        }
+        // 引入时
+
+    }, {
+        key: "HanlderLoadStart",
+        value: function HanlderLoadStart(e) {
+            console.log("start");
+            var self = this;
+            self.addEventListener("audioplay", function () {
+                self.async(function () {}, 3000);
+            });
+        }
+        /**
+         * 引入成功 开始播放
+         */
+
+    }, {
+        key: "HandlerLoad",
+        value: function HandlerLoad() {
+            var self = this;
+            console.log("go");
+            console.log(self.$.visAudio.src);
+            console.log(self.$.visAudio.duration);
+            console.log("end go");
+            self.currentTime = self.$.visAudio.currentTime;
+            self.duration = self.$.visAudio.duration;
+            self.formatCurrentTime = self.currentTime;
+            self.formatDuration = self.duration;
+            if (self.$.visAudio.buffered.length > 0) {
+                self.updatePaperSlider(self.$.visAudio.buffered.end(0));
+            }
+            self.$.videorange.rangeSlider.update();
+        }
+        // 播放时更新
+
+    }, {
+        key: "HandlerTimeUpdate",
+        value: function HandlerTimeUpdate(e) {
+            var self = this;
+            self.formatCurrentTime = self.$.visAudio.currentTime;
+            self.$.videorange.value = self.$.visAudio.currentTime / self.duration * 100;
+            if (!self.changing) {
+                self.$.videorange.rangeSlider.update();
+            }
+        }
+        // 音频加载
+
+    }, {
+        key: "HanlderProgress",
+        value: function HanlderProgress(e) {
+            var self = this;
+            var range = 0;
+            var bf = self.$.visAudio.buffered;
+            var time = self.$.visAudio.currentTime;
+            if (bf.length > 0) {
+                var loadEnd = bf.end(bf.length - 1);
+                self.updatePaperSlider(loadEnd);
+            }
+        }
+        // 中断时
+
+    }, {
+        key: "HandleAbort",
+        value: function HandleAbort(e) {
+            console.log("abort");
+        }
+        // 暂停时
+
+    }, {
+        key: "HandlePause",
+        value: function HandlePause(e) {
+            console.log("pause");
+        }
+        // 播放结束
+
+    }, {
+        key: "HandlerPlayEnd",
+        value: function HandlerPlayEnd(e) {
+            var self = this;
+            self.$.videorange.value = 0;
+            if (!self.changing) {
+                self.$.videorange.rangeSlider.update();
+            }
+            self.fire("audio-player-playend");
+        }
+    }, {
+        key: "HandlerTimeChange",
+        value: function HandlerTimeChange(value) {
+            var self = this;
+            if (self.duration && !Number.isNaN(self.duration)) {
+                self.changing = true;
+                self.$.videoMedia.currentTime = value / 100 * self.duration;
+            }
+        }
+        /**
+         * 处理播放暂停
+         */
+
+    }, {
+        key: "toggleHandle",
+        value: function toggleHandle() {
+            var self = this;
+            self.$.toggleAudioButton.toggle();
+            self.toggle(self.$.visAudio);
+        }
+        /**
+         * 处理上一首
+         */
+
+    }, {
+        key: "togglePrev",
+        value: function togglePrev() {
+            var self = this;
+            if (self.currentIndex > 0) {
+                self.pause(self.$.visAudio);
+                self.prev();
+                self.play(self.$.visAudio);
+                self.$.toggleAudioButton.toggle();
+            } else {
+                console.log('已经到第一首了');
+            }
+        }
+        /**
+         * 处理下一首
+         */
+
+    }, {
+        key: "toggleNext",
+        value: function toggleNext() {
+            var self = this;
+            if (self.currentIndex < self.items.length - 1) {
+                self.pause(self.$.visAudio);
+                self.next();
+                self.play(self.$.visAudio);
+                self.$.toggleAudioButton.toggle();
+            } else {
+                console.log('已经到最后一首了');
+            }
+        }
+        /**
+         * 听指定歌
+         *
+         * @param index
+         */
+
+    }, {
+        key: "toggleAtIndex",
+        value: function toggleAtIndex(index) {
+            var self = this;
+            if (0 < index < self.items.length - 1) {
+                self.currentIndex = index;
+                self.pause(self.$.visAudio);
+                self.setsource(self.$.visAudio, self.items[self.currentIndex].location);
+                self.play(self.$.visAudio);
+                self.$.toggleAudioButton.toggle();
+            } else {
+                console.log('已经到最后一首了');
+            }
+        }
     }]);
 
     return AudioPlayer;
 })(polymer.Base);
-AudioPlayer = __decorate([component("audio-player")], AudioPlayer);
+__decorate([property({ type: Object })], AudioPlayer.prototype, "items");
+__decorate([property({ type: Number })], AudioPlayer.prototype, "currentTime");
+__decorate([property({ type: Number })], AudioPlayer.prototype, "duration");
+__decorate([property({ type: Number })], AudioPlayer.prototype, "formatCurrentTime");
+__decorate([property({ type: Number })], AudioPlayer.prototype, "formatDuration");
+AudioPlayer = __decorate([component("audio-player"), behavior(MediaBehavior)], AudioPlayer);
 AudioPlayer.register();
-//# sourceMappingURL=audio-player.js.map
 
 },{"../../lib/rangeSlider":2}],2:[function(require,module,exports){
 'use strict';
@@ -775,6 +1051,5 @@ Plugin.create = function (el, options) {
     }
 };
 exports.default = Plugin;
-//# sourceMappingURL=rangeSlider.js.map
 
 },{}]},{},[1])

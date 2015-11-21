@@ -208,6 +208,25 @@ main {
   .vis-audio-player--default .vis-audio-player__list {
     color: #ffffff; }
 
+.audio-player--default .audio-player__toggle {
+  position: relative; }
+  .audio-player--default .audio-player__toggle .pause.audio-player {
+    position: absolute;
+    left: 0;
+    top: 0; }
+  .audio-player--default .audio-player__toggle .play.audio-player {
+    position: relative;
+    left: 0;
+    top: 0; }
+  .audio-player--default .audio-player__toggle .pause.audio-player {
+    visibility: hidden; }
+  .audio-player--default .audio-player__toggle.playing .pause.audio-player {
+    visibility: visible;
+    position: relative; }
+  .audio-player--default .audio-player__toggle.playing .play.audio-player {
+    visibility: hidden;
+    position: absolute; }
+
 .silder-nav--default .silder-nav__item {
   padding-top: 0;
   padding-bottom: 0; }
@@ -218,6 +237,8 @@ main {
     padding-top: 10px;
     padding-bottom: 10px; }
 .vis-audio-player--default .vis-audio-player__list a {
+  color: #ffffff; }
+html toggle-button {
   color: #ffffff; }
 
 #videorange + .rangeSlider .rangeSlider__fill {

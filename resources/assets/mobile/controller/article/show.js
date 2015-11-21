@@ -13,4 +13,3 @@
     window.addEventListener('WebComponentsReady', function () {
     });
 })(document);
-//# sourceMappingURL=show.js.map

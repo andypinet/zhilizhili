@@ -9,6 +9,7 @@
     <link rel="import" href="/assets/pc/elements/view-controller/view-controller.html">
     <link rel="import" href="/assets/pc/elements/lfx-modal/lfx-modal.html">
     <link rel="import" href="/assets/pc/elements/audio-player/audio-player.html">
+    <link rel="import" href="/assets/pc/elements/toggle-button/toggle-button.html">
 @stop
 
 @section('content')
@@ -88,27 +89,27 @@
                 </div>
             </div>
         </main>
-        <lfx-modal class="full-fixed audio-player-modal" style="display: none;">
+        <lfx-modal class="full-fixed audio-player-modal">
             <div class="vis-audio-player vis-audio-player--default">
                 <div class="vis-audio-player__list">
-                    <iron-ajax url="/assets/pc/data/music.json" last-response="{{data}}" auto></iron-ajax>
+                    <iron-ajax id="hihi" url="/assets/pc/data/music.json" last-response="{{data}}" auto></iron-ajax>
                     <iron-list items="[[data]]" as="item">
                         <template>
                             <div class="vis-audio-player__list-item">
-                                <div>Name: <a href="[[item.location]]">[[item.name]]</a></div>
+                                <div>Name: <span>[[item.name]]</span></div>
                             </div>
                         </template>
                     </iron-list>
                 </div>
             </div>
-            <audio-player items="[[data]]"></audio-player>
+
+            <audio-player></audio-player>
         </lfx-modal>
     </view-controller>
 @stop
 
 @section('script')
     <script src="/js/rangeSlider.js"></script>
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/assets/pc/controller/index.js"></script>
     <script>
         window.addEventListener("WebComponentsReady", function(){
@@ -259,7 +260,7 @@
 
             var slideNavItems = document.querySelectorAll('#sliderNav .btn');
 
-            console.dir(slideNavItems);
+//            console.dir(slideNavItems);
             
             var indexes = [0, 1, 2, 3, 4];
 
@@ -267,7 +268,7 @@
                 var sliderNavItem = slideNavItems[index];
                 var sliderIndex = parseInt(sliderNavItem.getAttribute('slider-index'));
 
-                console.dir(sliderNavItem);
+//                console.dir(sliderNavItem);
                 
                 sliderNavItem.addEventListener('click', function handle(){
                     console.log('请求第' + (sliderIndex +1));

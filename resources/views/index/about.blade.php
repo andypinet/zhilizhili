@@ -1,6 +1,7 @@
 @extends('base')
 
 @section('head')
+    <script src="/bower_components/gsap/src/minified/TweenMax.min.js"></script>
     <link rel="import" href="bower_components/zhilizhili-slider/slider-item.html">
     <link rel="import" href="bower_components/zhilizhili-slider/zhilizhili-slider.html">
     <link rel="import" href="../bower_components/paper-styles/paper-styles.html">
