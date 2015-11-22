@@ -99,7 +99,7 @@ main {
 .nav-item:nth-of-type(1) {
   left: 120px;
   top: 260px;
-  background-color: rgb(100, 176, 102);
+  background-color: rgb(130, 156, 107);
   z-index: 4;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
@@ -108,7 +108,7 @@ main {
 .nav-item:nth-of-type(2) {
   left: 180px;
   top: 200px;
-  background-color: rgb(35, 70, 190);
+  background-color: rgb(140, 37, 215);
   z-index: 3;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
@@ -117,7 +117,7 @@ main {
 .nav-item:nth-of-type(3) {
   left: 240px;
   top: 140px;
-  background-color: rgb(245, 66, 111);
+  background-color: rgb(20, 140, 203);
   z-index: 2;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
@@ -126,7 +126,7 @@ main {
 .nav-item:nth-of-type(4) {
   left: 300px;
   top: 80px;
-  background-color: rgb(88, 241, 57);
+  background-color: rgb(201, 33, 198);
   z-index: 1;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
@@ -135,7 +135,7 @@ main {
 .nav-item:nth-of-type(5) {
   left: 360px;
   top: 20px;
-  background-color: rgb(115, 166, 4);
+  background-color: rgb(101, 83, 173);
   z-index: 0;
   -webkit-transition: all 1s ease;
   transition: all 1s ease;

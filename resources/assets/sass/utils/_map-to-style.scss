@@ -1,5 +1,0 @@
-@mixin map-to-style($map) {
-  @each $key, $value in $map {
-    #{$key}: $value
-  }
-}

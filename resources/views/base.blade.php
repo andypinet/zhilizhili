@@ -33,7 +33,6 @@
     <link rel="import" href="/components/top-bar.html">
     <link rel="import" href="/components/dropdown-menu.html">
     <link rel="import" href="/components/appstyle.html">
-    <link rel="stylesheet" href="/css/flexgrid.css">
     <link rel="stylesheet" href="/css/app.css">
     <style>
         .polymer-support-oldbrowser {

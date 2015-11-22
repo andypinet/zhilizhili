@@ -1,16 +1,3 @@
-var elixir = require('laravel-elixir');
-
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Sass
- | file for our application, as well as publishing vendor resources.
- |
- */
-
 var gulp = require('gulp-param')(require('gulp'), process.argv);
 var zTask = require("require-dir")("../zhilizhili-gulp-task/build").index;
 
@@ -207,12 +194,15 @@ gulp.task('build:element', function(name, path){
 			.pipe(gulp.dest(`${destpath}`));
 });
 
+var uglify = require('gulp-uglify');
+
 gulp.task("deploy:element", function(name, path) {
 	var src = paths.srcRoot + path + name + '/';
 	var dest = paths.destRoot + path + name + '/';
 	
 	gulp.src(`${src}${name}.js`)
 		.pipe(es5)
+		.pipe(uglify())
 		.pipe(gulp.dest(`${dest}`));
 
 	gulp.src(`${src}${name}.html`)
@@ -222,4 +212,17 @@ gulp.task("deploy:element", function(name, path) {
 		src: `${src}${name}.scss`,
 		dest: `${dest}`
 	});
+});
+
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
+
+gulp.task('imagemin', function(){
+	return gulp.src('resources/assets/pc/img/*')
+		.pipe(imagemin({
+			progressive: true,
+			svgoPlugins: [{removeViewBox: false}],
+			use: [pngquant()]
+		}))
+		.pipe(gulp.dest('public/assets/pc/img'));
 });
