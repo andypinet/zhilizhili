@@ -1,6 +1,8 @@
 var gulp = require('gulp-param')(require('gulp'), process.argv);
 var zTask = require("require-dir")("../zhilizhili-gulp-task/build").index;
 
+var debug = false;
+
 var paths = {
 	srcRoot: 'resources/',
 	destRoot: 'public/'
@@ -139,10 +141,19 @@ gulp.task("watch-pc", function(){
 	gulp.watch(paths.srcRoot + 'assets/pc/controller/**/*.js', pcumddeb)
 });
 
+var uglify = require('gulp-uglify');
+
 gulp.task('build-es', function(src, dest) {
-	return gulp.src(src)
+	if (debug) {
+		return gulp.src(src)
 			.pipe(es5)
 			.pipe(gulp.dest(dest))
+	} else {
+		return gulp.src(src)
+			.pipe(es5)
+			.pipe(uglify())
+			.pipe(gulp.dest(dest))
+	}
 });
 
 const babel = require('gulp-babel');
@@ -193,8 +204,6 @@ gulp.task('build:element', function(name, path){
 			.pipe(rename(name + ".ts"))
 			.pipe(gulp.dest(`${destpath}`));
 });
-
-var uglify = require('gulp-uglify');
 
 gulp.task("deploy:element", function(name, path) {
 	var src = paths.srcRoot + path + name + '/';

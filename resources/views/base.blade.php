@@ -140,9 +140,13 @@
         <div class="polymer-support-oldbrowser" id="polymer-support-oldbrowser">
             web components 正在努力加载中
         </div>
+        @if (!is_null(Auth::user()))
+            <input id="username" type="hidden" value="<% Auth::user()->name %>">
+        @else
+            <input id="username" type="hidden" value="">
+        @endif
     </template>
 </body>
-<script src="/controller/ViewController.js"></script>
 <script src="/assets/pc/controller/base.js"></script>
 @yield('script')
 </html>
