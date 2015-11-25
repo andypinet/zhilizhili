@@ -92,7 +92,7 @@
         <lfx-modal class="full-fixed audio-player-modal">
             <div class="vis-audio-player vis-audio-player--default">
                 <div class="vis-audio-player__list">
-                    <iron-ajax id="hihi" url="/assets/pc/data/music.json" last-response="{{data}}" auto></iron-ajax>
+                    <iron-ajax id="hihi" url="/assets/pc/data/local.json" last-response="{{data}}" auto></iron-ajax>
                     <iron-list items="[[data]]" as="item">
                         <template>
                             <div class="vis-audio-player__list-item">
@@ -103,7 +103,7 @@
                 </div>
             </div>
 
-            <audio-player></audio-player>
+            <audio-player jsonurl="/assets/pc/data/local.json"></audio-player>
         </lfx-modal>
     </view-controller>
 @stop

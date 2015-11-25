@@ -1,8 +1,8 @@
 <dom-module id="audio-player">
     <!-- ... your custom element here... -->
-    <template>
+    <template jsonurl="{{jsonurl}}">
         <div class="audio-player audio-player--default">
-            <iron-ajax id="sourceorigin" url="/assets/pc/data/music.json" last-response="{{items}}" on-response="readytoshow" auto></iron-ajax>
+            <iron-ajax id="sourceorigin" url="{{jsonurl}}" last-response="{{items}}" on-response="readytoshow"></iron-ajax>
             <audio id="visAudio" on-loadstart="HanlderLoadStart" on-canplay="HandlerLoad" on-timeupdate="HandlerTimeUpdate" on-abort="HandleAbort"
                    on-progress="HanlderProgress" on-pause="HandlePause" on-ended="HandlerPlayEnd">
                 <source>
