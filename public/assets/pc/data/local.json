@@ -1,6 +1,14 @@
 [
   {
+    "name": "茅野愛衣,戸松遥,早見沙織 - secret base ~君がくれたもの~ (10 years after Ver.)",
+    "location": "http://localhost/茅野愛衣,戸松遥,早見沙織 - secret base ~君がくれたもの~ (10 years after Ver.).mp3"
+  },
+  {
+    "name": "Aimer - Brave Shine",
+    "location": "http://localhost/Aimer - Brave Shine.mp3"
+  },
+  {
     "name": "36 chapter/Tiara-Feat. Spontania",
-    "location": "http://192.168.0.100/36 chapter@@@Tiara-Feat. Spontania.mp3"
+    "location": "http://localhost/36 chapter@@@Tiara-Feat. Spontania.mp3"
   }
 ]
