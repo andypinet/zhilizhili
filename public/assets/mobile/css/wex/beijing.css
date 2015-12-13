@@ -1,0 +1,170 @@
+.ani-duration-100 {
+  -webkit-animation-duration: 100ms;
+  animation-duration: 100ms; }
+
+.ani-duration-200 {
+  -webkit-animation-duration: 200ms;
+  animation-duration: 200ms; }
+
+.ani-duration-300 {
+  -webkit-animation-duration: 300ms;
+  animation-duration: 300ms; }
+
+.ani-duration-400 {
+  -webkit-animation-duration: 400ms;
+  animation-duration: 400ms; }
+
+.ani-duration-500 {
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms; }
+
+.ani-duration-600 {
+  -webkit-animation-duration: 600ms;
+  animation-duration: 600ms; }
+
+.ani-duration-700 {
+  -webkit-animation-duration: 700ms;
+  animation-duration: 700ms; }
+
+.ani-duration-800 {
+  -webkit-animation-duration: 800ms;
+  animation-duration: 800ms; }
+
+.ani-duration-900 {
+  -webkit-animation-duration: 900ms;
+  animation-duration: 900ms; }
+
+.ani-duration-1000 {
+  -webkit-animation-duration: 1000ms;
+  animation-duration: 1000ms; }
+
+.ani-duration-1100 {
+  -webkit-animation-duration: 1100ms;
+  animation-duration: 1100ms; }
+
+.ani-duration-1200 {
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms; }
+
+.ani-duration-1300 {
+  -webkit-animation-duration: 1300ms;
+  animation-duration: 1300ms; }
+
+.ani-duration-1400 {
+  -webkit-animation-duration: 1400ms;
+  animation-duration: 1400ms; }
+
+.ani-duration-1500 {
+  -webkit-animation-duration: 1500ms;
+  animation-duration: 1500ms; }
+
+.ani-duration-1600 {
+  -webkit-animation-duration: 1600ms;
+  animation-duration: 1600ms; }
+
+.ani-duration-1700 {
+  -webkit-animation-duration: 1700ms;
+  animation-duration: 1700ms; }
+
+.ani-duration-1800 {
+  -webkit-animation-duration: 1800ms;
+  animation-duration: 1800ms; }
+
+.ani-duration-1900 {
+  -webkit-animation-duration: 1900ms;
+  animation-duration: 1900ms; }
+
+.ani-duration-2000 {
+  -webkit-animation-duration: 2000ms;
+  animation-duration: 2000ms; }
+
+@media screen and (max-width: 320px) {
+  .beijing1 {
+    background-image: url("../../img/beijing/12beijing-size-320.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; } }
+@media screen and (min-width: 321px) and (max-width: 414px) {
+  .beijing1 {
+    background-image: url("../../img/beijing/12beijing-size-414.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; } }
+@media screen and (min-width: 412px) {
+  .beijing1 {
+    background-image: url("../../img/beijing/5beijing.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; } }
+.beijing.current {
+  z-index: 1000; }
+
+.beijing3 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing4 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing5 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing6 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing7 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing8 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing9 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing10 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing11 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing12 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing13 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+
+
+/*# sourceMappingURL=../map/wex/beijing.css.map */

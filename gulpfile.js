@@ -1,7 +1,7 @@
 var gulp = require('gulp-param')(require('gulp'), process.argv);
 var zTask = require("require-dir")("../zhilizhili-gulp-task/build").index;
 
-var debug = false;
+var debug = true;
 
 var paths = {
 	srcRoot: 'resources/',
@@ -99,7 +99,7 @@ gulp.task("build:framework", function(){
 gulp.task('build-mobilesass', function () {
 	zTask.require('build-sass')({
 		src: paths.srcRoot + 'assets/mobile/sass/**/*.scss',
-		dest: paths.destRoot + 'mobile/css'
+		dest: paths.destRoot + 'assets/mobile/css'
 	});
 });
 

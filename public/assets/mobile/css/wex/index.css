@@ -1,0 +1,413 @@
+.items, .items .item {
+  width: 100%;
+  height: 100%; }
+
+.items, .items .item {
+  width: 100%;
+  height: 100%; }
+
+.ani-duration-100 {
+  -webkit-animation-duration: 100ms;
+  animation-duration: 100ms; }
+
+.ani-duration-200 {
+  -webkit-animation-duration: 200ms;
+  animation-duration: 200ms; }
+
+.ani-duration-300 {
+  -webkit-animation-duration: 300ms;
+  animation-duration: 300ms; }
+
+.ani-duration-400 {
+  -webkit-animation-duration: 400ms;
+  animation-duration: 400ms; }
+
+.ani-duration-500 {
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms; }
+
+.ani-duration-600 {
+  -webkit-animation-duration: 600ms;
+  animation-duration: 600ms; }
+
+.ani-duration-700 {
+  -webkit-animation-duration: 700ms;
+  animation-duration: 700ms; }
+
+.ani-duration-800 {
+  -webkit-animation-duration: 800ms;
+  animation-duration: 800ms; }
+
+.ani-duration-900 {
+  -webkit-animation-duration: 900ms;
+  animation-duration: 900ms; }
+
+.ani-duration-1000 {
+  -webkit-animation-duration: 1000ms;
+  animation-duration: 1000ms; }
+
+.ani-duration-1100 {
+  -webkit-animation-duration: 1100ms;
+  animation-duration: 1100ms; }
+
+.ani-duration-1200 {
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms; }
+
+.ani-duration-1300 {
+  -webkit-animation-duration: 1300ms;
+  animation-duration: 1300ms; }
+
+.ani-duration-1400 {
+  -webkit-animation-duration: 1400ms;
+  animation-duration: 1400ms; }
+
+.ani-duration-1500 {
+  -webkit-animation-duration: 1500ms;
+  animation-duration: 1500ms; }
+
+.ani-duration-1600 {
+  -webkit-animation-duration: 1600ms;
+  animation-duration: 1600ms; }
+
+.ani-duration-1700 {
+  -webkit-animation-duration: 1700ms;
+  animation-duration: 1700ms; }
+
+.ani-duration-1800 {
+  -webkit-animation-duration: 1800ms;
+  animation-duration: 1800ms; }
+
+.ani-duration-1900 {
+  -webkit-animation-duration: 1900ms;
+  animation-duration: 1900ms; }
+
+.ani-duration-2000 {
+  -webkit-animation-duration: 2000ms;
+  animation-duration: 2000ms; }
+
+@media screen and (max-width: 320px) {
+  .beijing1 {
+    background-image: url("../../img/beijing/12beijing-size-320.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; } }
+@media screen and (min-width: 321px) and (max-width: 414px) {
+  .beijing1 {
+    background-image: url("../../img/beijing/12beijing-size-414.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; } }
+@media screen and (min-width: 412px) {
+  .beijing1 {
+    background-image: url("../../img/beijing/5beijing.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; } }
+.beijing.current {
+  z-index: 1000; }
+
+.beijing3 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing4 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing5 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing6 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing7 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing8 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing9 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing10 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing11 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing12 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing13 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+* {
+  box-sizing: border-box; }
+
+body, html {
+  width: 100%;
+  height: 100%; }
+
+body {
+  margin: 0; }
+
+.full-parent {
+  width: 100%;
+  height: 100%; }
+
+body {
+  overflow: hidden; }
+
+.items .item {
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+.item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden; }
+  .item .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; }
+    .item .bg img {
+      width: 100%; }
+
+.logo {
+  width: 100%;
+  margin: 0 auto; }
+
+.text {
+  width: 100%; }
+
+.item {
+  text-align: center;
+  color: #ea9a00; }
+
+.biaodan input {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #ea9a00;
+  color: #ea9a00; }
+  .biaodan input::-webkit-input-placeholder {
+    color: #ea9a00; }
+.biaodan textarea {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #ea9a00;
+  color: #ea9a00; }
+  .biaodan textarea::-webkit-input-placeholder {
+    color: #ea9a00; }
+.biaodan .btn {
+  display: block;
+  color: #ffffff;
+  background-color: #ea9a00;
+  text-align: center;
+  border: 0;
+  margin: 0 auto; }
+  .biaodan .btn:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle; }
+
+.flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.flex.horizontal {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row; }
+
+.flex.horizontal.center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.flex.horizontal.center-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.flex-1 {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1; }
+
+.flex-2 {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+  -ms-flex: 2;
+  flex: 2; }
+
+.flex-3 {
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3; }
+
+.flex-4 {
+  -webkit-box-flex: 4;
+  -webkit-flex: 4;
+  -ms-flex: 4;
+  flex: 4; }
+
+.flex-5 {
+  -webkit-box-flex: 5;
+  -webkit-flex: 5;
+  -ms-flex: 5;
+  flex: 5; }
+
+.flex-6 {
+  -webkit-box-flex: 6;
+  -webkit-flex: 6;
+  -ms-flex: 6;
+  flex: 6; }
+
+.flex-7 {
+  -webkit-box-flex: 7;
+  -webkit-flex: 7;
+  -ms-flex: 7;
+  flex: 7; }
+
+.flex-8 {
+  -webkit-box-flex: 8;
+  -webkit-flex: 8;
+  -ms-flex: 8;
+  flex: 8; }
+
+.flex-9 {
+  -webkit-box-flex: 9;
+  -webkit-flex: 9;
+  -ms-flex: 9;
+  flex: 9; }
+
+.flex-10 {
+  -webkit-box-flex: 10;
+  -webkit-flex: 10;
+  -ms-flex: 10;
+  flex: 10; }
+
+.flex-11 {
+  -webkit-box-flex: 11;
+  -webkit-flex: 11;
+  -ms-flex: 11;
+  flex: 11; }
+
+.flex-12 {
+  -webkit-box-flex: 12;
+  -webkit-flex: 12;
+  -ms-flex: 12;
+  flex: 12; }
+
+.beijing2 {
+  background-image: url("../../img/beijing/5beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing3 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.item1 .logo {
+  width: 30vw;
+  height: 30vw;
+  margin-top: 36vw; }
+.item1 .text1 {
+  margin-top: 12vw; }
+  .item1 .text1 .p1 {
+    font-size: 6vw; }
+  .item1 .text1 .p2 {
+    margin-top: 4.93333vw;
+    font-size: 4vw; }
+
+.biaodan .form {
+  margin-top: 5.86701vh;
+  margin-left: 12vw;
+  margin-right: 5.86701vh; }
+.biaodan input {
+  margin-bottom: 5.86701vh;
+  padding: 2.66667vw;
+  border-radius: 2.66667vw; }
+.biaodan textarea {
+  margin-bottom: 5.86701vh;
+  padding: 2.66667vw;
+  border-radius: 2.66667vw; }
+.biaodan .btn {
+  width: 40.8vw;
+  height: 11.06667vw;
+  font-size: 5.33333vw;
+  border-radius: 2.66667vw; }
+
+/*! json-encode: {".item1 .logo": {"width": "30vw", "height": "30vw", "margin-top": "36vw"}, ".item1 .text1": {"margin-top": "12vw"}, ".item1 .text1 .p1": {"font-size": "6vw"}, ".item1 .text1 .p2": {"margin-top": "4.93333vw", "font-size": "4vw"}, ".biaodan .form": {"margin-right": "5.86701vh"}, ".biaodan input": {"padding": "2.66667vw", "border-radius": "2.66667vw"}, ".biaodan textarea": {"padding": "2.66667vw", "border-radius": "2.66667vw"}, ".biaodan .btn": {"width": "40.8vw", "height": "11.06667vw", "font-size": "5.33333vw", "border-radius": "2.66667vw"}} */
+body::before {
+  content: '{".item1 .logo": {"width": "30vw", "height": "30vw", "margin-top": "36vw"}, ".item1 .text1": {"margin-top": "12vw"}, ".item1 .text1 .p1": {"font-size": "6vw"}, ".item1 .text1 .p2": {"margin-top": "4.93333vw", "font-size": "4vw"}, ".biaodan .form": {"margin-right": "5.86701vh"}, ".biaodan input": {"padding": "2.66667vw", "border-radius": "2.66667vw"}, ".biaodan textarea": {"padding": "2.66667vw", "border-radius": "2.66667vw"}, ".biaodan .btn": {"width": "40.8vw", "height": "11.06667vw", "font-size": "5.33333vw", "border-radius": "2.66667vw"}}';
+  display: block;
+  height: 0;
+  overflow: hidden;
+  width: 0; }
+
+head {
+  font-family: '{".item1 .logo": {"width": "30vw", "height": "30vw", "margin-top": "36vw"}, ".item1 .text1": {"margin-top": "12vw"}, ".item1 .text1 .p1": {"font-size": "6vw"}, ".item1 .text1 .p2": {"margin-top": "4.93333vw", "font-size": "4vw"}, ".biaodan .form": {"margin-right": "5.86701vh"}, ".biaodan input": {"padding": "2.66667vw", "border-radius": "2.66667vw"}, ".biaodan textarea": {"padding": "2.66667vw", "border-radius": "2.66667vw"}, ".biaodan .btn": {"width": "40.8vw", "height": "11.06667vw", "font-size": "5.33333vw", "border-radius": "2.66667vw"}}'; }
+
+@media -json-encode {
+  json {
+    json: '{".item1 .logo": {"width": "30vw", "height": "30vw", "margin-top": "36vw"}, ".item1 .text1": {"margin-top": "12vw"}, ".item1 .text1 .p1": {"font-size": "6vw"}, ".item1 .text1 .p2": {"margin-top": "4.93333vw", "font-size": "4vw"}, ".biaodan .form": {"margin-right": "5.86701vh"}, ".biaodan input": {"padding": "2.66667vw", "border-radius": "2.66667vw"}, ".biaodan textarea": {"padding": "2.66667vw", "border-radius": "2.66667vw"}, ".biaodan .btn": {"width": "40.8vw", "height": "11.06667vw", "font-size": "5.33333vw", "border-radius": "2.66667vw"}}'; } }
+
+
+
+/*# sourceMappingURL=../map/wex/index.css.map */

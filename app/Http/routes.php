@@ -31,6 +31,8 @@ Route::group(['middleware' => 'cros'], function(\Illuminate\Routing\Router $rout
 Route::resource('user', 'UserController');
 Route::resource('admin', 'AdminController');
 Route::resource('music', 'MusicController');
+Route::resource('wex', 'WexController');
+Route::get('wex/tsc', 'WexController@tsc');
 
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -51,7 +53,7 @@ $api->version('v1', function ($api) {
     $api->group(['namespace' => 'App\Api\Controllers'], function($api) {
         $api->post('user/login', 'AuthController@authenticate');
         $api->post('user/register', 'AuthController@register');
-        $api->group(["middleware" => "oauth"], function($api){
+        $api->group([], function($api){
             $api->get('user/me', 'AuthController@getAuthenticatedUser');
             $api->get('videos', 'VideoController@index');
             $api->get('videos/{id}', 'VideoController@show');

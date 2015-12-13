@@ -1,0 +1,327 @@
+.items, .items .item {
+  width: 100%;
+  height: 100%; }
+
+.items, .items .item {
+  width: 100%;
+  height: 100%; }
+
+.ani-duration-100 {
+  -webkit-animation-duration: 100ms;
+  animation-duration: 100ms; }
+
+.ani-duration-200 {
+  -webkit-animation-duration: 200ms;
+  animation-duration: 200ms; }
+
+.ani-duration-300 {
+  -webkit-animation-duration: 300ms;
+  animation-duration: 300ms; }
+
+.ani-duration-400 {
+  -webkit-animation-duration: 400ms;
+  animation-duration: 400ms; }
+
+.ani-duration-500 {
+  -webkit-animation-duration: 500ms;
+  animation-duration: 500ms; }
+
+.ani-duration-600 {
+  -webkit-animation-duration: 600ms;
+  animation-duration: 600ms; }
+
+.ani-duration-700 {
+  -webkit-animation-duration: 700ms;
+  animation-duration: 700ms; }
+
+.ani-duration-800 {
+  -webkit-animation-duration: 800ms;
+  animation-duration: 800ms; }
+
+.ani-duration-900 {
+  -webkit-animation-duration: 900ms;
+  animation-duration: 900ms; }
+
+.ani-duration-1000 {
+  -webkit-animation-duration: 1000ms;
+  animation-duration: 1000ms; }
+
+.ani-duration-1100 {
+  -webkit-animation-duration: 1100ms;
+  animation-duration: 1100ms; }
+
+.ani-duration-1200 {
+  -webkit-animation-duration: 1200ms;
+  animation-duration: 1200ms; }
+
+.ani-duration-1300 {
+  -webkit-animation-duration: 1300ms;
+  animation-duration: 1300ms; }
+
+.ani-duration-1400 {
+  -webkit-animation-duration: 1400ms;
+  animation-duration: 1400ms; }
+
+.ani-duration-1500 {
+  -webkit-animation-duration: 1500ms;
+  animation-duration: 1500ms; }
+
+.ani-duration-1600 {
+  -webkit-animation-duration: 1600ms;
+  animation-duration: 1600ms; }
+
+.ani-duration-1700 {
+  -webkit-animation-duration: 1700ms;
+  animation-duration: 1700ms; }
+
+.ani-duration-1800 {
+  -webkit-animation-duration: 1800ms;
+  animation-duration: 1800ms; }
+
+.ani-duration-1900 {
+  -webkit-animation-duration: 1900ms;
+  animation-duration: 1900ms; }
+
+.ani-duration-2000 {
+  -webkit-animation-duration: 2000ms;
+  animation-duration: 2000ms; }
+
+@media screen and (max-width: 320px) {
+  .beijing1 {
+    background-image: url("../../img/beijing/12beijing-size-320.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; } }
+@media screen and (min-width: 321px) and (max-width: 414px) {
+  .beijing1 {
+    background-image: url("../../img/beijing/12beijing-size-414.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; } }
+@media screen and (min-width: 412px) {
+  .beijing1 {
+    background-image: url("../../img/beijing/5beijing.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; } }
+.beijing.current {
+  z-index: 1000; }
+
+.beijing3 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing4 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing5 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing6 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing7 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing8 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing9 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing10 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing11 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing12 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing13 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+* {
+  box-sizing: border-box; }
+
+body, html {
+  width: 100%;
+  height: 100%; }
+
+body {
+  margin: 0; }
+
+.full-parent {
+  width: 100%;
+  height: 100%; }
+
+body {
+  overflow: hidden; }
+
+.items .item {
+  position: absolute;
+  left: 0;
+  top: 0; }
+
+.item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden; }
+  .item .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; }
+    .item .bg img {
+      width: 100%; }
+
+.item {
+  opacity: 0; }
+  .item.prev {
+    opacity: 0; }
+  .item.current {
+    opacity: 1; }
+  .item.next {
+    opacity: 0; }
+
+.beijing.current {
+  z-index: 1000; }
+
+.beijing.next {
+  z-index: 999; }
+
+.beijing.prev {
+  z-index: 999; }
+
+.beijing1 {
+  z-index: 12; }
+
+.beijing2 {
+  z-index: 11; }
+
+.beijing3 {
+  z-index: 10; }
+
+.beijing4 {
+  z-index: 9; }
+
+.beijing5 {
+  z-index: 8; }
+
+.beijing6 {
+  z-index: 7; }
+
+.beijing7 {
+  z-index: 6; }
+
+.beijing8 {
+  z-index: 5; }
+
+.beijing9 {
+  z-index: 4; }
+
+.beijing10 {
+  z-index: 3; }
+
+.beijing11 {
+  z-index: 2; }
+
+.beijing12 {
+  z-index: 1; }
+
+.beijing13 {
+  z-index: 0; }
+
+.beijing2 {
+  background-image: url("../../img/beijing/5beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.beijing3 {
+  background-image: url("../../img/beijing/6beijing.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+/*! json-encode: [] */
+body::before {
+  content: "[]";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  width: 0; }
+
+head {
+  font-family: "[]"; }
+
+@media -json-encode {
+  json {
+    json: "[]"; } }
+@-webkit-keyframes customrotateIn {
+  0% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -200deg);
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0; }
+  100% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1; } }
+@keyframes customrotateIn {
+  0% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -200deg);
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0; }
+  100% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1; } }
+
+
+
+/*# sourceMappingURL=../map/wex/donghua.css.map */
