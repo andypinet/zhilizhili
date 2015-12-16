@@ -1,6 +1,0 @@
-{
-	"param":{
-		"pc":{"lifeSpd":8,"lifeSpdAdd":0.5,"lifeSpdMax":50,"item":3,"itemAdd":1,"itemMax":7,"kaihuku0":3,"kaihuku1":6,"kaihuku2":10,"combo":0.2,"moveX":30,"moveY":20,"moveSpeed":0.338,"itemRangeX":550,"itemRangeY":220,"fov":45,"lineLife":35},
-		"smt":{"lifeSpd":8,"lifeSpdAdd":1,"lifeSpdMax":50,"item":3,"itemAdd":1,"itemMax":7,"kaihuku0":3,"kaihuku1":6,"kaihuku2":10,"combo":0.2,"fov":45,"lineLife":35,"moveX":60,"moveY":0,"moveSpeed":0.1,"itemRangeX":220,"itemRangeY":150}
-	}
-}
