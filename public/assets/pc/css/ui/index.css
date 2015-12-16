@@ -271,6 +271,13 @@ body {
 .icon-times:before {
   content: ""; }
 
+.rangeSlider, .rangeSlider .rangeSlider__fill {
+  background: #d6d6d6;
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  height: 3px; }
+
 .icon-angle-left:before {
   content: ""; }
 
@@ -489,6 +496,8 @@ body {
 .list-group {
   padding-left: 0;
   margin: 0; }
+  ul.list-group {
+    list-style: none; }
   .list-group .list-group__item {
     padding: 20px 50px; }
 
@@ -537,6 +546,8 @@ body {
     border: 0;
     background-color: transparent;
     padding: 0; }
+  .btn:focus {
+    outline: none; }
 
 .video {
   position: relative; }
@@ -1050,6 +1061,55 @@ h6 {
       content: ""; }
   .form-radio input[type="radio"]:checked + div:after {
     content: ""; }
+
+.rangeSlider {
+  position: relative; }
+  .rangeSlider--disabled {
+    opacity: 0.4; }
+  .rangeSlider .rangeSlider__fill {
+    background: #3367D6;
+    position: absolute;
+    top: 0;
+    z-index: 2; }
+  .rangeSlider .rangeSlider__handle {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    z-index: 3;
+    background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.1));
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    top: -5px; }
+    .rangeSlider .rangeSlider__handle:after {
+      content: "";
+      display: block;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.13), rgba(255, 255, 255, 0));
+      background-image: linear-gradient(rgba(0, 0, 0, 0.13), rgba(255, 255, 255, 0));
+      border-radius: 50%;
+      width: 7px;
+      height: 7px; }
+    .rangeSlider .rangeSlider__handle:active {
+      background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12));
+      background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12)); }
+    input[type="range"]:focus + .rangeSlider .rangeSlider__handle {
+      box-shadow: 0 0 8px rgba(142, 68, 173, 0.9); }
+  .rangeSlider .rangeSlider__buffer {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    height: 3px;
+    background: #7396e3;
+    border-radius: 10px; }
 
 .icon-btn--block {
   height: auto; }

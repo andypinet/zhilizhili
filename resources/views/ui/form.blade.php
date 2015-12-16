@@ -11,21 +11,31 @@
     <link rel="stylesheet" href="/assets/static/css/normalize.css">
     <link rel="stylesheet" href="/assets/pc/css/ui/index.css?v=<% rand(0, 1000) %>">
     <script src="/assets/static/js/dom4.min.js"></script>
-    <script src="/assets/static/js/document-register-element.max.js"></script>
+    <style>
+        [compile] {
+            opacity: 0;
+        }
+
+        [element="ui-select"][compile] {
+            height: 60px;
+        }
+    </style>
 </head>
 <body>
     <section>
-        <ui-select>
-            <option value="name1" selected>
-                name1
-            </option>
-            <option value="name2">
-                name2
-            </option>
-            <option value="name3">
-                name3
-            </option>
-        </ui-select>
+        <div element="ui-select" compile>
+            <select>
+                <option value="name1" selected>
+                    name1
+                </option>
+                <option value="name2">
+                    name2
+                </option>
+                <option value="name3">
+                    name3
+                </option>
+            </select>
+        </div>
         <form id="testForm" class="form">
             <div class="form__group">
                 <div id="pat" class="form-field" data-regex="if: input, do: min(10) | max(15);"
@@ -34,7 +44,8 @@
                 </div>
             </div>
             <div class="form__group">
-                <div class="form-field">
+                <div id="sat" class="form-field" data-regex="if: input, do: min(10) | max(15);"
+                v-on:regex-error="handleRegexError" v-on:regex-success="handleRegexSuccess">
                     <input type="password">
                 </div>
             </div>
@@ -64,17 +75,24 @@
                 </div>
             </div>
             <div class="form__group">
-                <ui-select>
-                    <option value="name1" selected>
-                        name2
-                    </option>
-                    <option value="name2">
-                        name3
-                    </option>
-                    <option value="name3">
-                        name4
-                    </option>
-                </ui-select>
+                <div element="ui-rangeslider" compile>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="form__group">
+                <div element="ui-select" compile>
+                    <select>
+                        <option value="name2" selected>
+                            name2
+                        </option>
+                        <option value="name3">
+                            name3
+                        </option>
+                        <option value="name4">
+                            name4
+                        </option>
+                    </select>
+                </div>
             </div>
             <div class="form__group">
                 <button id="submit" type="submit" class="btn form__btn submit-btn">提交</button>

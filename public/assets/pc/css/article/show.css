@@ -251,17 +251,17 @@ lfx-player.mouseleave > .lfx-player {
   margin: 0 auto;
   margin-top: 30px; }
   .gallery--default .gallery__slider slider-item:nth-of-type(1) {
-    background-color: rgba(198, 183, 226, 0.63); }
+    background-color: rgba(60, 4, 170, 0.03); }
   .gallery--default .gallery__slider slider-item:nth-of-type(2) {
-    background-color: rgba(95, 200, 88, 0.38); }
+    background-color: rgba(40, 179, 101, 0.81); }
   .gallery--default .gallery__slider slider-item:nth-of-type(3) {
-    background-color: rgba(171, 47, 64, 0.86); }
+    background-color: rgba(193, 73, 149, 0.72); }
   .gallery--default .gallery__slider slider-item:nth-of-type(4) {
-    background-color: rgba(24, 206, 187, 0.64); }
+    background-color: rgba(5, 189, 153, 0.59); }
   .gallery--default .gallery__slider slider-item:nth-of-type(5) {
-    background-color: rgba(139, 216, 105, 0.32); }
+    background-color: rgba(243, 137, 239, 0.39); }
   .gallery--default .gallery__slider slider-item:nth-of-type(6) {
-    background-color: rgba(9, 82, 219, 0.68); }
+    background-color: rgba(27, 214, 245, 0.46); }
 .gallery--default .gallery__thumbnail-control {
   width: 1280px;
   overflow: hidden;
@@ -288,17 +288,17 @@ lfx-player.mouseleave > .lfx-player {
   .gallery--default .gallery__thumbnail.active {
     border-color: #2196f3; }
   .gallery--default .gallery__thumbnail:nth-of-type(1) {
-    background-color: rgba(235, 33, 27, 0.26); }
+    background-color: rgba(136, 76, 240, 0.13); }
   .gallery--default .gallery__thumbnail:nth-of-type(2) {
-    background-color: rgba(108, 134, 5, 0.15); }
+    background-color: rgba(165, 121, 182, 0.09); }
   .gallery--default .gallery__thumbnail:nth-of-type(3) {
-    background-color: rgba(70, 9, 118, 0.91); }
+    background-color: rgba(75, 80, 144, 0.39); }
   .gallery--default .gallery__thumbnail:nth-of-type(4) {
-    background-color: rgba(35, 236, 77, 0.45); }
+    background-color: rgba(42, 58, 137, 0.33); }
   .gallery--default .gallery__thumbnail:nth-of-type(5) {
-    background-color: rgba(155, 50, 253, 0.29); }
+    background-color: rgba(102, 143, 235, 0.46); }
   .gallery--default .gallery__thumbnail:nth-of-type(6) {
-    background-color: rgba(0, 197, 112, 0.06); }
+    background-color: rgba(228, 43, 42, 0.87); }
 
 .video-figure--default {
   margin: 0;
@@ -310,7 +310,7 @@ lfx-player.mouseleave > .lfx-player {
     display: block;
     width: 179px;
     height: 100.6875px;
-    background-color: rgba(74, 84, 200, 0.32);
+    background-color: rgba(27, 84, 178, 0.62);
     position: relative; }
   .video-figure--default .video-figure__time {
     padding: 5px 8px;
