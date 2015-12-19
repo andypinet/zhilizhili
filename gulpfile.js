@@ -235,3 +235,32 @@ gulp.task('imagemin', function(){
 		}))
 		.pipe(gulp.dest('public/assets/pc/img'));
 });
+
+gulp.task('build-sys', function(src, dest) {
+    if (debug) {
+        return gulp.src(src)
+            .pipe(gulp.dest(dest))
+    } else {
+        return gulp.src(src)
+            .pipe(uglify())
+            .pipe(gulp.dest(dest))
+    }
+});
+
+var sst = function(name, destpath) {
+	"use strict";
+	return debounce(function(){
+		var src = paths.srcRoot + `${destpath}/${name}.js`;
+		var dest = paths.destRoot + `${destpath}`;
+
+		exec("gulp build-sys -d --src " + src + " --dest " + dest, function(err, stdout, stderr) {
+			console.log(stdout);
+			console.log(stderr);
+		});
+	}, 0)
+};
+
+gulp.task("watch-sys", function(name, dest){
+	dest = dest || '';
+	gulp.watch(paths.srcRoot + `${dest}/${name}.js`, sst(name, dest))
+});

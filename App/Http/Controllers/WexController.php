@@ -18,7 +18,7 @@ class WexController extends Controller
     public function index()
     {
         //
-        return view("auth/newlogin");
+        return view("ui/kde");
     }
 
     /**

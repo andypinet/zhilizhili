@@ -4,7 +4,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html class="" lang="zh-cn"><!--<![endif]-->
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+    <meta http-eq\v="X-UA-Compatible" content="IE=EDGE" />
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Document</title>

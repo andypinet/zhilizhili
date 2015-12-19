@@ -1,6 +1,6 @@
 var utils;
 (function (utils) {
-    let getTransalateXReg = /[-\d]+(?=px)/g;
+    var getTransalateXReg = /[-\d]+(?=px)/g;
     function css(element, style) {
         for (var stypeprop in style) {
             element.style[stypeprop] = style[stypeprop];

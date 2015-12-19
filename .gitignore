@@ -4,6 +4,7 @@ Homestead.yaml
 Homestead.json
 .env
 _ide_helper.php
+/public/assets
 /public/bower_components
 /public/js/about
 /public/upload
