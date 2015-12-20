@@ -30,7 +30,7 @@
         </div>
         <div class="view__item" main>
             <div class="stack-view">
-                <div class="view__item active">
+                <div class="view__item">
                     <header>
                         <div class="navbar">
                             <div class="layout full-parent flex vertical vertical-center">
@@ -127,7 +127,9 @@
                         </div>
                     </section>
                 </div>
-                <div class="view__item"></div>
+                <div class="view__item active">
+                    @include("mobile.ui.partials.form")
+                </div>
                 <div class="view__item"></div>
                 <div class="view__item"></div>
                 <div class="view__item"></div>
