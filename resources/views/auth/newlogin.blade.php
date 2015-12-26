@@ -59,7 +59,5 @@
 </body>
 <script src="/assets/static/js/validator.min.js"></script>
 <script src="/assets/static/js/vue.js"></script>
-<script src="/assets/static/js/utils.js"></script>
-<script src="/assets/static/js/easydom.js"></script>
 <script src="/assets/pc/controller/auth/newlogin.js"></script>
 </html>

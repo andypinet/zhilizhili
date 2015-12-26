@@ -96,6 +96,46 @@ class WexController extends Controller
     public function tsc()
     {
         //
-        return view("wex/tsc");
+        return view("ui/ie8");
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function h5()
+    {
+        //
+        return view("wex/react");
+    }
+
+    public function api($type)
+    {
+        //
+        if ($type == "comments") {
+            return [
+                ["id" => 1, "author" => "Pete Hunt", "text" => "This is one comment"],
+                ["id" => 2, "author" => "Jordan Walke", "text" => "This is *another* comment"]
+            ];
+        }
+        return [];
+    }
+
+    public function savedata($type, Request $request)
+    {
+        //
+        $comment = $request->all();
+        if ($type == "comments") {
+            return [
+                "state" => "success",
+                "data" => $comment
+            ];
+        }
+        return [
+            "state" => "failed",
+            "data" => []
+        ];
     }
 }

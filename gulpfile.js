@@ -71,12 +71,6 @@ var umddeb = debounce(function(){
 }, 10000);
 
 gulp.task("watch-umd", function(){
-	//setInterval(function(){
-	//    exec("gulp build-umd", function(err, stdout, stderr){
-	//        console.log(stdout);
-	//        console.log(stderr);
-	//    });
-	//}, 10000);
 	gulp.watch(paths.srcRoot + 'assets/mobile/controller/**/*.js', umddeb)
 });
 
@@ -163,7 +157,7 @@ const babelify = require("babelify");
 var es5 = browserify({
 	transform: function(filename, opts){
 		return babelify(filename, {
-			presets: ['es2015'],
+			presets: ['es2015', "react"],
 			plugins: ['transform-regenerator']
 		});
 	}
@@ -179,7 +173,7 @@ var zst = function(name, destpath) {
 			console.log(stdout);
 			console.log(stderr);
 		});
-	}, 0)
+	}, 0);
 };
 
 gulp.task("watch-es5", function(name, dest){
@@ -263,4 +257,50 @@ var sst = function(name, destpath) {
 gulp.task("watch-sys", function(name, dest){
 	dest = dest || '';
 	gulp.watch(paths.srcRoot + `${dest}/${name}.js`, sst(name, dest))
+});
+
+gulp.task('build-react', function(src, dest) {
+    if (debug) {
+        return gulp.src(src)
+            .pipe(ms5)
+            .pipe(rename({
+                extname: ".js"
+            }))
+            .pipe(gulp.dest(dest))
+    } else {
+        return gulp.src(src)
+            .pipe(ms5)
+            .pipe(rename({
+                extname: ".js"
+            }))
+            .pipe(uglify())
+            .pipe(gulp.dest(dest))
+    }
+});
+
+var ms5 = browserify({
+    transform: function(filename, opts){
+        return babelify(filename, {
+            presets: ['es2015', "react"],
+            plugins: ['transform-regenerator']
+        });
+    }
+});
+
+var mst = function(name, destpath) {
+    "use strict";
+    return debounce(function(){
+        var src = paths.srcRoot + `${destpath}/${name}.jsx`;
+        var dest = paths.destRoot + `${destpath}`;
+
+        exec("gulp build-react -d --src " + src + " --dest " + dest, function(err, stdout, stderr) {
+            console.log(stdout);
+            console.log(stderr);
+        });
+    }, 0);
+};
+
+gulp.task("watch-react", function(name, dest){
+    dest = dest || '';
+    gulp.watch(paths.srcRoot + `${dest}/${name}.jsx`, mst(name, dest))
 });

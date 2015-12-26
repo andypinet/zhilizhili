@@ -25,45 +25,17 @@
     </script>
     <link rel="stylesheet" href="/assets/static/css/normalize.css">
     <link rel="stylesheet" href="/assets/static/css/anicollection.css">
-    <link rel="stylesheet" href="/assets/mobile/css/ui/touch.css?v=<% rand(0, 1000) %>">
+    <link rel="stylesheet" href="/assets/mobile/css/wex/maocafe.css?v=<% rand(0, 1000) %>">
     <script src="/assets/static/js/dom4.min.js"></script>
 </head>
-<body class="ios ios--default ui-touch">
-    <div class="drawer-view">
-        <div class="view__item" drawer>
-            <div class="scroll-panel">
-                <div class="scroll-panel__body">
-                    <div class="list-group">
-                        <div class="list-group__item">菜单1</div>
-                        <div class="list-group__item">菜单2</div>
-                        <div class="list-group__item">菜单3</div>
-                    </div>
-                </div>
-            </div>
-            <div class="bg"></div>
-        </div>
-        <div class="view__item" main>
-            <div class="stack-view">
-                <div class="view__item">
-                    @include("mobile.ui.partials.default")
-                </div>
-                <div class="view__item">
-                    @include("mobile.ui.partials.form")
-                </div>
-                <div class="view__item active">
-                    @include("mobile.ui.partials.layouttest")
-                </div>
-                <div class="view__item"></div>
-                <div class="view__item"></div>
-            </div>
-            <div class="bg"></div>
-        </div>
+<body class="ios ios--default wex-maocafe">
+    <div class="stack-view">
+        <div class="view__item active">1</div>
+        <div class="view__item"></div>
+        <div class="view__item"></div>
+        <div class="view__item"></div>
+        <div class="view__item"></div>
     </div>
-    <svg class="filter-svg" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <filter id="blur">
-            <feGaussianBlur stdDeviation="6"></feGaussianBlur>
-        </filter>
-    </svg>
 </body>
 <script src="/assets/static/js/validator.min.js"></script>
 <script src="/assets/static/js/anijs.min.js"></script>
