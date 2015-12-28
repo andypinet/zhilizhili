@@ -31,7 +31,7 @@ Route::group(['middleware' => 'cros'], function(\Illuminate\Routing\Router $rout
 Route::resource('user', 'UserController');
 Route::resource('admin', 'AdminController');
 Route::resource('music', 'MusicController');
-Route::get('wex/tsc', 'WexController@tsc');
+Route::get('wex/tsc/{router}', 'WexController@tsc');
 Route::get('wex/h5', 'WexController@h5');
 Route::get('wex/api/{type}', 'WexController@api');
 Route::post('wex/api/{type}', 'WexController@savedata');

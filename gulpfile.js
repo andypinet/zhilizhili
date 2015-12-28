@@ -98,7 +98,7 @@ gulp.task('build-mobilesass', function () {
 });
 
 gulp.task('watch-mobilesass', function() {
-	gulp.watch(paths.srcRoot + 'assets/mobile/sass/**/*.scss', ["build-mobilesass"]);
+	gulp.watch(paths.srcRoot + 'assets/mobile/**/*.scss', ["build-mobilesass"]);
 });
 
 

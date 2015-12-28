@@ -50,9 +50,10 @@
         }
     </script>
     <![endif]-->
-    <!--[if lte IE 9]>
+    <!--[if lte IE 10]>
     <script src="/assets/static/js/placeholders.min.js"></script>
     <![endif]-->
+    <script src="/assets/static/node_modules/d3/d3.min.js"></script>
 </head>
 <body class="ui-kde dark-style">
     <div class="layout table full-parent">

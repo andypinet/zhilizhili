@@ -30,7 +30,7 @@
         <script src="/assets/static/oldie/calc.min.js"></script>
         <![endif]-->
         <!-- dom4级 功能 -->
-        <script src="../../public/js/modren-browser/dom4.min.js"></script
+        <script src="/assets/static/js/dom4.min.js"></script>
 
     </head>
     <body>
@@ -42,6 +42,22 @@
         </div>
         <![endif]-->
 
+        <style>
+            body {
+                height: 1200px;
+            }
+
+            .test {
+                width: 450px;
+                height: 200px;
+                overflow: auto;
+            }
+        </style>
+
+        <div id="test" class="test">
+            <img src="/assets/static/img/mm.jpeg">
+        </div>
+
         <!--[if lt IE 9]>
         <script src="//cdn.bootcss.com/jquery/1.11.2/jquery.js"></script>
         <script>window.jQuery || document.write('<script src="/assets/static/oldie/jquery-1.11.2.min.js"><\/script>')</script>
@@ -50,5 +66,55 @@
         <script src="//cdn.bootcss.com/jquery/2.1.3/jquery.js"></script>
         <script>window.jQuery || document.write('<script src="/assets/static/oldie/jquery-2.1.3.min.js"><\/script>')</script>
         <!--<![endif]-->
+
+        <script>var utils = {};</script>
+
+        <script>utils.ui = {};</script>
+
+        <script>
+            var testElement = document.getElementById("test");
+
+            utils.arrayElements = function(element) {
+                // 数据检测
+
+                if (Array.isArray(element)) {
+                    return element;
+                }
+                if (element instanceof NodeList)  {
+                    return Array.prototype.slice.call(element);
+                }
+                return [element];
+            };
+
+            console.dir(utils.arrayElements(testElement));
+
+            utils.ui.scrollUnique = function(element) {
+                var eventType = 'mousewheel';
+                if (document.mozHidden !== undefined) {
+                    eventType = 'DOMMouseScroll';
+                }
+
+                utils.arrayElements(element).forEach(function(arrayele) {
+                    var self = arrayele;
+                    arrayele.addEventListener(eventType, function(event) {
+                        // 一些数据
+                        var scrollTop = self.scrollTop,
+                                scrollHeight = self.scrollHeight,
+                                height = self.clientHeight;                             
+
+                        var delta = (event.wheelDelta) ? event.wheelDelta : -(event.detail || 0);
+
+                        if ((delta > 0 && scrollTop <= delta) || (delta < 0 && scrollHeight - height - scrollTop <= -1 * delta)) {
+                            // IE浏览器下滚动会跨越边界直接影响父级滚动，因此，临界时候手动边界滚动定位
+                            self.scrollTop = delta > 0? 0: scrollHeight;
+                            // 向上滚 || 向下滚
+                            event.preventDefault();
+                        }
+                    }, false);
+                });                    
+            };
+
+            utils.ui.scrollUnique(testElement);
+        </script>
     </body>
 </html>

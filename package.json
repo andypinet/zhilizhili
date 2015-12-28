@@ -13,6 +13,7 @@
     "bootstrap-sass": "^3.0.0",
     "boy": "0.0.5",
     "core-js": "^1.2.2",
+    "d3": "^3.5.12",
     "debounce": "^1.0.0",
     "document-register-element": "^0.5.3",
     "es6-promise": "^3.0.2",
@@ -54,8 +55,8 @@
     "videojs-webcomponent": "^0.1.3",
     "vue": "^1.0.11",
     "whatwg-fetch": "^0.10.1",
-    "zhilizhili-ui": "^1.2.5",
-    "zhilizhili-ui-plus": "^0.3.0",
+    "zhilizhili-ui": "^1.2.6",
+    "zhilizhili-ui-plus": "^0.3.4",
     "zone.js": "0.5.10"
   }
 }

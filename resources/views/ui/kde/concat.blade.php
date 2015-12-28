@@ -1,4 +1,4 @@
-<div class="scroll-panel main-panel" style="display: none;">
+<div class="scroll-panel main-panel">
     <div class="scroll-panel__head">
         <div class="layout table full-parent">
             <div class="layout__item auto">
@@ -36,46 +36,156 @@
                                         </div>
                                     </div>
                                 </form>
+                                <div class="concat-book-talkers">
+                                    <div class="list-group">
+                                        <div class="list-group__item">
+                                            <div class="concat-book-talker">
+                                                <div class="layout calcsize concat-book-talker__wrapper">
+                                                    <div class="layout__item layout__item--prefix concat-book-talker__marker">
+                                                        <span class="icon iconfont icon-star"></span>
+                                                    </div>
+                                                    <div class="layout__item layout__item--content concat-book-talker__content">
+                                                        <div class="layout new-left-right">
+                                                            <div class="float-left center">
+                                                                <div class="left-inner">
+                                                                    <div class="concat-book-talker__name">Jaye Rowe</div>
+                                                                </div>
+                                                                <div class="float-right">
+                                                                    <div class="concat-book-talker__phone">213123213</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <%--  /concat-book-talker   --%>
+                                        </div>
+                                        <div class="list-group__item">
+                                            <div class="concat-book-talker active">
+                                                <div class="layout calcsize concat-book-talker__wrapper">
+                                                    <div class="layout__item layout__item--prefix concat-book-talker__marker">
+                                                        <span class="icon iconfont icon-star"></span>
+                                                    </div>
+                                                    <div class="layout__item layout__item--content concat-book-talker__content">
+                                                        <div class="layout new-left-right">
+                                                            <div class="float-left center">
+                                                                <div class="left-inner">
+                                                                    <div class="concat-book-talker__name">Jaye Rowe</div>
+                                                                </div>
+                                                                <div class="float-right">
+                                                                    <div class="concat-book-talker__phone">213123213</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <%--  /concat-book-talker   --%>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="layout__item layout__item--suffix">
                                 <div class="list-group">
-                                    <div class="list-group__item">1</div>
-                                    <div class="list-group__item">2</div>
-                                    <div class="list-group__item">3</div>
-                                    <div class="list-group__item">4</div>
-                                    <div class="list-group__item">5</div>
-                                    <div class="list-group__item">6</div>
-                                    <div class="list-group__item">7</div>
-                                    <div class="list-group__item">8</div>
-                                    <div class="list-group__item">9</div>
-                                    <div class="list-group__item">10</div>
-                                    <div class="list-group__item">11</div>
-                                    <div class="list-group__item">12</div>
-                                    <div class="list-group__item">13</div>
-                                    <div class="list-group__item">14</div>
-                                    <div class="list-group__item">15</div>
-                                    <div class="list-group__item">16</div>
-                                    <div class="list-group__item">17</div>
-                                    <div class="list-group__item">18</div>
-                                    <div class="list-group__item">19</div>
-                                    <div class="list-group__item">20</div>
-                                    <div class="list-group__item">21</div>
-                                    <div class="list-group__item">22</div>
-                                    <div class="list-group__item">23</div>
-                                    <div class="list-group__item">24</div>
-                                    <div class="list-group__item">25</div>
-                                    <div class="list-group__item">26</div>
+                                    @for($i = 0; $i < 26; $i++)
+                                        <div class="list-group__item">
+                                            @if($i == 15)
+                                                <span class="concat-book__indicator active"><% $i+1 %></span>
+                                            @else
+                                                <span class="concat-book__indicator"><% $i+1 %></span>
+                                            @endif
+                                        </div>
+                                    @endfor
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <%--  /concat-main prefix   --%>
                 <div class="layout__item layout__item--content">
-                    <p>主内容栏自适应宽度</p>
+                    <div class="full-height user">
+                        <div class="list-group">
+                            <div class="list-group__item">
+                                <div class="user-info">
+                                    <div class="layout center-set">
+                                        <div class="layout__item"><h1 class="text--blue user-info__name">Feilsa Oshiro</h1></div>
+                                        <div class="layout__item"><div class="label label--default user-info__label"><span class="icon iconfont icon-star"></span><span>sdsdsds</span></div></div>
+                                    </div>
+                                    <div class="layout center-set">
+                                        <div class="layout__item"><div class="user-info__email">sdasdsadsds</div></div>
+                                        <div class="layout__item"><div class="user-info__phone">17232122</div></div>
+                                    </div>
+                                    <div class="layout center-set">
+                                        <div class="layout__item"><div class="btn btn--normal bg--normal bg--green"><span>send sms</span><div class="icon iconfont icon-message"></div></div></div>
+                                        <div class="layout__item"><div class="btn btn--normal bg--normal bg--green"><span>call</span><div class="icon iconfont icon-phone"></div></div></div>
+                                        <div class="layout__item"><div class="user-info__addons">
+                                                <div class="layout center-set">
+                                                    <div class="layout__item">left <a href="">3 reviews</a></div>
+                                                    <div class="layout__item"><div class="raty">raty</div></div>
+                                                </div></div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group__item">
+                                <div class="user-status">
+                                    <div class="layout calcsize user-status__wrapper">
+                                        <div class="layout__item layout__item--prefix"><div id="user-info__chart" class="chart-container user-info__chart"></div></div>
+                                        <div class="layout__item layout__item--content">resurtant status</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group__item">
+                                <div class="user-perfernce">
+                                    <h3>preference</h3>
+                                    <div class="user-preference__seating">
+                                        <div class="layout calcsize user-perfernce__item">
+                                            <div class="layout__item layout__item--prefix">seating</div>
+                                            <div class="layout__item layout__item--content">
+                                                <div class="layout center-set">
+                                                    <div class="layout__item">
+                                                        <div class="user-perfernce__seatings">
+                                                            <div class="layout center-set">
+                                                                <div class="layout__item">
+                                                                    <div class="label label--colored blue shape-round">
+                                                                        <span class="label__content">p3</span>
+                                                                        <span class="label__addons"><span class="icon iconfont icon-remove"></span></span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="layout__item">
+                                                                    <div class="label label--colored blue shape-round">
+                                                                        <span class="label__content">p4</span>
+                                                                        <span class="label__addons"><span class="icon iconfont icon-remove"></span></span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="layout__item">
+                                                                    <div class="label label--colored blue shape-round">
+                                                                        <span class="label__content">l17</span>
+                                                                        <span class="label__addons"><span class="icon iconfont icon-remove"></span></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>                                                        
+                                                    </div>
+                                                    <div class="layout__item"><div class="btn btn--basic plus-btn shape-circle"><span class="icon iconfont icon-plus"></span></div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="layout calcsize user-perfernce__item">
+                                            <div class="layout__item layout__item--prefix">seating</div>
+                                            <div class="layout__item layout__item--content">label</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%--  /user   --%>
                 </div>
+                <%--  /concat-main content   --%>
                 <div class="layout__item layout__item--suffix">
                     <p>侧边栏2固定宽度</p>
                 </div>
+                <%--  /concat-main suffix   --%>
             </div>
         </div>
     </div>
@@ -151,3 +261,60 @@
         </div>
     </div>
 </div>
+<style>
+
+    .arc text {
+        font: 10px sans-serif;
+        text-anchor: middle;
+    }
+
+    .arc path {
+        stroke: #fff;
+    }
+
+</style>
+<script type="text/javascript">
+    var width = 260,
+            height = 260,
+            radius = Math.min(width, height) / 2;
+
+    var color = d3.scale.ordinal()
+            .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+    var arc = d3.svg.arc()
+            .outerRadius(radius - 10)
+            .innerRadius(radius - 40);
+
+    var pie = d3.layout.pie()
+            .sort(null)
+            .value(function(d) { return d.population; });
+
+    var svg = d3.select("#user-info__chart").append("svg")
+            .attr("width", width)
+            .attr("height", height)
+            .append("g")
+            .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    d3.csv("/assets/static/data/chart/data.csv", type, function(error, data) {
+        if (error) throw error;
+
+        var g = svg.selectAll(".arc")
+                .data(pie(data))
+                .enter().append("g")
+                .attr("class", "arc");
+
+        g.append("path")
+                .attr("d", arc)
+                .style("fill", function(d) { return color(d.data.age); });
+
+        g.append("text")
+                .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+                .attr("dy", ".35em")
+                .text(function(d) { return d.data.age; });
+    });
+
+    function type(d) {
+        d.population = +d.population;
+        return d;
+    }
+</script>

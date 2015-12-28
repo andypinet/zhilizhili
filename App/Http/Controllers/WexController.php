@@ -96,7 +96,7 @@ class WexController extends Controller
     public function tsc()
     {
         //
-        return view("ui/ie8");
+        return view("ui/lde");
     }
 
     /**
@@ -108,7 +108,7 @@ class WexController extends Controller
     public function h5()
     {
         //
-        return view("wex/react");
+        return view("ui/lde");
     }
 
     public function api($type)

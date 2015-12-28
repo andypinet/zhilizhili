@@ -50,10 +50,12 @@
                 <div class="view__item">
                     @include("mobile.ui.partials.form")
                 </div>
-                <div class="view__item active">
+                <div class="view__item">
                     @include("mobile.ui.partials.layouttest")
                 </div>
-                <div class="view__item"></div>
+                <div class="view__item active">
+                    @include("mobile.ui.partials.tableview")
+                </div>
                 <div class="view__item"></div>
             </div>
             <div class="bg"></div>

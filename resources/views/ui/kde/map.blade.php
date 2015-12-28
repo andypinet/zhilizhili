@@ -1,6 +1,5 @@
 <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=cbfe44e1c0313a88de1731433641e0d8"></script>
-<script src="https://maps.googleapis.com/maps/api/js"></script>
-<div class="scroll-panel main-panel">
+<div class="scroll-panel main-panel" style="display: none;">
     <div class="scroll-panel__head">
         <div class="layout table full-parent">
             <div class="layout__item auto">
@@ -169,42 +168,4 @@ map.on('click', function(e) {
         polyline.setMap(map);
     });
 });
-
-//function drawshape(mappoints) {
-//    return new google.maps.Polyline({
-//        path: mappoints,
-//        geodesic: true,
-//        strokeColor: '#FF0000',
-//        strokeOpacity: 1.0,
-//        strokeWeight: 2
-//    })
-//}
-//
-//var mappoints = [
-//];
-//
-//function initialize() {
-//    var mapCanvas = document.getElementById('historymap');
-//    var mapOptions = {
-//        center: new google.maps.LatLng(39.9150, 116.4040),
-//        zoom: 5
-//    };
-//    var map = new google.maps.Map(mapCanvas, mapOptions);
-//
-//    var polyline = drawshape(mappoints);
-//    polyline.setMap(map);
-//
-//    map.addListener('click', function(e) {
-//        var pointX = e.latLng.lat();
-//        var pointY = e.latLng.lng();
-//        polyline.setMap(null);
-//        requestAnimationFrame(function() {
-//            mappoints.push(new google.maps.LatLng(pointX, pointY));
-//            polyline = drawshape(mappoints);
-//            polyline.setMap(map);
-//        });
-//    });
-//}
-//
-//google.maps.event.addDomListener(window, 'load', initialize);
 </script>
