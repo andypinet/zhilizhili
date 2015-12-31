@@ -7,21 +7,27 @@
     <title>Document</title>
     <link rel="stylesheet" href="/assets/static/css/anicollection.css?v=<% rand(0, 1000) %>">
     <link rel="stylesheet" href="/assets/mobile/css/wex/donghua.css?v=<% rand(0, 1000) %>">
+    <script>
+        if (typeof CSS === "undefined") {
+            document.querySelector("html").classList.add("not-support-highlevelcss");
+        } else {
+            document.querySelector("html").classList.add("support-highlevelcss");
+        }
+        // https://github.com/jieyou/rem_layout
+        !function(a,b,c){function q(){var d=Math.min((o?e[h]().width:f.innerWidth)/(a/b),c);d!=p&&(k.innerHTML="html{font-size:"+d+"px!important;"+n+"}",p=d)}function r(){clearTimeout(l),l=setTimeout(q,500)}var l,d=document,e=d.documentElement,f=window,g="addEventListener",h="getBoundingClientRect",i="pageshow",j=d.head||d.getElementsByTagName("HEAD")[0],k=d.createElement("STYLE"),m="text-size-adjust:100%;",n="-webkit-"+m+"-moz-"+m+"-ms-"+m+"-o-"+m+m,o=h in e,p=null;a=a||320,b=b||16,c=c||32,j.appendChild(k),d[g]("DOMContentLoaded",q,!1),"on"+i in f?f[g](i,function(a){a.persisted&&r()},!1):f[g]("load",r,!1),f[g]("resize",r,!1),q()}(
+                320, // 设置设计稿基准宽度
+                16, // 设置开发时的被除数（见HOW TO USE第4步） 在设计稿基准宽度为320时最好设置为16（在在设计稿基准宽度为其他值时等比放大，如640时设置为32等）。因为浏览器默认的值就是16，这样代码失效或尚未起效时，不会有布局问题
+                32 // 设置最大根元素font-size，请注意这是一个css像素值，而非物理像素值。它的作用是，当用户用非常宽的屏幕（pad、pc）访问页面时，不至于使得根元素的font-size超过这个值，使得布局非常难看。见图“show/wide_max_rem.jpg”
+        );
+    </script>
+    <script src="/assets/static/js/modernizr.min.js"></script>
+    <!-- dom4级 功能 -->
+    <script src="/assets/static/js/dom4.min.js"></script>
 </head>
 <body>
     <div class="debug"></div>
-    <style>
-        .item {
-            color: #0000C0;
-            font-size: 30px;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    </style>
     <div class="items">
-        @for($i = 0; $i < 13; $i++)
+        @for($i = 0; $i < 0; $i++)
             @if($i+1 == 1)
                 <div class="item beijing beijing<%$i+1%> current">
                     <%$i%>
@@ -36,263 +42,174 @@
                 </div>
             @endif
         @endfor
+        <div class="item beijing beijing1 current">
+            <div class="element ani text1" data-anijs="
+            if: load, on: .beijing1, do: element ani text1 fadeIn ani-duration1000 animated;
+            if: prev, on: .beijing1, do: element ani text1 fadeIn ani-duration1000 animated;
+            if: reset, on: .beijing1, do: element ani text1 hide, to .beijing1 .text1;"></div>
+            <div class="element ani text2" data-anijs="
+            if: load, on: .beijing1, do: element ani text2 fadeIn delay-100 ani-duration1000 animated;
+            if: prev, on: .beijing1, do: element ani text2 fadeIn delay-100 ani-duration1000 animated;
+            if: reset, on: .beijing1, do: element ani text2 hide, to .beijing1 .text2;"></div>
+        </div>
+        <div class="item beijing beijing2">
+            <div class="layout flex full-parent vertical vertical-center flex-space-between">
+                <div class="layout__item">
+                    <div class="element ani image1"></div>
+                </div>
+                <div class="layout__item">
+                    <div class="element ani image2" data-anijs="if: load, on: .beijing2, do: fadeIn delay animated;"></div>
+                    <div class="element ani text1" data-anijs="if: load, on: .beijing2, do: slideInLeft animated;"></div>
+                    <div class="element ani text2" data-anijs="if: load, on: .beijing2, do: slideInRight animated;"></div>
+                    <div class="element ani image3" data-anijs="if: load, on: .beijing2, do: fadeIn delay animated;"></div>
+                    <div class="element ani image4" data-anijs="if: load, on: .beijing2, do: fadeIn delay animated;"></div>
+                </div>
+                <div class="layout__item">
+                    <div class="element ani image5"></div>
+                </div>
+            </div>
+        </div>
+        <div class="item beijing beijing3">
+            <div class="layout flex full-parent vertical vertical-center flex-space-between">
+                <div class="layout__item">
+                    <div class="element ani image1"></div>
+                </div>
+                <div class="layout__item">
+                    <div class="element ani image2"></div>
+                    <div class="element ani text1"></div>
+                    <div class="element ani text2"></div>
+                    <div class="element ani image3"></div>
+                    <div class="element ani image4"></div>
+                </div>
+                <div class="layout__item">
+                    <div class="element ani image5"></div>
+                </div>
+            </div>
+        </div>
+        <div class="item beijing beijing4">
+            <div class="layout flex full-parent vertical vertical-center flex-space-between">
+                <div class="layout__item">
+                    <div class="element ani image1"></div>
+                </div>
+                <div class="layout__item">
+                    <div class="element ani image2"></div>
+                    <div class="element ani text1"></div>
+                    <div class="element ani text2"></div>
+                    <div class="element ani image3"></div>
+                    <div class="element ani image4"></div>
+                </div>
+                <div class="layout__item">
+                    <div class="element ani image5"></div>
+                </div>
+            </div>
+        </div>
+        <div class="item beijing beijing5">
+            <div class="element ani text1"></div>
+            <div class="element ani text2"></div>
+            <div class="element ani image1"></div>
+        </div>
+        <div class="item beijing beijing6">
+            <div class="element ani text1"></div>
+            <div class="element ani text2"></div>
+            <div class="element ani image1"></div>
+        </div>
+        <div class="item beijing beijing7">
+            <div class="element ani text1"></div>
+            <div class="element ani text2"></div>
+        </div>
+        <div class="item beijing beijing8">
+            <div class="layout flex full-height vertical center">
+                <div class="layout__item layout__item-head">
+                    <img src="/assets/static/img/mobile/wex/donghua/8/8_03.png" alt="">
+                </div>
+                <div class="layout__item">
+                    总有人不忍它们在寒风中流浪
+                </div>
+                <div class="layout__item">
+                    总有人想到让这个世界越来越好
+                </div>
+                <div class="layout__item">
+                    而爱, 会让我们都会更好
+                </div>
+                <div class="layout__item">
+                    12月9号, 猫史∙咖啡
+                </div>
+                <div class="layout__item">
+                    在二十多只猫咪的陪伴下
+                </div>
+                <div class="layout__item">
+                    邀您来一起聆听这些小可爱的故事
+                </div>
+            </div>
+        </div>
+        <div class="item beijing beijing9">
+            <div class="layout flex full-parent vertical center">
+                <div class="layout__item layout__item-head">
+                    <img src="/assets/static/img/mobile/wex/donghua/9/touxiang.png" alt="">
+                </div>
+                <div class="layout__item text-align-left first-p">
+                    田园猫, 江湖猫称黄二傻,咖啡店第一
+                </div>
+                <div class="layout__item text-align-left">
+                    掌柜, 身兼保安，保姆，奶妈，保镖，模特等
+                </div>
+                <div class="layout__item text-align-left">
+                    数职. 曾经流浪街头如今定居打豆豆咖啡厅,
+                </div>
+                <div class="layout__item text-align-left">
+                    外表无辜迷人, 内里聪慧过人, 会溜自己会开
+                </div>
+                <div class="layout__item text-align-left">
+                    门, 偶尔客串咖啡屋保安队长站岗放哨~
+                </div>
+            </div>
+        </div>
+        <div class="item beijing beijing10">
+            <div class="layout flex full-parent vertical center">
+                <div class="layout__item layout__item-head">
+                    <img src="/assets/static/img/mobile/wex/donghua/10/touxiang.png" alt="">
+                </div>
+                <div class="layout__item text-align-left first-p">
+                    田园猫, 江湖猫称黄二傻,咖啡店第一
+                </div>
+                <div class="layout__item text-align-left">
+                    掌柜, 身兼保安，保姆，奶妈，保镖，模特等
+                </div>
+                <div class="layout__item text-align-left">
+                    数职. 曾经流浪街头如今定居打豆豆咖啡厅,
+                </div>
+                <div class="layout__item text-align-left">
+                    外表无辜迷人, 内里聪慧过人, 会溜自己会开
+                </div>
+                <div class="layout__item text-align-left">
+                    门, 偶尔客串咖啡屋保安队长站岗放哨~
+                </div>
+            </div>
+        </div>
+        <div class="item beijing beijing11">
+            <div class="layout flex full-parent vertical center">
+                <div class="layout__item layout__item-head">
+                    <img src="/assets/static/img/mobile/wex/donghua/11/touxiang.png" alt="">
+                </div>
+                <div class="layout__item text-align-left first-p">
+                    田园猫, 江湖猫称黄二傻,咖啡店第一
+                </div>
+                <div class="layout__item text-align-left">
+                    掌柜, 身兼保安，保姆，奶妈，保镖，模特等
+                </div>
+                <div class="layout__item text-align-left">
+                    数职. 曾经流浪街头如今定居打豆豆咖啡厅,
+                </div>
+                <div class="layout__item text-align-left">
+                    外表无辜迷人, 内里聪慧过人, 会溜自己会开
+                </div>
+                <div class="layout__item text-align-left">
+                    门, 偶尔客串咖啡屋保安队长站岗放哨~
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 <script src="/assets/static/js/anijs.min.js"></script>
-<script src="/assets/static/js/underscore-min.js"></script>
-<script>
-    var debug = (window.getComputedStyle(
-                    document.querySelector('.debug')
-            ).fontFamily) == "true";
-    if (!debug) {
-        var content = window.getComputedStyle(
-                document.querySelector('head')
-        ).fontFamily.replace(/\\/g, "").replace(/'/g, '');
-
-        var viewportwidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        var viewportheight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-
-        function rel(propval, unit) {
-            return parseFloat(propval.replace(unit, ""));
-        }
-
-        function cal(propval) {
-            if (typeof propval != "string") {
-                return propval;
-            }
-
-            if (propval.indexOf('vw') > -1) {
-                return viewportwidth * rel(propval, "vw") / 100 + "px";
-            } else if (propval.indexOf('vh') > -1) {
-                return viewportheight * rel(propval, "vh") / 100 + "px";
-            } else {
-                return propval;
-            }
-        }
-
-        function setVwStyle(ele, cssprops) {
-            for (var csspropkey in cssprops) {
-                ele.style[csspropkey] = cal(cssprops[csspropkey]);
-            }
-        }
-
-        var parseobj = ( new Function( 'return (' + content + ');' ) )();
-
-        for (var key in parseobj) {
-            var elements = Array.prototype.slice.call(document.querySelectorAll(key));
-            if (elements) {
-                for (var i = 0; i < elements.length; i++) {
-                    console.dir(elements[i]);
-                    setVwStyle(elements[i], parseobj[key]);
-                }
-            }
-        }
-    }
-</script>
-<script>
-    var loadEvent = new CustomEvent('load', { });
-    var elements = Array.prototype.slice.call(document.querySelectorAll(".beijing"));
-    var currentIndex = 0;
-    var istouch = false;
-    var instanceY = 0;
-    var delayTime = 2000;
-    var debounceTime = 2000;
-
-    function ani111(max) {
-        // next 动画结束时清除动画
-        function clearPrevAnimation(index, currentAniName, nextAniName) {
-            elements[index].classList.remove(currentAniName);
-            elements[index].classList.remove("animated");
-            elements[index - 1].classList.remove(nextAniName);
-            elements[index - 1].classList.remove("animated");
-        }
-
-        // next 动画结束时延时触发
-        function prevAnimationEnd(index, callback) {
-            (function(i){
-                setTimeout(function() {
-                    // 当前的解除current
-                    elements[i].classList.remove("current");
-                    elements[i].classList.add("next");
-                    // 之前一个收回next
-                    if (elements[i+1]) {
-                        elements[i+1].classList.remove("next");
-                    }
-                    // 下下个变成next
-                    elements[i-1].classList.add("current");
-                    callback(i);
-                }, delayTime);
-            })(index);
-        }
-
-        // next 动画结束时清除动画
-        function clearNextAnimation(index, currentAniName, nextAniName) {
-            elements[index].classList.remove(currentAniName);
-            elements[index].classList.remove("animated");
-            elements[index + 1].classList.remove(nextAniName);
-            elements[index + 1].classList.remove("animated");
-        }
-
-        // next 动画结束时延时触发
-        function nextAnimationEnd(index, callback) {
-            (function(i){
-                setTimeout(function() {
-                    // 当前的解除current
-                    elements[i].classList.remove("current");
-                    // 下一个变成current
-                    elements[i+1].classList.remove("next");
-                    elements[i+1].classList.add("current");
-                    // 下下个变成next
-                    if (elements[i+2]) {
-                        elements[i+2].classList.add("next");
-                    }
-                    callback(i);
-                }, delayTime);
-            })(index);
-        }
-
-        return {
-            prev: function(currentAniName, nextAniName, onprev) {
-                // 当页面不在第一页的时候才可以执行
-                if (currentIndex > 0) {
-                    onprev(currentIndex);
-                    // 当前动画执行区域
-                    elements[currentIndex].classList.add(currentAniName);
-                    elements[currentIndex].classList.add("animated");
-
-                    // 下一动画执行区域
-                    elements[currentIndex - 1].classList.add(nextAniName);
-                    elements[currentIndex - 1].classList.add("animated");
-                    prevAnimationEnd(currentIndex, function(index) {
-                        clearPrevAnimation(index, currentAniName, nextAniName);
-                    });
-                    currentIndex--;
-                }
-            },
-            next: function(currentAniName, nextAniName, onnext, delayNext) {
-                if (currentIndex < max) {
-                    onnext(currentIndex);
-                    // 当前动画执行区域
-                    elements[currentIndex].classList.add(currentAniName);
-                    elements[currentIndex].classList.add("animated");
-
-                    // 下一动画执行区域
-                    elements[currentIndex + 1].classList.add(nextAniName);
-                    elements[currentIndex + 1].classList.add("animated");
-                    nextAnimationEnd(currentIndex, function(index) {
-                        clearNextAnimation(index, currentAniName, nextAniName);
-                        delayNext();
-                    });
-                    currentIndex++;
-                }
-            }
-        };
-    }
-
-    var anicenter = ani111(12);
-
-    document.querySelector("body").addEventListener('touchstart', function(e) {
-        e.preventDefault();
-        istouch = true;
-        instanceY = e.changedTouches[0].clientY;
-    });
-
-    var isCan = true;
-    var changeItem = _.debounce(function() {
-        isCan = true;
-    }, debounceTime);
-
-    var deb = function(e) {
-        if (isCan) {
-            isCan = false;
-            if (istouch) {
-                istouch = false;
-                var ins = e.changedTouches[0].clientY - instanceY;
-                var distance = Math.abs(ins);
-                if (ins < 0) {
-                    if (distance > 30) {
-//                    elements[0].innerHTML = "向上";
-//                    elements[0].style.backgroundImage = "none";
-//                    elements[0].style.backgroundColor = '#' + ('000000' + (distance * 1000).toString(16)).slice(-6);
-                        window.nextpageload();
-                    }
-                } else {
-                    if (distance > 30) {
-//                    elements[0].innerHTML = "向下";
-//                    elements[0].style.backgroundImage = "none";
-//                    elements[0].style.backgroundColor = '#' + ('000000' + (distance * 1000).toString(16)).slice(-6);
-                        window.prevpageload();
-                    }
-                }
-            }
-            changeItem();
-        }
-    };
-
-//    @-webkit-keyframes rotateIn {
-//        0% {
-//            -webkit-transform-origin: center;
-//            transform-origin: center;
-//            -webkit-transform: rotate3d(0, 0, 1, -200deg);
-//            transform: rotate3d(0, 0, 1, -200deg);
-//            opacity: 0;
-//        }
-//
-//        100% {
-//            -webkit-transform-origin: center;
-//            transform-origin: center;
-//            -webkit-transform: none;
-//            transform: none;
-//            opacity: 1;
-//        }
-//    }
-//
-//    @keyframes rotateIn {
-//        0% {
-//            -webkit-transform-origin: center;
-//            -ms-transform-origin: center;
-//            transform-origin: center;
-//            -webkit-transform: rotate3d(0, 0, 1, -200deg);
-//            -ms-transform: rotate3d(0, 0, 1, -200deg);
-//            transform: rotate3d(0, 0, 1, -200deg);
-//            opacity: 0;
-//        }
-//
-//        100% {
-//            -webkit-transform-origin: center;
-//            -ms-transform-origin: center;
-//            transform-origin: center;
-//            -webkit-transform: none;
-//            -ms-transform: none;
-//            transform: none;
-//            opacity: 1;
-//        }
-//    }
-
-//    document.querySelector("body").addEventListener("touchmove", function(e) {
-//        var ins = e.changedTouches[0].clientY - instanceY;
-//        var distance = Math.abs(ins);
-//        elements[0].innerHTML = distance;
-//    });
-
-    document.querySelector("body").addEventListener("touchend", deb);
-
-    // prevpage 触发
-    window.prevpageload = function() {
-//        anicenter.prev("rotateOutDownRight", "rotateInDownRight");
-//        anicenter.prev("rotateOutDownRight", "rotateInDownRight");
-        anicenter.prev("flipOutX", "flipInX", function(index) {
-            elements[index-1].style.opacity = 1;
-        });
-    };
-
-    // nextpage 触发
-    window.nextpageload = function() {
-//        anicenter.next("rotateOutDownLeft", "rotateInDownLeft");
-//        anicenter.next("rotateOutUpRight", "rotateInUpRight");
-        anicenter.next("flipOutX", "flipInX", function(index) {
-            elements[index+1].style.opacity = 1;
-        });
-    };
-</script>
+<script src="/assets/mobile/controller/wex/donghua.js?v=<% rand(0, 1000) %>"></script>
 </html>

@@ -108,7 +108,7 @@ class WexController extends Controller
     public function h5()
     {
         //
-        return view("ui/lde");
+        return view("wex/donghua");
     }
 
     public function api($type)

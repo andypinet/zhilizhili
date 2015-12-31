@@ -136,43 +136,98 @@
                             </div>
                             <div class="list-group__item">
                                 <div class="user-perfernce">
-                                    <h3>preference</h3>
-                                    <div class="user-preference__seating">
+                                    <h3>perfernce</h3>
+                                    <div class="user-perfernce__seating">
                                         <div class="layout calcsize user-perfernce__item">
                                             <div class="layout__item layout__item--prefix">seating</div>
                                             <div class="layout__item layout__item--content">
-                                                <div class="layout center-set">
-                                                    <div class="layout__item">
-                                                        <div class="user-perfernce__seatings">
-                                                            <div class="layout center-set">
-                                                                <div class="layout__item">
-                                                                    <div class="label label--colored blue shape-round">
-                                                                        <span class="label__content">p3</span>
-                                                                        <span class="label__addons"><span class="icon iconfont icon-remove"></span></span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="layout__item">
-                                                                    <div class="label label--colored blue shape-round">
-                                                                        <span class="label__content">p4</span>
-                                                                        <span class="label__addons"><span class="icon iconfont icon-remove"></span></span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="layout__item">
-                                                                    <div class="label label--colored blue shape-round">
-                                                                        <span class="label__content">l17</span>
-                                                                        <span class="label__addons"><span class="icon iconfont icon-remove"></span></span>
-                                                                    </div>
-                                                                </div>
+                                                <div class="user-perfernce__foods">
+                                                    <div class="layout center-set">
+                                                        <div class="layout__item">
+                                                            <div class="label label--colored blue shape-round-circle">
+                                                                <span class="label__content">p3</span>
+                                                                <span class="label__addons"><span class="icon iconfont icon-remove"></span></span>
                                                             </div>
-                                                        </div>                                                        
+                                                        </div>
+                                                        <div class="layout__item">
+                                                            <div class="label label--colored blue shape-round-circle">
+                                                                <span class="label__content">p4</span>
+                                                                <span class="label__addons"><span class="icon iconfont icon-remove"></span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="layout__item">
+                                                            <div class="label label--colored blue shape-round-circle">
+                                                                <span class="label__content">l17</span>
+                                                                <span class="label__addons"><span class="icon iconfont icon-remove"></span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="layout__item">
+                                                            <div class="button button--basic blue shape-circle user-perfernce__add-seat"><span class="icon iconfont icon-plus"></span></div>
+                                                        </div>
                                                     </div>
-                                                    <div class="layout__item"><div class="btn btn--basic plus-btn shape-circle"><span class="icon iconfont icon-plus"></span></div></div>
                                                 </div>
+                                                <%--  /user-perfernce__seatings   --%>
                                             </div>
+                                            <%--  /layout__item--content   --%>
                                         </div>
+                                    </div>
+                                    <%--  /user-perference__seating   --%>
+                                    <div class="user-perfernce__food">
                                         <div class="layout calcsize user-perfernce__item">
-                                            <div class="layout__item layout__item--prefix">seating</div>
-                                            <div class="layout__item layout__item--content">label</div>
+                                            <div class="layout__item layout__item--prefix">food</div>
+                                            <div class="layout__item layout__item--content">
+                                                <div class="user-perfernce__seatings">
+                                                    <div class="layout center-set">
+                                                        <div class="layout__item">
+                                                            <div class="label label--colored green shape-round-circle">
+                                                                <span class="label__content">seafood</span>
+                                                                <span class="label__addons"><span class="icon iconfont icon-remove"></span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="layout__item">
+                                                            <div class="label label--colored green shape-round-circle">
+                                                                <span class="label__content">football</span>
+                                                                <span class="label__addons"><span class="icon iconfont icon-remove"></span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="layout__item">
+                                                            <div class="label label--colored green shape-round-circle">
+                                                                <span class="label__content">baseball</span>
+                                                                <span class="label__addons"><span class="icon iconfont icon-remove"></span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="layout__item">
+                                                            <div class="label label--colored green shape-round-circle">
+                                                                <span class="label__content">beer</span>
+                                                                <span class="label__addons"><span class="icon iconfont icon-remove"></span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="layout__item">
+                                                            <div class="label label--colored blue shape-round-circle">
+                                                                <span class="label__content">p3</span>
+                                                                <span class="label__addons"><span class="icon iconfont icon-remove"></span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="layout__item">
+                                                            <div class="label label--colored blue shape-round-circle">
+                                                                <span class="label__content">p4</span>
+                                                                <span class="label__addons"><span class="icon iconfont icon-remove"></span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="layout__item">
+                                                            <div class="label label--colored blue shape-round-circle">
+                                                                <span class="label__content">l17</span>
+                                                                <span class="label__addons"><span class="icon iconfont icon-remove"></span></span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="layout__item">
+                                                            <div class="button button--basic blue shape-circle user-perfernce__add-seat"><span class="icon iconfont icon-plus"></span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <%--  /user-perfernce__seatings   --%>
+                                            </div>
+                                            <%--  /layout__item--content   --%>
                                         </div>
                                     </div>
                                 </div>
@@ -183,7 +238,134 @@
                 </div>
                 <%--  /concat-main content   --%>
                 <div class="layout__item layout__item--suffix">
-                    <p>侧边栏2固定宽度</p>
+                    <div class="full-parent user-statistics">
+                        <div class="user-statistics__events">
+                            <div class="list-group">
+                                <div class="list-group__item" data-role="title">
+                                    <h3 class="user-statistics__title">event / pronitins history</h3>
+                                </div>
+                                <div class="list-group__item">
+                                    <div class="user-statistics__event">
+                                        <div class="layout new-left-right">
+                                            <div class="float-left">
+                                                <div class="left-inner">
+                                                    <div class="layout center-set">
+                                                        <div class="layout__item"><span>happy hours</span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="float-right">
+                                                    <div class="layout center-set">
+                                                        <div class="layout__item"><span class="number">10</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <%--  /user-statistics__event   --%>
+                                </div>
+                                <div class="list-group__item">
+                                    <div class="user-statistics__event">
+                                        <div class="layout new-left-right">
+                                            <div class="float-left">
+                                                <div class="left-inner">
+                                                    <div class="layout center-set">
+                                                        <div class="layout__item"><span>happy hours</span></div>
+                                                    </div>
+                                                </div>
+                                                <div class="float-right">
+                                                    <div class="layout center-set">
+                                                        <div class="layout__item"><span class="number">10</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <%--  /user-statistics__event   --%>
+                                </div>
+                            </div>
+                        </div>
+                        <%--  /user-statistics__events   --%>
+                        <div class="user-statistics__history">
+                            <div class="list-group">
+                                <div class="list-group__item" data-role="title">
+                                    <div class="layout table full-width user-statistics__history-item">
+                                        <div class="layout__item"><h3 class="user-statistics__title">recebt dining history</h3></div>
+                                        <div class="layout__item">covers</div>
+                                        <div class="layout__item">table</div>
+                                    </div>
+                                </div>
+                                <div class="list-group__item">
+                                    <div class="layout table full-width user-statistics__history-item">
+                                        <div class="layout__item"><span class="label label--colored shape-circle--5px green">18:50</span> recebt dining history</div>
+                                        <div class="layout__item"><span class="label label--colored shape-circle green user-statistics__badge">1</span></div>
+                                        <div class="layout__item">2</div>
+                                    </div>
+                                </div>
+                                <div class="list-group__item">
+                                    <div class="layout table full-width user-statistics__history-item">
+                                        <div class="layout__item"><span class="label label--colored shape-circle--5px grey">20:00</span> recebt dining history</div>
+                                        <div class="layout__item"><span class="label label--colored shape-circle green user-statistics__badge">1</span></div>
+                                        <div class="layout__item">2</div>
+                                    </div>
+                                </div>
+                                <div class="list-group__item">
+                                    <div class="layout table full-width user-statistics__history-item">
+                                        <div class="layout__item"><span class="label label--colored shape-circle--5px blue">20:00</span> recebt dining history</div>
+                                        <div class="layout__item"><span class="label label--colored shape-circle green user-statistics__badge">1</span></div>
+                                        <div class="layout__item">2</div>
+                                    </div>
+                                </div>
+                                <div class="list-group__item">
+                                    <div class="layout table full-width user-statistics__history-item">
+                                        <div class="layout__item"><span class="label label--colored shape-circle--5px green">18:50</span> recebt dining history</div>
+                                        <div class="layout__item"><span class="label label--colored shape-circle green user-statistics__badge">1</span></div>
+                                        <div class="layout__item">2</div>
+                                    </div>
+                                </div>
+                                <div class="list-group__item">
+                                    <div class="layout table full-width user-statistics__history-item">
+                                        <div class="layout__item"><span class="label label--colored shape-circle--5px green">18:50</span> recebt dining history</div>
+                                        <div class="layout__item"><span class="label label--colored shape-circle green user-statistics__badge">1</span></div>
+                                        <div class="layout__item">2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%--  /user-statistics__history   --%>
+                        <div class="user-statistics__upcoming">
+                            <div class="list-group">
+                                <div class="list-group__item" data-role="title">
+                                    <div class="layout table full-width user-statistics__upcoming-item">
+                                        <div class="layout__item"><h3 class="user-statistics__title">recebt dining history</h3></div>
+                                        <div class="layout__item">covers</div>
+                                        <div class="layout__item">table</div>
+                                    </div>
+                                </div>
+                                <div class="list-group__item">
+                                    <div class="layout table full-width user-statistics__upcoming-item">
+                                        <div class="layout__item"><span class="label label--colored shape-circle--5px pink">18:50</span> recebt dining history</div>
+                                        <div class="layout__item"><span class="label label--colored shape-circle green user-statistics__badge">1</span></div>
+                                        <div class="layout__item">2</div>
+                                    </div>
+                                </div>
+                                <div class="list-group__item">
+                                    <div class="layout table full-width user-statistics__upcoming-item">
+                                        <div class="layout__item"><span class="label label--colored shape-circle--5px grey">18:50</span> recebt dining history</div>
+                                        <div class="layout__item"><span class="label label--colored shape-circle green user-statistics__badge">1</span></div>
+                                        <div class="layout__item">2</div>
+                                    </div>
+                                </div>
+                                <div class="list-group__item">
+                                    <div class="layout table full-width user-statistics__upcoming-item">
+                                        <div class="layout__item"><span class="label label--colored shape-circle--5px grey">18:50</span> recebt dining history</div>
+                                        <div class="layout__item"><span class="label label--colored shape-circle green user-statistics__badge">1</span></div>
+                                        <div class="layout__item">2</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <%--  /user-statistics__upcoming   --%>
+                    </div>
                 </div>
                 <%--  /concat-main suffix   --%>
             </div>

@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="css-to-js-global-variable-encode">
     <title>Document</title>
 
     <!-- 1. Load libraries -->
@@ -32,6 +33,7 @@
 
     <link rel="stylesheet" href="/assets/static/css/normalize.css">
     <link rel="stylesheet" href="/assets/pc/css/ui/kde.css?v=<% rand(0, 1000) %>">
+    <link id="cssToJsGlobalVariable" rel="stylesheet" href="/assets/pc/css/ui/variable.css?v=<% rand(0, 1000) %>">
     <script src="/assets/static/js/dom4.min.js"></script>
     <!-- 总共35k 提供了dom3 es5 大部分功能 -->
     <!--[if IE 8]>
@@ -70,4 +72,10 @@
     <my-app style="display: none;">Loading...</my-app>
 </body>
 <script src="/assets/pc/controller/ui.js"></script>
+<script>
+    var content = window.getComputedStyle(
+        document.querySelector("meta[name=css-to-js-global-variable-encode]")
+    ).fontFamily.replace(/\\/g, "").replace(/'/g, '');
+    console.dir(content);
+</script>
 </html>
