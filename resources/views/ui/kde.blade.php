@@ -56,6 +56,7 @@
     <script src="/assets/static/js/placeholders.min.js"></script>
     <![endif]-->
     <script src="/assets/static/node_modules/d3/d3.min.js"></script>
+    <script src="/assets/pc/lib/getcssvariable.js"></script>
 </head>
 <body class="ui-kde dark-style">
     <div class="layout table full-parent">
@@ -72,10 +73,4 @@
     <my-app style="display: none;">Loading...</my-app>
 </body>
 <script src="/assets/pc/controller/ui.js"></script>
-<script>
-    var content = window.getComputedStyle(
-        document.querySelector("meta[name=css-to-js-global-variable-encode]")
-    ).fontFamily.replace(/\\/g, "").replace(/'/g, '');
-    console.dir(content);
-</script>
 </html>

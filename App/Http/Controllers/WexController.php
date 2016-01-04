@@ -105,10 +105,59 @@ class WexController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function mtc()
+    {
+        //
+        return view("mobile/ui/tde");
+    }
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function vtc()
+    {
+        //
+        return view("mobile/ui/vde");
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function atc()
+    {
+        //
+        return view("mobile/ui/ade");
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function h5()
     {
         //
-        return view("wex/donghua");
+        return view("ui/ie8");
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function mobile()
+    {
+        //
+        return view("wex/mobile");
     }
 
     public function api($type)

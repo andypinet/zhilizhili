@@ -301,6 +301,15 @@ var mst = function(name, destpath) {
 };
 
 gulp.task("watch-react", function(name, dest){
-    dest = dest || '';
-    gulp.watch(paths.srcRoot + `${dest}/${name}.jsx`, mst(name, dest))
+	dest = dest || '';
+	gulp.watch(paths.srcRoot + `${dest}/${name}.jsx`, mst(name, dest))
+});
+
+gulp.task("watch-tsc", function() {
+    var cwd = `tsc --watch resources/assets/**/*.ts`;
+
+    exec(cwd, function(err, stdout, stderr) {
+        console.log(stdout);
+        console.log(stderr);
+    });
 });
