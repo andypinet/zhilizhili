@@ -30,10 +30,19 @@
     <link rel="stylesheet" href="/assets/static/css/normalize.css">
     <link rel="stylesheet" href="/assets/mobile/css/ui/tde.css?v=<% rand(0, 1000) %>">
     <script src="/assets/static/js/dom4.min.js"></script>
+    <script src="/assets/static/js/pep.js"></script>
+    <script src="/assets/static/node_modules/webcomponents.js/webcomponents.min.js"></script>
 </head>
 <body class="ui-tde dark-style">
     <%--@include("ui.ceshi.layout")--%>
-    @include("ui.ceshi.phone")
+    <%--@include("ui.ceshi.phone")--%>
+    <%--@include("ui.ceshi.setting")--%>
+    <%--@include("ui.ceshi.drawer")--%>
+    <%--@include("ui.ceshi.responsive")--%>
+    <%--@include("ui.ceshi.usermenu")--%>
+    <%--@include("ui.ceshi.pagecontrol")--%>
+    <%--@include("ui.ceshi.webcomponent")--%>
+    @include("ui.ceshi.webcomponent")
 </body>
-<script src="/assets/mobile/controller/mobile.js"></script>
+<script src="/assets/mobile/controller/mobile.js?v=<% rand(0, 1000) %>"></script>
 </html>

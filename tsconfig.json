@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "system",
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "noImplicitAny": false
+  },
+  "exclude": [
+    "node_modules",
+    "vendor",
+    "build",
+    "resources/assets/mobile",
+    "resources/assets/pc/elements",
+    "resources/assets/pc/controller/about",
+    "resources/assets/pc/controller/article",
+    "resources/assets/pc/controller/auth",
+    "resources/assets/pc/controller/music",
+    "resources/assets/pc/lib",
+    "resources/assets/pc/controller/base.ts",
+    "resources/assets/pc/controller/index.ts"
+  ]
+}
