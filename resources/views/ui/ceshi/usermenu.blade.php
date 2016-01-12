@@ -40,7 +40,7 @@
                 <div class="layout flex horizontal vertical-center bilibili-postcard__user-info">
                     <div class="layout__item"><div class="text">修电脑找妹子</div></div>
                     <div class="layout__item"><div class="label label--basic grey shape-circle--5px bilibili-postcard__user-level">LV3</div></div>
-                    <div class="layout__item"><span class="icon iconfont bilibili-postcard__user-sex icon-male"></span></div>
+                    <div class="layout__item"><span class="icon iconfont icon-male bilibili-postcard__user-sex"></span></div>
                 </div>
                 <div class="layout flex horizontal">
                     <div class="layout__item"><div class="label label--colored grey shape-round-circle bilibili-postcard__dogpai">正式会员</div></div>

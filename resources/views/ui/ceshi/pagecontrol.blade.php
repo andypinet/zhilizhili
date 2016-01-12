@@ -21,5 +21,4 @@
         <div>2</div>
         <div>3</div>
     </div>
-    zhilizhili-iron-selector
 </div>

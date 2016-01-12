@@ -28,21 +28,34 @@
     <script src="/assets/static/oldie/calc-polyfill.js?v=<% rand(0, 1000) %>"></script>
     <script src="/assets/static/oldie/picturefill.js?v=<% rand(0, 1000) %>"></script>
     <link rel="stylesheet" href="/assets/static/css/normalize.css">
+    <link rel="stylesheet" href="/assets/static/css/anicollection.css">
     <link rel="stylesheet" href="/assets/mobile/css/ui/tde.css?v=<% rand(0, 1000) %>">
+    <script src="/assets/static/js/tde.mustbe.v2.js?v=<% rand(0, 1000) %>"></script>
     <script src="/assets/static/js/dom4.min.js"></script>
     <script src="/assets/static/js/pep.js"></script>
-    <script src="/assets/static/node_modules/webcomponents.js/webcomponents.min.js"></script>
 </head>
 <body class="ui-tde dark-style">
-    <%--@include("ui.ceshi.layout")--%>
-    <%--@include("ui.ceshi.phone")--%>
-    <%--@include("ui.ceshi.setting")--%>
-    <%--@include("ui.ceshi.drawer")--%>
-    <%--@include("ui.ceshi.responsive")--%>
-    <%--@include("ui.ceshi.usermenu")--%>
-    <%--@include("ui.ceshi.pagecontrol")--%>
-    <%--@include("ui.ceshi.webcomponent")--%>
-    @include("ui.ceshi.webcomponent")
+    <%--
+    <div id="htmlclass"></div>
+    <script>
+        document.getElementById("htmlclass").innerHTML = document.querySelector("html").getAttribute("class");
+    </script>
+    --%>
+    <%--
+        @include("ui.ceshi.layout")
+        @include("ui.ceshi.phone")
+        @include("ui.ceshi.setting")
+        @include("ui.ceshi.drawer")
+        @include("ui.ceshi.responsive")
+        @include("ui.ceshi.usermenu")
+        @include("ui.ceshi.pagecontrol")
+        @include("ui.ceshi.webcomponent")
+        @include("ui.ceshi.stackview")
+        @include("ui.ceshi.drawerview")
+        @include("ui.ceshi.tabview")
+        @include("ui.ceshi.stack")
+    --%>
+    @include("ui.ceshi.animation")
 </body>
 <script src="/assets/mobile/controller/mobile.js?v=<% rand(0, 1000) %>"></script>
 </html>

@@ -1,0 +1,23 @@
+{
+  "minify": true,
+  "options": [
+    "domPrefixes",
+    "prefixes",
+    "addTest",
+    "atRule",
+    "hasEvent",
+    "mq",
+    "prefixed",
+    "prefixedCSS",
+    "prefixedCSSValue",
+    "setClasses"
+  ],
+  "feature-detects": [
+    "test/fullscreen-api",
+    "test/serviceworker",
+    "test/webgl",
+    "test/css/all",
+    "test/css/backgroundblendmode",
+    "test/css/calc"
+  ]
+}
